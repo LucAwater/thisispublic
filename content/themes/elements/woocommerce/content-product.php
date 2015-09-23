@@ -6,7 +6,7 @@
  *
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 1.6.4
+ * @version 2.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -56,30 +56,34 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
+
+			/**
+			 * woocommerce_shop_loop_item_title hook
+			 *
+			 * @hooked woocommerce_template_loop_product_title - 10
+			 */
+			do_action( 'woocommerce_shop_loop_item_title' );
+
+			/**
+			 * woocommerce_after_shop_loop_item_title hook
+			 *
+			 * @hooked woocommerce_template_loop_rating - 5
+			 * @hooked woocommerce_template_loop_price - 10
+			 */
+			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
 
-		<div>
-			<?php
-			$title = get_the_title();
-			$subtitle = get_field( 'product_subtitle' );
-			$description = get_field( 'product_description' );
-			?>
-
-			<h2><?php the_title(); ?></h2>
-			<h3><?php echo $subtitle; ?></h3>
-			<?php echo substr( $description, 0, 50) . '...'; ?>
-
-			<?php
-				/**
-				 * woocommerce_after_shop_loop_item_title hook
-				 *
-				 * @hooked woocommerce_template_loop_rating - 5
-				 * @hooked woocommerce_template_loop_price - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop_item_title' );
-			?>
-		</div>
-
 	</a>
+
+	<?php
+
+		/**
+		 * woocommerce_after_shop_loop_item hook
+		 *
+		 * @hooked woocommerce_template_loop_add_to_cart - 10
+		 */
+		do_action( 'woocommerce_after_shop_loop_item' );
+
+	?>
 
 </li>
