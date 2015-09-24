@@ -36,7 +36,7 @@ require_once('includes/admin/tutorial.php');
 // Woocommerce includes
 require_once('includes/cart-update.php');
 require_once('includes/download_button.php');
-// require_once('woocommerce/woo-functions.php');
+require_once('woocommerce/woo-functions.php');
 
 // Add support for woocommerce
 add_action( 'after_setup_theme', 'woocommerce_support' );
