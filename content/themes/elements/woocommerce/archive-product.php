@@ -59,7 +59,19 @@ get_header( 'shop' ); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+					<?php
+          if ( is_user_logged_in() ){
+            global $current_user;
+            $current_user_role = $current_user->roles[0];
+
+            // Custom user level
+            $user_level = get_field( 'user_level' );
+
+            if( $current_user_role == 'administrator' || in_array($current_user_role, $user_level) ){
+              wc_get_template_part( 'content', 'product' );
+            }
+          }
+          ?>
 
 				<?php endwhile; // end of the loop. ?>
 
