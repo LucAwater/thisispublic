@@ -34,7 +34,7 @@ if ( ! $product->is_purchasable() ) {
 	<form class="cart" method="post" enctype='multipart/form-data'>
 	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-	 	<?php
+	 	<!-- <?php
 	 		if ( ! $product->is_sold_individually() ) {
 	 			woocommerce_quantity_input( array(
 	 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
@@ -42,7 +42,7 @@ if ( ! $product->is_purchasable() ) {
 	 				'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
 	 			) );
 	 		}
-	 	?>
+	 	?> -->
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 
