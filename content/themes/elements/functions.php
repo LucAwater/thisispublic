@@ -39,7 +39,6 @@ require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');
 require_once('includes/admin/acf-page.php');
-// require_once('includes/admin/product.php');
 
 // Woocommerce includes
 require_once('includes/cart-update.php');
