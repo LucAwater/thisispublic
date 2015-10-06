@@ -5,7 +5,7 @@ Tags: retina, images, image, admin, attachment, media, files, iphone, ipad, plug
 License: GPLv2 or later
 Requires at least: 3.5
 Tested up to: 4.3.1
-Stable tag: 3.5.0
+Stable tag: 3.5.2
 
 Make your website look beautiful and crisp on Retina / High DPI displays.
 
@@ -26,6 +26,9 @@ Languages: English, French.
 3. Check if it works! - if it doesn't, read the FAQ, the tutorial, and check the forums.
 
 == Changelog ==
+
+= 3.5.2 =
+* Update: Little modification for SmushIt (https://wordpress.org/support/topic/wp-retina-2x-support-in-wp-smush?replies=1#post-7460268).
 
 = 3.5.0 =
 * Update: Towards using the new WP translation system.
