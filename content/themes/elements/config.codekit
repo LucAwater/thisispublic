@@ -106,19 +106,6 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/coffee\/pageload.coffee": {
-		"createSourceMap": 0,
-		"fileType": 32,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/coffee\/pageload.coffee",
-		"minifyOutput": 1,
-		"outputAbbreviatedPath": "\/coffee\/pageload.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
-		},
 	"\/content\/gridPri.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -325,6 +312,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/app.js",
 		"outputAbbreviatedPath": "\/js\/min\/app-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/pageload.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/pageload.js",
+		"outputAbbreviatedPath": "\/js\/min\/pageload-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -2172,7 +2170,7 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/coffee\/pageload.coffee",
+			"linkedFileAbbreviatedPath": "\/js\/pageload.js",
 			"position": 9,
 			"type": 1
 			},
