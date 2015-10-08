@@ -10,7 +10,7 @@ if ( class_exists('WooCommerce') ) {
 if( have_rows('page') ): $i_anchor = 1; $i_par = 0;
   while( have_rows('page') ): the_row();
 
-    // Hero section is placed before main
+    // Hero section is placed before <main>
 
     if( get_row_layout() == 'text' ):
       include( locate_template('content/text.php') ); $i_anchor++;
