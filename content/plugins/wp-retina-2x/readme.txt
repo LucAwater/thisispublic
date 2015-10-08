@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: retina, images, image, admin, attachment, media, files, iphone, ipad, plugin, picture, pictures
 License: GPLv2 or later
 Requires at least: 3.5
-Tested up to: 4.2.2
-Stable tag: 3.4.2
+Tested up to: 4.3.1
+Stable tag: 3.5.4
 
 Make your website look beautiful and crisp on Retina / High DPI displays.
 
@@ -27,9 +27,31 @@ Languages: English, French.
 
 == Changelog ==
 
+= 3.5.4 =
+* Update: PictureFill 3.0.1 (full codebase rewrite).
+
+= 3.5.2 =
+* Update: Little modification for SmushIt (https://wordpress.org/support/topic/wp-retina-2x-support-in-wp-smush?replies=1#post-7460268).
+
+= 3.5.0 =
+* Update: Towards using the new WP translation system.
+
+= 3.4.8 =
+* Update: For WordPress 4.3.
+* Update: RetinaImages to 1.7.2.
+* Info: If you like the plugin, please tell me so here: https://wordpress.org/support/view/plugin-reviews/wp-retina-2x :) Thank you, and have a nice week-end everyone!
+
+= 3.4.6 =
+* Fix: Search string not null but empty induces error.
+* Change: User Agent used for Pro authentification.
+
+= 3.4.4 =
+* Fix: Issues with class containing trailing spaces. Fixed in in SimpleHTMLDOM.
+* Fix: Used to show weird numbers when using 9999 as width or height.
+* Add: Filter and default filter to avoid certain IMG SRC to be checked/parsed by the plugin while rendering.
+
 = 3.4.2 =
 * Fix: Full-Size Retina wasn't removed when the original file was deleted from WP.
-* Info: If you use Lightroom and WordPress, please have a look at http://apps.meow.fr/wplr-sync/ :)
 
 = 3.4.0 =
 * Fix: Images set up with a 0x0 size must be skipped.
@@ -113,7 +135,7 @@ Fix: Very minor issue (one of the debug line had a bug).
 * Change: Enhanced logs (in debug mode), much easier to read.
 * Change: Dashboard enhanced, more clear, possibility of having many image sizes on the screen.
 * Fix: Better handing of non-image media and image detection.
-* Fix: Rounding issues always been present, they are now fixed with an 2px error margin. 
+* Fix: Rounding issues always been present, they are now fixed with an 2px error margin.
 * Fix: Warnings and issues in case of broken metadata and images.
 * Add: (PRO) New pop-up screen with detailed information.
 * Add: (PRO) Added Retina for Full-Size with upload feature. Please note that Full-Size Retina also works with the normal version but you will have to manually resize and upload them.
@@ -337,6 +359,7 @@ Developers, WP Retina 2x has a little API. Here are a few filters and actions yo
 * wr2x_img_url: you can check and potentially override the $wr2x_img_url (normal/original image from the src) that will be used in the srcset for 1x
 * wr2x_img_retina_url: you can check and potentially override the $wr2x_img_retina_url (retina image) that will be used in the srcset for 2x
 * wr2x_img_src: you can check and potentially override the $wr2x_img_src that will be used in the img's src (only used in Pro version)
+* wr2x_validate_src: the img src is passed; return it if it is valid, return null if it should be skipped
 
 == Upgrade Notice ==
 

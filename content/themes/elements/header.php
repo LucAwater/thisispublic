@@ -33,6 +33,10 @@
 </head>
 
 <body class="is-loading">
+  <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
   <!-- Header -->
   <header>
     <a class="link-logo" href="<?php echo home_url(); ?>">
@@ -45,7 +49,7 @@
   </header>
 
   <?php
-  // Hero section must be placed before main
+  // Hero section (must be placed before main)
   if( have_posts() ):
     while( have_posts() ): the_post();
 

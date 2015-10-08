@@ -34,7 +34,7 @@ if ( ! $product->is_purchasable() ) {
 	<form class="cart" method="post" enctype='multipart/form-data'>
 	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-	 	<?php
+	 	<!-- <?php
 	 		if ( ! $product->is_sold_individually() ) {
 	 			woocommerce_quantity_input( array(
 	 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
@@ -42,15 +42,27 @@ if ( ! $product->is_purchasable() ) {
 	 				'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
 	 			) );
 	 		}
-	 	?>
+	 	?> -->
 
 	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 
-		<button type="submit"
-        data-quantity="1" data-product_id="<?php echo $product->id; ?>"
-        class="button button-sec system alt add_to_cart_button product_type_simple">
-        Add to cart
-    </button>
+    <?php
+    if( $product->is_downloadable() ){
+      echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+      	sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button %s product_type_%s">%s</a>',
+      		esc_url( $product->add_to_cart_url() ),
+      		esc_attr( $product->id ),
+      		esc_attr( $product->get_sku() ),
+      		esc_attr( isset( $quantity ) ? $quantity : 1 ),
+      		$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
+      		esc_attr( $product->product_type ),
+      		esc_html( $product->add_to_cart_text() )
+      	),
+      $product );
+    } else {
+      echo '<button type="submit" class="single_add_to_cart_button button alt">' . esc_html( $product->single_add_to_cart_text() ) . '</button>';
+    }
+    ?>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>

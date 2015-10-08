@@ -11,12 +11,12 @@
     display: inline;
     height: auto;
     float: left;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
 
 @media only screen {
   .s-grid-1 > li {
     width: 100%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .s-grid-1 > li:nth-of-type(n) {
       clear: none; }
     .s-grid-1 > li:nth-of-type(1n+1) {
@@ -24,7 +24,7 @@
 
   .s-grid-2 > li {
     width: 50%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .s-grid-2 > li:nth-of-type(n) {
       clear: none; }
     .s-grid-2 > li:nth-of-type(2n+1) {
@@ -32,7 +32,7 @@
 
   .s-grid-3 > li {
     width: 33.3333333333%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .s-grid-3 > li:nth-of-type(n) {
       clear: none; }
     .s-grid-3 > li:nth-of-type(3n+1) {
@@ -40,7 +40,7 @@
 
   .s-grid-4 > li {
     width: 25%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .s-grid-4 > li:nth-of-type(n) {
       clear: none; }
     .s-grid-4 > li:nth-of-type(4n+1) {
@@ -48,7 +48,7 @@
 @media only screen and (min-width: 31.313em) {
   .m-grid-1 > li {
     width: 100%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .m-grid-1 > li:nth-of-type(n) {
       clear: none; }
     .m-grid-1 > li:nth-of-type(1n+1) {
@@ -56,7 +56,7 @@
 
   .m-grid-2 > li {
     width: 50%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .m-grid-2 > li:nth-of-type(n) {
       clear: none; }
     .m-grid-2 > li:nth-of-type(2n+1) {
@@ -64,7 +64,7 @@
 
   .m-grid-3 > li {
     width: 33.3333333333%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .m-grid-3 > li:nth-of-type(n) {
       clear: none; }
     .m-grid-3 > li:nth-of-type(3n+1) {
@@ -72,7 +72,7 @@
 
   .m-grid-4 > li {
     width: 25%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .m-grid-4 > li:nth-of-type(n) {
       clear: none; }
     .m-grid-4 > li:nth-of-type(4n+1) {
@@ -80,7 +80,7 @@
 @media only screen and (min-width: 62.563em) {
   .l-grid-1 > li {
     width: 100%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .l-grid-1 > li:nth-of-type(n) {
       clear: none; }
     .l-grid-1 > li:nth-of-type(1n+1) {
@@ -88,7 +88,7 @@
 
   .l-grid-2 > li {
     width: 50%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .l-grid-2 > li:nth-of-type(n) {
       clear: none; }
     .l-grid-2 > li:nth-of-type(2n+1) {
@@ -96,7 +96,7 @@
 
   .l-grid-3 > li {
     width: 33.3333333333%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .l-grid-3 > li:nth-of-type(n) {
       clear: none; }
     .l-grid-3 > li:nth-of-type(3n+1) {
@@ -104,7 +104,7 @@
 
   .l-grid-4 > li {
     width: 25%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .l-grid-4 > li:nth-of-type(n) {
       clear: none; }
     .l-grid-4 > li:nth-of-type(4n+1) {
@@ -112,7 +112,7 @@
 @media only screen and (min-width: 87.5em) {
   .xl-grid-1 > li {
     width: 100%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xl-grid-1 > li:nth-of-type(n) {
       clear: none; }
     .xl-grid-1 > li:nth-of-type(1n+1) {
@@ -120,7 +120,7 @@
 
   .xl-grid-2 > li {
     width: 50%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xl-grid-2 > li:nth-of-type(n) {
       clear: none; }
     .xl-grid-2 > li:nth-of-type(2n+1) {
@@ -128,7 +128,7 @@
 
   .xl-grid-3 > li {
     width: 33.3333333333%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xl-grid-3 > li:nth-of-type(n) {
       clear: none; }
     .xl-grid-3 > li:nth-of-type(3n+1) {
@@ -136,7 +136,7 @@
 
   .xl-grid-4 > li {
     width: 25%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xl-grid-4 > li:nth-of-type(n) {
       clear: none; }
     .xl-grid-4 > li:nth-of-type(4n+1) {
@@ -144,7 +144,7 @@
 @media only screen and (min-width: 120em) {
   .xxl-grid-1 > li {
     width: 100%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xxl-grid-1 > li:nth-of-type(n) {
       clear: none; }
     .xxl-grid-1 > li:nth-of-type(1n+1) {
@@ -152,7 +152,7 @@
 
   .xxl-grid-2 > li {
     width: 50%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xxl-grid-2 > li:nth-of-type(n) {
       clear: none; }
     .xxl-grid-2 > li:nth-of-type(2n+1) {
@@ -160,7 +160,7 @@
 
   .xxl-grid-3 > li {
     width: 33.3333333333%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xxl-grid-3 > li:nth-of-type(n) {
       clear: none; }
     .xxl-grid-3 > li:nth-of-type(3n+1) {
@@ -168,7 +168,7 @@
 
   .xxl-grid-4 > li {
     width: 25%;
-    padding: 0 0.9375rem; }
+    padding: 0 3.75rem; }
     .xxl-grid-4 > li:nth-of-type(n) {
       clear: none; }
     .xxl-grid-4 > li:nth-of-type(4n+1) {
@@ -1369,6 +1369,7 @@ main {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
+  padding-top: 90px;
   background: white;
   z-index: 900; }
 
@@ -1391,14 +1392,14 @@ header {
   -webkit-justify-content: space-between;
   -moz-justify-content: space-between;
   justify-content: space-between;
-  left: 0;
-  position: fixed;
-  z-index: 1100;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px; }
+  height: 60px;
+  background-color: whitesmoke; }
   header .link-logo {
-    width: 50px; }
+    width: auto;
+    height: 80%; }
+    header .link-logo img {
+      height: 100%; }
 
 footer {
   z-index: 1100;
@@ -1757,6 +1758,16 @@ section.parallax .section-body,
   background-attachment: fixed;
   background-size: cover;
   width: 100%; }
+
+.product {
+  padding: 0 60px;
+  margin-bottom: 180px; }
+  .product > a {
+    display: block;
+    width: 100%;
+    background-color: whitesmoke; }
+    .product > a img {
+      width: 100%; }
 
 /*
  * Show and Hide class functions

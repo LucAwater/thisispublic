@@ -80,12 +80,8 @@ class acf_field_taxonomy extends acf_field {
 			'post_id'		=> 0,
 			's'				=> '',
 			'field_key'		=> '',
+			'paged'			=> 1
 		));
-		
-		
-		// vars
-   		$r = array();
-		$args = array( 'hide_empty'	=> false );
 		
 		
 		// load field
@@ -97,12 +93,34 @@ class acf_field_taxonomy extends acf_field {
 			
 		}
 		
-				
+		
+		// vars
+   		$r = array();
+		$args = array();
+		$is_hierarchical = is_taxonomy_hierarchical( $field['taxonomy'] );
+		$limit = 20;
+		$offset = 20 * ($options['paged'] - 1);
+		
+		
+		// hide empty
+		$args['hide_empty'] = false;
+		
+		
+		// pagination
+		// - don't bother for hierarchial terms, we will need to load all terms anyway
+		if( !$is_hierarchical ) {
+			
+			$args['offset'] = $offset;
+			$args['number'] = $limit;
+		
+		}
+		
+		
 		// search
 		if( $options['s'] ) {
 		
 			$args['search'] = $options['s'];
-			
+		
 		}
 		
 		
@@ -117,7 +135,7 @@ class acf_field_taxonomy extends acf_field {
 		
 		
 		// sort into hierachial order!
-		if( is_taxonomy_hierarchical( $field['taxonomy'] ) ) {
+		if( $is_hierarchical ) {
 			
 			// get parent
 			$parent = acf_maybe_get( $args, 'parent', 0 );
@@ -130,6 +148,10 @@ class acf_field_taxonomy extends acf_field {
 				$terms = _get_term_children( $parent, $terms, $field['taxonomy'] );
 				
 			}
+			
+			
+			// fake pagination
+			$terms = array_slice($terms, $offset, $limit);
 			
 		}
 		
@@ -167,9 +189,8 @@ class acf_field_taxonomy extends acf_field {
 	
 	function ajax_query() {
 		
-		
 		// validate
-		if( empty($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'acf_nonce') ) {
+		if( !acf_verify_ajax() ) {
 		
 			die();
 			
@@ -562,9 +583,7 @@ class acf_field_taxonomy extends acf_field {
 		?>
 <div <?php acf_esc_attr_e($div); ?>>
 	<?php if( $field['add_term'] && current_user_can( $taxonomy->cap->manage_terms) ): ?>
-	<a href="#" class="acf-js-tooltip acf-icon small acf-soh-target" data-name="add" title="<?php echo sprintf( __('Add new %s ', 'acf'), $taxonomy->labels->singular_name ); ?>">
-		<i class="acf-sprite-add"></i>
-	</a>
+	<a href="#" class="acf-icon acf-icon-plus acf-js-tooltip small acf-soh-target" data-name="add" title="<?php echo sprintf( __('Add new %s ', 'acf'), $taxonomy->labels->singular_name ); ?>"></a>
 	<?php endif;
 
 	if( $field['field_type'] == 'select' ) {

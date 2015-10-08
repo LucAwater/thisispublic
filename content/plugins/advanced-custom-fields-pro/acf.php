@@ -3,7 +3,7 @@
 Plugin Name: Advanced Custom Fields Pro
 Plugin URI: http://www.advancedcustomfields.com/
 Description: Customise WordPress with powerful, professional and intuitive fields
-Version: 5.2.7
+Version: 5.3.1
 Author: elliot condon
 Author URI: http://www.elliotcondon.com/
 Copyright: Elliot Condon
@@ -61,7 +61,7 @@ class acf {
 			
 			// basic
 			'name'				=> __('Advanced Custom Fields', 'acf'),
-			'version'			=> '5.2.7',
+			'version'			=> '5.3.1',
 						
 			// urls
 			'basename'			=> plugin_basename( __FILE__ ),
@@ -79,16 +79,13 @@ class acf {
 			'default_language'	=> '',
 			'current_language'	=> '',
 			'capability'		=> 'manage_options',
-			'uploader'			=> 'wp'
+			'uploader'			=> 'wp',
+			'autoload'			=> false
 		);
 		
 		
 		// include helpers
 		include_once('api/api-helpers.php');
-		
-		
-		// set text domain
-		load_textdomain( 'acf', acf_get_path( 'lang/acf-' . get_locale() . '.mo' ) );
 		
 		
 		// api
@@ -127,7 +124,7 @@ class acf {
 			acf_include('admin/field-group.php');
 			acf_include('admin/field-groups.php');
 			acf_include('admin/update.php');
-			acf_include('admin/settings-export.php');
+			acf_include('admin/settings-tools.php');
 			//acf_include('admin/settings-addons.php');
 			acf_include('admin/settings-info.php');
 		}
@@ -198,8 +195,16 @@ class acf {
 		$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
 		
 		
-		// Create post type 'acf-field-group'
-		register_post_type( 'acf-field-group', array(
+		// redeclare dir - allow another plugin to modify dir (maybe force SSL)
+		acf_update_setting('dir', plugin_dir_url( __FILE__ ));
+		
+		
+		// set text domain
+		load_textdomain( 'acf', acf_get_path( 'lang/acf-' . get_locale() . '.mo' ) );
+		
+		
+		// register post type 'acf-field-group'
+		register_post_type('acf-field-group', array(
 			'labels'			=> array(
 			    'name'					=> __( 'Field Groups', 'acf' ),
 				'singular_name'			=> __( 'Field Group', 'acf' ),
@@ -230,8 +235,8 @@ class acf {
 		));
 		
 		
-		// Create post type 'acf-field'
-		register_post_type( 'acf-field', array(
+		// register post type 'acf-field'
+		register_post_type('acf-field', array(
 			'labels'			=> array(
 			    'name'					=> __( 'Fields', 'acf' ),
 				'singular_name'			=> __( 'Field', 'acf' ),
@@ -259,6 +264,17 @@ class acf {
 			'query_var'			=> false,
 			'supports' 			=> array('title'),
 			'show_in_menu'		=> false,
+		));
+		
+		
+		// register post status
+		register_post_status('acf-disabled', array(
+			'label'                     => __( 'Disabled', 'acf' ),
+			'public'                    => true,
+			'exclude_from_search'       => false,
+			'show_in_admin_all_list'    => true,
+			'show_in_admin_status_list' => true,
+			'label_count'               => _n_noop( 'Disabled <span class="count">(%s)</span>', 'Disabled <span class="count">(%s)</span>', 'acf' ),
 		));
 		
 		
@@ -477,6 +493,7 @@ class acf {
 	    }
 	    
 	    
+	    // return
 	    return $where;
 	    
 	}

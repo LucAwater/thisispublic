@@ -10,10 +10,12 @@ require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');
 require_once('includes/admin/acf-page.php');
-require_once('includes/admin/tutorial.php');
+require_once('includes/admin/custom-roles.php');
+require_once('includes/admin/free-products.php');
 
 // Woocommerce includes
 require_once('includes/cart-update.php');
+require_once('includes/download-button.php');
 require_once('woocommerce/woo-functions.php');
 
 // Add support for woocommerce
@@ -23,7 +25,7 @@ function woocommerce_support() {
 }
 
 // Initialize mobile detect
-require_once('includes/Mobile_Detect.php');
+require_once('includes/mobile-detect.php');
 $detect = new Mobile_Detect;
 
 // Hide admin bar
