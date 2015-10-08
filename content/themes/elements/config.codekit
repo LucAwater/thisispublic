@@ -211,7 +211,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 2
 		},
 	"\/js\/app.min.js": {
 		"fileType": 64,
