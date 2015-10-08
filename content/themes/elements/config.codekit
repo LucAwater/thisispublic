@@ -121,6 +121,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/includes\/admin\/custom-roles.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/admin\/custom-roles.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/includes\/admin\/free-products.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/admin\/free-products.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/includes\/admin\/login.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -157,20 +175,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/download_button.php": {
+	"\/includes\/download-button.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/download_button.php",
+		"inputAbbreviatedPath": "\/includes\/download-button.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/includes\/Mobile_Detect.php": {
+	"\/includes\/mobile-detect.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/includes\/Mobile_Detect.php",
+		"inputAbbreviatedPath": "\/includes\/mobile-detect.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

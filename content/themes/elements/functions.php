@@ -3,35 +3,6 @@
  * @package WordPress
  * @subpackage HTML5_Boilerplate */
 
-// Make priceless product purchasable
-function custom_woocommerce_is_purchasable( $purchasable, $product ){
-   if( $product->get_price() == 0 ||  $product->get_price() == '')
-       $purchasable = true;
-   return $purchasable;
-}
-add_filter( 'woocommerce_is_purchasable', 'custom_woocommerce_is_purchasable', 10, 2 );
-
-// Custom user roles
-add_role(
-  'level_one',
-  'Level one',
-  array(
-    'read'          => true,
-    'edit_posts'    => false,
-    'delete_posts'  => false
-  )
-);
-
-add_role(
-  'level_two',
-  'Level two',
-  array(
-    'read'          => true,
-    'edit_posts'    => false,
-    'delete_posts'  => false
-  )
-);
-
 // Includes
 require_once('includes/scripts.php');
 
@@ -39,10 +10,12 @@ require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');
 require_once('includes/admin/acf-page.php');
+require_once('includes/admin/custom-roles.php');
+require_once('includes/admin/free-products.php');
 
 // Woocommerce includes
 require_once('includes/cart-update.php');
-require_once('includes/download_button.php');
+require_once('includes/download-button.php');
 require_once('woocommerce/woo-functions.php');
 
 // Add support for woocommerce
@@ -52,7 +25,7 @@ function woocommerce_support() {
 }
 
 // Initialize mobile detect
-require_once('includes/Mobile_Detect.php');
+require_once('includes/mobile-detect.php');
 $detect = new Mobile_Detect;
 
 // Hide admin bar
