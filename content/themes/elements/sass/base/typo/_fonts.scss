@@ -1,10 +1,19 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
-
-@mixin opensans{
-  font-family: 'Open Sans', sans-serif;
+@mixin avenir{
+  font-family: 'Avenir Next Pro', 'sans-serif';
   font-style: normal;
-  
-  &.is_bold{
-    font-weight: 700;
-  }
+}
+
+@mixin avenir-bold{
+  font-family: 'Avenir Next Pro Bold', 'sans-serif';
+  font-style: normal;
+}
+
+@mixin avenir-medium{
+  font-family: 'Avenir Next Pro Medium', 'sans-serif';
+  font-style: normal;
+}
+
+@mixin avenir-light{
+  font-family: 'Avenir Next Pro UltraLight', 'sans-serif';
+  font-style: normal;
 }

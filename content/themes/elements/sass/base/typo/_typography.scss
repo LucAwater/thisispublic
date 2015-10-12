@@ -1,18 +1,18 @@
 %base{
-  @include opensans;
+  @include avenir;
   font-size: 16px;
-  font-weight: normal;
-  text-rendering: geometricPrecision;
 }
 
 h1{
   @extend %base;
-  font-size: 3em;
+
+  font-size: 2em; //24px
 }
 
 h2{
   @extend h1;
-  font-size: 2em;
+
+  font-size: 1.125em; //18px
 }
 
 p{
@@ -21,15 +21,15 @@ p{
 
 a{
   @extend %base;
-  
+
   color: black;
   text-decoration: underline;
   cursor: pointer;
-  
-  &.link-h1,
-  &.link-h2,
-  &.link-h3,
-  &.link-p{
+
+  h1,
+  h2,
+  h3,
+  p{
     text-decoration: none;
   }
 }
