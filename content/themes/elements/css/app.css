@@ -1471,7 +1471,7 @@ button,
   max-width: 250px;
   height: 40px;
   padding: 0 50px;
-  display: inline-block;
+  display: block;
   text-align: center;
   text-decoration: none;
   line-height: 40px;
@@ -1771,14 +1771,19 @@ section.parallax .section-body,
   background-size: cover;
   width: 100%; }
 
-.product {
+.products .product {
   padding: 0 60px;
   margin-bottom: 180px; }
-  .product > a {
+  .products .product > a.has-content {
     display: block;
     width: 100%; }
-    .product > a img {
+    .products .product > a.has-content img {
       width: 100%; }
+    .products .product > a.has-content > div {
+      padding: 20px;
+      text-align: center; }
+  .products .product a.button {
+    margin: auto; }
 
 /*
  * Show and Hide class functions

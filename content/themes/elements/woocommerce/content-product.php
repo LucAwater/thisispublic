@@ -52,20 +52,22 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
       echo '<img src="' . $thumbnail[0] . '">';
 
-			/**
-			 * woocommerce_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_product_title - 10
-			 */
-			do_action( 'woocommerce_shop_loop_item_title' );
+      echo '<div>';
+  			/**
+  			 * woocommerce_shop_loop_item_title hook
+  			 *
+  			 * @hooked woocommerce_template_loop_product_title - 10
+  			 */
+  			do_action( 'woocommerce_shop_loop_item_title' );
 
-			/**
-			 * woocommerce_after_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_rating - 5
-			 * @hooked woocommerce_template_loop_price - 10
-			 */
-			do_action( 'woocommerce_after_shop_loop_item_title' );
+  			/**
+  			 * woocommerce_after_shop_loop_item_title hook
+  			 *
+  			 * @hooked woocommerce_template_loop_rating - 5
+  			 * @hooked woocommerce_template_loop_price - 10
+  			 */
+  			do_action( 'woocommerce_after_shop_loop_item_title' );
+      echo '</div>';
 		?>
 
     <?php
