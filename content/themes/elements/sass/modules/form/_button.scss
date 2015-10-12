@@ -1,0 +1,18 @@
+button,
+.button{
+  width: auto;
+  max-width: 250px;
+  height: 40px;
+  padding: 0 50px;
+  display: inline-block;
+
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+  background-color: $grey-light;
+
+  &:hover,
+  &:focus{
+    background-color: $grey;
+  }
+}

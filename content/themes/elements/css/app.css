@@ -1465,6 +1465,22 @@ nav ul {
 nav ul li.current {
   text-decoration: underline; }
 
+button,
+.button {
+  width: auto;
+  max-width: 250px;
+  height: 40px;
+  padding: 0 50px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  line-height: 40px;
+  background-color: whitesmoke; }
+  button:hover, button:focus,
+  .button:hover,
+  .button:focus {
+    background-color: #e8e8e8; }
+
 .slider {
   position: relative; }
 
@@ -1760,8 +1776,7 @@ section.parallax .section-body,
   margin-bottom: 180px; }
   .product > a {
     display: block;
-    width: 100%;
-    background-color: whitesmoke; }
+    width: 100%; }
     .product > a img {
       width: 100%; }
 
