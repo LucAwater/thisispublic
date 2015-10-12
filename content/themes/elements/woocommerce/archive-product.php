@@ -25,12 +25,6 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
-		<!-- <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
-		<?php endif; ?> -->
-
 		<?php
 			/**
 			 * woocommerce_archive_description hook
@@ -41,56 +35,64 @@ get_header( 'shop' ); ?>
 			do_action( 'woocommerce_archive_description' );
 		?>
 
-		<?php if ( have_posts() ) : ?>
+    <?php
+    // Check if user is logged in
+    if( ! is_user_logged_in() ):
+      echo '<p class="woocommerce-info">You must be logged in to view products.</p>';
+    // If user is logged in, continue looping products
+    else: ?>
+      <?php if ( have_posts() ) : ?>
 
-			<!-- <?php
-				/**
-				 * woocommerce_before_shop_loop hook
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-			?> -->
+        <!-- <?php
+          /**
+           * woocommerce_before_shop_loop hook
+           *
+           * @hooked woocommerce_result_count - 20
+           * @hooked woocommerce_catalog_ordering - 30
+           */
+          do_action( 'woocommerce_before_shop_loop' );
+        ?> -->
 
-			<?php woocommerce_product_loop_start(); ?>
+        <?php woocommerce_product_loop_start(); ?>
 
-				<?php woocommerce_product_subcategories(); ?>
+          <?php woocommerce_product_subcategories(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+          <?php while ( have_posts() ) : the_post(); ?>
 
-					<?php
-          if ( is_user_logged_in() ){
-            global $current_user;
-            $current_user_role = $current_user->roles[0];
+            <?php
+            if ( is_user_logged_in() ){
+              global $current_user;
+              $current_user_role = $current_user->roles[0];
 
-            // Custom user level
-            $user_level = get_field( 'user_level' );
+              // Custom user level
+              $user_level = get_field( 'user_level' );
 
-            if( $current_user_role == 'administrator' || in_array($current_user_role, $user_level) ){
-              wc_get_template_part( 'content', 'product' );
+              if( $current_user_role === 'administrator' || in_array($current_user_role, $user_level) ){
+                wc_get_template_part( 'content', 'product' );
+              }
             }
-          }
-          ?>
+            ?>
 
-				<?php endwhile; // end of the loop. ?>
+          <?php endwhile; // end of the loop. ?>
 
-			<?php woocommerce_product_loop_end(); ?>
+        <?php woocommerce_product_loop_end(); ?>
 
-			<?php
-				/**
-				 * woocommerce_after_shop_loop hook
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
+        <?php
+          /**
+           * woocommerce_after_shop_loop hook
+           *
+           * @hooked woocommerce_pagination - 10
+           */
+          do_action( 'woocommerce_after_shop_loop' );
+        ?>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+      <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
+        <?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
-		<?php endif; ?>
+      <?php endif; ?>
+    <?php endif;
+    ?>
 
 	<?php
 		/**
