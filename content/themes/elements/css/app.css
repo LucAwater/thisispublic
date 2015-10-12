@@ -1317,26 +1317,24 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, p, a {
+h1, h2, h3, p, a {
   font-family: 'Avenir Next Pro', 'sans-serif';
   font-style: normal;
   font-size: 16px; }
 
-h1, h2 {
-  font-size: 2em; }
+h1, h2, h3 {
+  font-size: 2.250em; }
 
 h2 {
-  font-size: 1.125em; }
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.313em; }
 
 a {
   color: black;
   text-decoration: underline;
   cursor: pointer; }
-  a h1, a h2,
-  a h2,
-  a h3,
-  a p {
-    text-decoration: none; }
 
 html,
 body {
@@ -2012,31 +2010,34 @@ section.image .section-body.is-pos-center {
 section.image .section-body.is-pos-right {
   text-align: right; }
 
-h1.is-italic, h2.is-italic, p.is-italic, a.is-italic {
+h1.is-italic, h2.is-italic, h3.is-italic, p.is-italic, a.is-italic {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, p.is-underlined, a.is-underlined {
+h1.is-underlined, h2.is-underlined, h3.is-underlined, p.is-underlined, a.is-underlined {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, p.is-capitalized, a.is-capitalized {
+h1.is-capitalized, h2.is-capitalized, h3.is-capitalized, p.is-capitalized, a.is-capitalized {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, p.is-uppercase, a.is-uppercase {
+h1.is-uppercase, h2.is-uppercase, h3.is-uppercase, p.is-uppercase, a.is-uppercase {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, p.is-lowercase, a.is-lowercase {
+h1.is-lowercase, h2.is-lowercase, h3.is-lowercase, p.is-lowercase, a.is-lowercase {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, p.is-bold, a.is-bold {
+h1.is-bold, h2.is-bold, h3.is-bold, p.is-bold, a.is-bold {
   font-weight: 700; }
-h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, a.is-aligned-center {
+h1.is-aligned-center, h2.is-aligned-center, h3.is-aligned-center, p.is-aligned-center, a.is-aligned-center {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, a.is-aligned-left {
+h1.is-aligned-left, h2.is-aligned-left, h3.is-aligned-left, p.is-aligned-left, a.is-aligned-left {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, a.is-aligned-right {
+h1.is-aligned-right, h2.is-aligned-right, h3.is-aligned-right, p.is-aligned-right, a.is-aligned-right {
   text-align: right; }
-h1.is-black, h2.is-black, p.is-black, a.is-black {
+h1.is-black, h2.is-black, h3.is-black, p.is-black, a.is-black {
   color: black; }
-h1.is-white, h2.is-white, p.is-white, a.is-white {
+h1.is-white, h2.is-white, h3.is-white, p.is-white, a.is-white {
   color: white; }
 
 p.is-small {
   font-size: 15px; }
+
+a.has-content {
+  text-decoration: none; }
 
 .is-stretched-wrapper {
   position: relative;
