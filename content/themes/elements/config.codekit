@@ -225,21 +225,10 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/app.js",
-		"outputAbbreviatedPath": "\/js\/app.min-1234.js",
+		"outputAbbreviatedPath": "\/js\/app.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 2
-		},
-	"\/js\/app.min-1234.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/app.min-1234.js",
-		"outputAbbreviatedPath": "\/js\/min\/app.min-1234-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/app.min.js": {
@@ -267,7 +256,7 @@
 	"\/js\/hero.js": {
 		"fileType": 64,
 		"ignore": 1,
-		"ignoreWasSetByUser": 0,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/hero.js",
 		"outputAbbreviatedPath": "\/js\/min\/hero-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -2205,43 +2194,43 @@
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/js\/pageload.js",
 			"position": 8,
-			"type": 1
+			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/js\/resize.js",
 			"position": 9,
-			"type": 1
+			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/js\/hero.js",
 			"position": 10,
-			"type": 1
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/init-isotope.js",
-			"position": 11,
-			"type": 1
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/init-skrollr.js",
-			"position": 12,
-			"type": 1
+			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/js\/link-heading.js",
-			"position": 13,
-			"type": 1
+			"position": 11,
+			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/js\/download-button.js",
+			"position": 12,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/init-isotope.js",
+			"position": 13,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/init-skrollr.js",
 			"position": 14,
-			"type": 1
+			"type": 0
 			}
 		]
 	},
@@ -2394,7 +2383,7 @@
 	"coffeeMinifyOutput": 1,
 	"coffeeOutputStyle": 0,
 	"coffeeSyntaxCheckerStyle": 1,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http:\/\/localhost:8888\/thisispublic",
 	"externalServerPreviewPathAddition": "",
 	"genericWebpageFileExtensionsString": "html, htm, shtml, shtm, xhtml, php, jsp, asp, aspx, erb, ctp",
 	"hamlAutoOutputPathEnabled": 1,

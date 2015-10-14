@@ -5,6 +5,8 @@
     var hero = $('.hero');
     var hero_banner = $('.hero-banner');
 
+    console.log("Testi");
+
     // Determine hero height
     var header = $('header');
     var header_height = header.height();
@@ -15,12 +17,12 @@
     hero_banner.css("height", hero_height);
 
     // Shape the stretched object
-    var wrapper = $('.is-stretched-wrapper')
-    var wrapper_w = wrapper.width()
-    var wrapper_h = wrapper.height()
+    var wrapper = $('.is-stretched-wrapper');
+    var wrapper_w = wrapper.width();
+    var wrapper_h = wrapper.height();
 
-    var object = $('.is-stretched-object')
-    var ratio = object.width() / object.height()
+    var object = $('.is-stretched-object');
+    var ratio = object.width() / object.height();
 
     object.css("min-height", wrapper_h);
 
@@ -50,7 +52,7 @@
     waypoint = new Waypoint({
       element: $('.hero .section-body'),
       offset: '10%',
-      handler: function(direction) {
+      handler: function() {
         hero_content.toggleClass('is-visible-0.7s');
         hero_content.toggleClass('is-hidden-0.7s');
       }
