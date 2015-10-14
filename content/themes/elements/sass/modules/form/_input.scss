@@ -38,7 +38,8 @@ input{
   -webkit-border-radius: 0 !important;
 }
 
-input[type="submit"]{
+input[type="submit"],
+input[type="search"]{
   @include appearance( none );
 }
 
