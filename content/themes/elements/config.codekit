@@ -228,7 +228,7 @@
 		"outputAbbreviatedPath": "\/js\/app.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 2
 		},
 	"\/js\/app.min.js": {
