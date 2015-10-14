@@ -43,18 +43,7 @@ global $product;
 	?> -->
 
 	<div class="summary entry-summary">
-
     <?php
-<<<<<<< HEAD
-    $title = get_the_title();
-    $description = get_field('description');
-
-    echo '<h1 itemprop="name">' . $title . '</h1>';
-    echo '<div class="product-description">' . $description . '</div>';
-
-    // @hooked woocommerce_template_single_add_to_cart - 30
-    do_action( 'woocommerce_single_product_summary' );
-=======
     $attachment_ids = $product->get_gallery_attachment_ids();
 
     echo '<ul class="product-images">';
@@ -64,9 +53,7 @@ global $product;
       }
 
     echo '</ul>';
-    ?>
-
-    <?php
+    
     echo '<div class="product-info">';
       $title = get_the_title();
       $description = get_field('description');
@@ -78,7 +65,6 @@ global $product;
       do_action( 'woocommerce_single_product_summary' );
 
     echo '</div>';
->>>>>>> release/v0.2
     ?>
 
 	</div><!-- .summary -->
