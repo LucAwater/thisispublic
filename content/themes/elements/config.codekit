@@ -244,7 +244,7 @@
 		},
 	"\/js\/download-button.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/download-button.js",
 		"outputAbbreviatedPath": "\/js\/min\/download-button-min.js",
@@ -288,7 +288,7 @@
 		},
 	"\/js\/link-heading.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/link-heading.js",
 		"outputAbbreviatedPath": "\/js\/min\/link-heading-min.js",
@@ -310,7 +310,7 @@
 		},
 	"\/js\/resize.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/resize.js",
 		"outputAbbreviatedPath": "\/js\/min\/resize-min.js",
@@ -2198,20 +2198,38 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/hero.js",
+			"linkedFileAbbreviatedPath": "\/js\/resize.js",
 			"position": 9,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/init-isotope.js",
+			"linkedFileAbbreviatedPath": "\/js\/hero.js",
 			"position": 10,
 			"type": 1
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/init-skrollr.js",
+			"linkedFileAbbreviatedPath": "\/js\/init-isotope.js",
 			"position": 11,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/init-skrollr.js",
+			"position": 12,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/link-heading.js",
+			"position": 13,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/js\/download-button.js",
+			"position": 14,
 			"type": 1
 			}
 		]

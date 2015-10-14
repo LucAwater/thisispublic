@@ -57,10 +57,12 @@
     });
   };
 
-  initHero();
-
-  $(window).on("resize", function() {
+  if($('section.hero').length > 0) {
     initHero();
-  });
+
+    $(window).on("resize", function() {
+      initHero();
+    });
+  }
 
 }( jQuery ));
