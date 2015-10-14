@@ -3,45 +3,45 @@
   &.is-italic{
     font-style: italic;
   }
-  
+
   &.is-underlined{
     text-decoration: underline;
   }
-  
+
   &.is-capitalized{
     text-transform: capitalize;
   }
-  
+
   &.is-uppercase{
     text-transform: uppercase;
   }
-  
+
   &.is-lowercase{
     text-transform: lowercase;
   }
-  
+
   &.is-bold{
     font-weight: 700;
   }
-  
+
   // Alignment
   &.is-aligned-center{
     text-align: center;
   }
-  
+
   &.is-aligned-left{
     text-align: left;
   }
-  
+
   &.is-aligned-right{
     text-align: right;
   }
-  
+
   // Colors
   &.is-black{
     color: $black;
   }
-  
+
   &.is-white{
     color: $white;
   }
@@ -49,4 +49,8 @@
 
 p.is-small{
   font-size: 15px;
+}
+
+a.has-content{
+  text-decoration: none;
 }

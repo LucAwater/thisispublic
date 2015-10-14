@@ -27,6 +27,8 @@
 
 // MODULE
 @import
+  "modules/form/_button",
+
   "modules/slider/_slider",
   "modules/slider/_slider-bullets",
   "modules/slider/_slider-controls",
@@ -40,7 +42,8 @@
 
 // SHOP
 @import
-  "shop/_product";
+  "shop/_product",
+  "shop/_product-thumb";
 
 // STATE
 @import
