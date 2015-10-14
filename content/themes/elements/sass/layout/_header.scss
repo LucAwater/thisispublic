@@ -1,7 +1,7 @@
 header{
   @include flex;
   @include align-items( center );
-  @include justify-content( space-between );
+  @include justify-content( flex-start );
 
   // left: 0;
   // position: fixed;
@@ -15,6 +15,7 @@ header{
   .link-logo{
     width: auto;
     height: 80%;
+    margin-right: 30px;
 
     img{
       height: 100%;
