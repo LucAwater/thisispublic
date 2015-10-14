@@ -17,3 +17,8 @@
   font-family: 'Avenir Next Pro UltraLight', 'sans-serif';
   font-style: normal;
 }
+
+div#mfPreviewBarShow,
+#mfPreviewBar{
+  display: none !important;
+}
