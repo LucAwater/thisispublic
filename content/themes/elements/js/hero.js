@@ -10,10 +10,6 @@
     var header_height = header.height();
     var hero_height = window.innerHeight - header_height;
 
-    console.log("header: " + header_height);
-    console.log("window: " + window.innerHeight);
-    console.log("hero: " + hero_height);
-
     // Apply heights
     hero.css("height", hero_height);
     hero_banner.css("height", hero_height);
