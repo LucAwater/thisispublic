@@ -8,3 +8,11 @@ main{
   background: $white;
   z-index: $zIndex-main;
 }
+
+body.archive,
+body.search-results{
+  main{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

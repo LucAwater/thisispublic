@@ -46,7 +46,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -65,7 +65,7 @@
 
     <?php include( 'includes/nav.php' ); ?>
 
-    <!-- <a class="trigger trigger-menu"><i></i></a> -->
+    <a class="trigger trigger-menu"><i></i></a>
   </header>
 
   <?php

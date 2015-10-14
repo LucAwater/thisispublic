@@ -1,16 +1,18 @@
 a.trigger-menu{
-  width: 35px;
-  height: 35px;
+  right: $side-margin;
+  position: absolute;
+
+  width: 25px;
+  height: 100%;
   display: block;
-  position: relative;
-  
+
   i{
     width: 100%;
-    height: 3px;
+    height: 2px;
     display: block;
     top: calc(50% - 1.5px);
     background: $black;
-    
+
     &:before,
     &:after{
       content: " ";
@@ -20,44 +22,25 @@ a.trigger-menu{
       background: $black;
       transition: .2s;
     }
-    
+
     &:before{
       margin-top: -8px;
     }
-    
+
     &:after{
       margin-top: 8px;
     }
   }
 }
 
-a.trigger-menu:hover i{
-  &:before,
-  &:after{
-    transition: .2s;
-  }
-  
-  &:before{
-    margin-top: -11px;
-  }
-  
-  &:after{
-    margin-top: 11px;
-  }
-}
-
-@keyframes activebefore{
-  50%{
-    margin-top: 0;
-  }
-  
-  100%{
-    @include transform( rotate(45deg) );
-  }
-}
-
 a.trigger-menu:focus i{
   &:before{
     -webkit-animation: activebefore .4s linear;
+  }
+}
+
+@media #{$small-only}{
+  a.trigger-menu{
+    right: $side-margin-small;
   }
 }
