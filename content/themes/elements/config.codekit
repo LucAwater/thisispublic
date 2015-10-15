@@ -1321,146 +1321,65 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/assets\/css\/style.css": {
-		"fileType": 16,
+	"\/woocommerce-brands\/brand-description.php": {
+		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/assets\/css\/style.css",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/brand-description.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/classes\/class-wc-brands-admin.php": {
+	"\/woocommerce-brands\/shortcodes\/brands-a-z.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/classes\/class-wc-brands-admin.php",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/shortcodes\/brands-a-z.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/classes\/class-wc-brands.php": {
+	"\/woocommerce-brands\/shortcodes\/single-brand.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/classes\/class-wc-brands.php",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/shortcodes\/single-brand.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/classes\/widgets\/class-wc-widget-brand-description.php": {
+	"\/woocommerce-brands\/taxonomy-product_brand.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/classes\/widgets\/class-wc-widget-brand-description.php",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/taxonomy-product_brand.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/classes\/widgets\/class-wc-widget-brand-nav.php": {
+	"\/woocommerce-brands\/widgets\/brand-description.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/classes\/widgets\/class-wc-widget-brand-nav.php",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/widgets\/brand-description.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/classes\/widgets\/class-wc-widget-brand-thumbnails.php": {
+	"\/woocommerce-brands\/widgets\/brand-thumbnails-description.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/classes\/widgets\/class-wc-widget-brand-thumbnails.php",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/widgets\/brand-thumbnails-description.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/woocommerce-brands\/templates\/brand-description.php": {
+	"\/woocommerce-brands\/widgets\/brand-thumbnails.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/brand-description.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/templates\/shortcodes\/brands-a-z.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/shortcodes\/brands-a-z.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/templates\/shortcodes\/single-brand.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/shortcodes\/single-brand.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/templates\/taxonomy-product_brand.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/taxonomy-product_brand.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/templates\/widgets\/brand-description.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/widgets\/brand-description.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/templates\/widgets\/brand-thumbnails-description.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/widgets\/brand-thumbnails-description.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/templates\/widgets\/brand-thumbnails.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/templates\/widgets\/brand-thumbnails.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/woo-includes\/class-wc-dependencies.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/woo-includes\/class-wc-dependencies.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/woo-includes\/woo-functions.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/woo-includes\/woo-functions.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/woocommerce-brands\/woocommerce-brands.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/woocommerce-brands\/woocommerce-brands.php",
+		"inputAbbreviatedPath": "\/woocommerce-brands\/widgets\/brand-thumbnails.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

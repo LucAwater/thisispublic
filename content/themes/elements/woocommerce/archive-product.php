@@ -40,20 +40,22 @@ get_header( 'shop' ); ?>
     if( ! is_user_logged_in() ):
       echo '<p class="woocommerce-info">You must be logged in to view products.</p>';
     // If user is logged in, continue looping products
-    else: ?>
-      <?php if ( have_posts() ) : ?>
+    else:
+      echo '<div class="filter">';
 
-        <!-- <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select> -->
-        <?php
-        $brands = get_brands( $post_id = 0, $sep = ‘, ‘, $before = ”, $after = ” );
-        print_r($brands);
-        echo do_shortcode('[product_brand_list show_top_links="0"]');
-        ?>
+        // Get current brand/all
+        if (is_tax( 'product_brand' )) {
+          $terms = get_the_terms($post->id, 'product_brand');
+          echo $terms[0]->name;
+        } else {
+          echo 'All';
+        }
+
+        echo do_shortcode('[product_brand_list]');
+
+      echo '</div>';
+
+      if ( have_posts() ) : ?>
 
         <!-- <?php
           /**
