@@ -34,6 +34,13 @@ global $product;
 
   <div class="summary entry-summary">
     <?php
+    $shop_link = get_permalink( woocommerce_get_page_id( 'shop' ) );
+
+    echo
+    '<div class="product-back">
+      <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">go back</a>
+    </div>';
+
     $attachment_ids = $product->get_gallery_attachment_ids();
 
     echo '<ul class="product-images">';

@@ -1,4 +1,19 @@
+body.single-product main{
+  padding-top: 0;
+}
+
 .product{
+  .product-back{
+    width: 100%;
+    display: block;
+    padding: 45px;
+    padding-left: 0;
+
+    a{
+      text-decoration: none;
+    }
+  }
+
   .product-images{
     float: left;
 
