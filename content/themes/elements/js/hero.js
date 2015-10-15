@@ -5,8 +5,6 @@
     var hero = $('.hero');
     var hero_banner = $('.hero-banner');
 
-    console.log("Testi");
-
     // Determine hero height
     var header = $('header');
     var header_height = header.height();

@@ -43,6 +43,18 @@ get_header( 'shop' ); ?>
     else: ?>
       <?php if ( have_posts() ) : ?>
 
+        <!-- <select>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select> -->
+        <?php
+        $brands = get_brands( $post_id = 0, $sep = ‘, ‘, $before = ”, $after = ” );
+        print_r($brands);
+        echo do_shortcode('[product_brand_list show_top_links="0"]');
+        ?>
+
         <!-- <?php
           /**
            * woocommerce_before_shop_loop hook
