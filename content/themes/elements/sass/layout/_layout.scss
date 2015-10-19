@@ -4,26 +4,26 @@
 // So on either sides of a column it's 30 / 2 = 15px
 // Side margin = 60 - 15 = 45px
 
-header{
-  padding-left: $side-margin;
-  padding-right: $side-margin;
-}
-
-main,
+header,
 footer{
   padding-left: $side-margin;
   padding-right: $side-margin;
 }
 
+main{
+  padding-left: $side-margin / 2;
+  padding-right: $side-margin / 2;
+}
+
 @media #{$small-only}{
-  header{
+  header,
+  footer{
     padding-left: $side-margin-small;
     padding-right: $side-margin-small;
   }
 
-  main,
-  footer{
-    padding-left: $side-margin-small;
-    padding-right: $side-margin-small;
+  main{
+    padding-left: $side-margin-small / 2;
+    padding-right: $side-margin-small / 2;
   }
 }

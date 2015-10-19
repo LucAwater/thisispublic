@@ -20,18 +20,18 @@ $include-xl-html-block-grid-classes: true;
 
 // Basic settings
 $total-columns: 4;
-$column-gutter: rem-calc(30);
+$column-gutter: rem-calc(80);
 
 $block-grid-elements: 4;
-$block-grid-default-spacing: rem-calc(120);
+$block-grid-default-spacing: rem-calc(80);
 $align-block-grid-to-grid: true;
 
 // (Extra) margin at either side of content
-$side-margin: rem-calc(60);
-$side-margin-small: rem-calc(30);
+$side-margin: rem-calc(80);
+$side-margin-small: rem-calc(40);
 
 // Space between content sections
-$section-spacing: rem-calc(60);
+$section-spacing: rem-calc(80);
 
 
 //
