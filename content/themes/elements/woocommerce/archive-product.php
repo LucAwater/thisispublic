@@ -55,6 +55,15 @@ get_header( 'shop' ); ?>
         // List rest of brands
         echo do_shortcode('[product_brand_list]');
 
+        // Gender filter
+        $genders = $terms = get_terms( 'gender', 'orderby=count&hide_empty=0' );
+        echo '<ul id="select-gender" name="gender">';
+        echo '<li><a class="tax-filter" title="all">All</a></li>';
+        foreach ( $genders as $gender ) {
+          echo '<li><a class="tax-filter" title="' . $gender->slug . '">' . $gender->name . '</a></li>';
+        }
+        echo '</ul>';
+
         // Search
         echo
         '<a class="search" href="javascript:;">
