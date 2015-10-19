@@ -22,7 +22,7 @@ if (is_tax( 'product_brand' )) {
     endif;
   echo '</ul>';
 } else {
-  echo '<ul class="brands s-grid-1 m-grid-2 isotope isotope-masonry">';
+  echo '<ul class="brands s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">';
     foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :
       foreach ( $product_brands[ $i ] as $brand ) {
         // echo $brand->term_id;
