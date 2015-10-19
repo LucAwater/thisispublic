@@ -12,6 +12,7 @@ require_once('includes/admin/menu.php');
 require_once('includes/admin/acf-page.php');
 require_once('includes/admin/custom-roles.php');
 require_once('includes/admin/free-products.php');
+require_once('includes/admin/tax-gender.php');
 
 // Woocommerce includes
 require_once('includes/account-autologin.php');
