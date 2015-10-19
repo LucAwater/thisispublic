@@ -54,7 +54,9 @@ global $product;
     echo '<div class="product-info">';
       $title = get_the_title();
       $description = get_field('description');
+      $brand = get_the_terms( get_the_ID(), 'product_brand' );
 
+      echo '<p>' . $brand[0]->name . '</p>';
       echo '<h1>' . $title . '</h1>';
       echo $description;
 

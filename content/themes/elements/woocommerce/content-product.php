@@ -15,6 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product, $woocommerce_loop;
 
+// Get brand(s) product belongs to
+$brand = get_the_terms( get_the_ID(), 'product_brand' );
+
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) ) {
 	$woocommerce_loop['loop'] = 0;
@@ -53,6 +56,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
       echo '<img src="' . $thumbnail[0] . '">';
 
       echo '<div>';
+        echo '<p>' . $brand[0]->name . '</p>';
   			/**
   			 * woocommerce_shop_loop_item_title hook
   			 *
