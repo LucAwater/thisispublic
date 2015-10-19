@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+
+$brand = get_the_terms( get_the_ID(), 'product_brand' );
 ?>
 
 <?php
@@ -34,7 +36,7 @@ global $product;
 
   <div class="summary entry-summary">
     <?php
-    $shop_link = get_permalink( woocommerce_get_page_id( 'shop' ) );
+    $shop_link = home_url() . "/brand/" . $brand[0]->slug;
 
     echo
     '<div class="product-back">
@@ -54,7 +56,6 @@ global $product;
     echo '<div class="product-info">';
       $title = get_the_title();
       $description = get_field('description');
-      $brand = get_the_terms( get_the_ID(), 'product_brand' );
 
       echo '<p>' . $brand[0]->name . '</p>';
       echo '<h1>' . $title . '</h1>';
