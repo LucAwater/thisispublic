@@ -45,12 +45,12 @@ get_header( 'shop' ); ?>
 
         // Brand filter
         // Get current brand
-        if (is_tax( 'product_brand' )) {
-          $terms = get_the_terms($post->id, 'product_brand');
-          echo '<p>' . $terms[0]->name . '</p>';
-        } else {
-          echo '<p>All</p>';
-        }
+        // if (is_tax( 'product_brand' )) {
+        //   $terms = get_the_terms($post->id, 'product_brand');
+        //   echo '<p>' . $terms[0]->name . '</p>';
+        // } else {
+        //   echo '<p>All</p>';
+        // }
 
         // List rest of brands
         echo do_shortcode('[product_brand_list]');
