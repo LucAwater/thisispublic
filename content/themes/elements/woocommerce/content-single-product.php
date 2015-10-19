@@ -41,16 +41,16 @@ global $product;
       <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">go back</a>
     </div>';
 
-    $attachment_ids = $product->get_gallery_attachment_ids();
-
+    // Product images
     echo '<ul class="product-images">';
+      $attachment_ids = $product->get_gallery_attachment_ids();
 
       foreach( $attachment_ids as $attachment_id ) {
         echo '<li><img src="' . wp_get_attachment_url( $attachment_id ) . '"></li>';
       }
-
     echo '</ul>';
 
+    // Product info
     echo '<div class="product-info">';
       $title = get_the_title();
       $description = get_field('description');
@@ -63,6 +63,7 @@ global $product;
       // Download button
       do_action( 'woocommerce_single_product_summary' );
 
+      echo '<p>download a .zip ﬁle with all high ressolution images</p>';
     echo '</div>';
     ?>
 

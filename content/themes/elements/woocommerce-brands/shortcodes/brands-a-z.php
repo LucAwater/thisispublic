@@ -37,12 +37,12 @@ if (is_tax( 'product_brand' )) {
 
         echo
         '<li class="brand">
-          <a href="' . get_term_link( $brand->slug, 'product_brand' ) . '">
+          <a href="' . get_term_link( $brand->slug, 'product_brand' ) . '" data-hover="view this brand">
             <div>
               <h3>' . $brand->name . '</h3>
               <p>' . $brand->description . '</p>
-              <img src="' . get_brand_thumbnail_url( $brand->term_id ) . '">
             </div>
+            <img src="' . get_brand_thumbnail_url( $brand->term_id ) . '">
           </a>
         </li>';
       }
