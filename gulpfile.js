@@ -40,6 +40,7 @@ gulp.task('concat', function () {
       './content/themes/elements/js/min/slider.js',
       './content/themes/elements/js/min/pageload.js',
       './content/themes/elements/js/min/resize.js',
+      './content/themes/elements/js/product-filter.js',
       './content/themes/elements/js/min/hero.js',
       './content/themes/elements/js/min/link-heading.js',
       './content/themes/elements/js/min/download-button.js',
