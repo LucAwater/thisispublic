@@ -16,6 +16,7 @@ gulp.task('minify-js', function () {
       './content/themes/elements/js/vendor/slider.js',
       './content/themes/elements/js/pageload.js',
       './content/themes/elements/js/resize.js',
+      './content/themes/elements/js/product-filter.js',
       './content/themes/elements/js/hero.js',
       './content/themes/elements/js/link-heading.js',
       './content/themes/elements/js/download-button.js',
