@@ -57,12 +57,6 @@
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
 
-    <a class="search" href="javascript:;">
-      <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-        <input type="search" class="search" placeholder="Search" value="" name="s" title="" />
-      </form>
-    </a>
-
     <?php include( 'includes/nav.php' ); ?>
 
     <a class="trigger trigger-menu"><i></i></a>

@@ -43,15 +43,25 @@ get_header( 'shop' ); ?>
     else:
       echo '<div class="filter">';
 
-        // Get current brand/all
+        // Brand filter
+        // Get current brand
         if (is_tax( 'product_brand' )) {
           $terms = get_the_terms($post->id, 'product_brand');
-          echo $terms[0]->name;
+          echo '<p>' . $terms[0]->name . '</p>';
         } else {
-          echo 'All';
+          echo '<p>All</p>';
         }
 
+        // List rest of brands
         echo do_shortcode('[product_brand_list]');
+
+        // Search
+        echo
+        '<a class="search" href="javascript:;">
+          <form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+            <input type="search" class="search" placeholder="Search" value="" name="s" title="" />
+          </form>
+        </a>';
 
       echo '</div>';
 
