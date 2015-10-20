@@ -5,7 +5,7 @@
     <?php
     if( have_posts() ):
 
-      echo '<ul class="margin-t90 products s-grid-1 m-grid-2 isotope isotope-masonry">';
+      echo '<ul class="margin-t90 products s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">';
 
       while( have_posts() ): the_post();
 

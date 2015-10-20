@@ -50,3 +50,8 @@ gulp.task('concat', function () {
     .pipe(concat('app.js'))  // concat and name it "concat.js"
     .pipe(gulp.dest('./content/themes/elements/js'));
 });
+
+gulp.task('default', function () {
+  gulp.run('minify-js');
+  gulp.run('concat');
+});
