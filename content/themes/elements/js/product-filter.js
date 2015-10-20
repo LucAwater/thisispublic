@@ -9,30 +9,30 @@
       if(triggerVal === 'all'){
         var products = document.getElementsByClassName('product');
 
-        $(products).show();
+        $(products).removeClass('hidden');
       } else {
         var products = document.getElementsByClassName('product');
         var productsLength = products.length;
 
         for(var i = 0; i < productsLength; i++){
-          console.log(products[i]);
-          $(products[i]).hide();
+          // $(products[i]).hide();
+          $(products[i]).addClass('hidden');
           var productGender = products[i].getAttribute('data-gender');
 
           if(productGender === triggerVal){
-            $(products[i]).show();
+            // $(products[i]).show();
+            $(products[i]).removeClass('hidden');
           } else {
-            $(products[i]).hide();
+            // $(products[i]).hide();
           }
         };
       }
 
       var masonry = $('.isotope-masonry');
 
-      $('main').imagesLoaded( function() {
-        masonry.isotope({
-          layoutMode: 'masonry'
-        });
+      masonry.isotope({
+        filter: '.product:not(.hidden)',
+        layoutMode: 'masonry'
       });
     });
   };
