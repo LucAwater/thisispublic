@@ -57,8 +57,8 @@ get_header( 'shop' ); ?>
 
           // Gender filter
           $genders = $terms = get_terms( 'gender', 'orderby=count&hide_empty=0' );
-          echo '<ul id="select-gender" name="gender">';
-          echo '<li><a class="tax-filter" title="all">All</a></li>';
+          echo '<ul id="select-gender">';
+          echo '<li class="current"><a class="tax-filter" title="all">All</a></li>';
           foreach ( $genders as $gender ) {
             echo '<li><a class="tax-filter" title="' . $gender->slug . '">' . $gender->name . '</a></li>';
           }
