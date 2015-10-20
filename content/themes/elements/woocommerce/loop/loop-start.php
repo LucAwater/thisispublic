@@ -7,4 +7,4 @@
  * @version     2.0.0
  */
 ?>
-<ul id="testing" class="products s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">
+<ul class="products s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">

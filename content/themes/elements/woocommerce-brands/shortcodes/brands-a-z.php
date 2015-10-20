@@ -9,16 +9,19 @@ if( is_tax('product_brand') || is_shop() ){
     $terms = get_the_terms($post->id, 'product_brand');
     $current_brand = $terms[0]->slug;
 
-    echo '<li class="current"><a class="tax-filter" title="all">All</a></li>';
+    if( is_shop() ){
+      echo '<li class="current"><a class="tax-filter" title="all">All</a></li>';
+    } else {
+      echo '<li><a class="tax-filter" title="all">All</a></li>';
+    }
 
     foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :
       foreach ( $product_brands[ $i ] as $brand ) {
-        // if( $brand->slug === $current_brand ){
-        //   echo '<li class="current"><a href="' . get_term_link( $brand->slug, 'product_brand' ) . '">' . $brand->name . '</a></li>';
-        // } else {
-        //   echo '<li><a href="' . get_term_link( $brand->slug, 'product_brand' ) . '">' . $brand->name . '</a></li>';
-        // }
-        echo '<li><a class="tax-filter" title="' . $brand->slug . '">' . $brand->name . '</a></li>';
+        if( $brand->slug === $current_brand ){
+          echo '<li class="current"><a class="tax-filter" title="' . $brand->slug . '">' . $brand->name . '</a></li>';
+        } else {
+          echo '<li><a class="tax-filter" title="' . $brand->slug . '">' . $brand->name . '</a></li>';
+        }
       }
     endif;
   echo '</ul>';
