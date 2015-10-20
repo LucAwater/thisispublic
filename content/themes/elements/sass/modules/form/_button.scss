@@ -1,14 +1,18 @@
 button,
 .button{
+  @extend p;
+
   width: auto;
   max-width: 250px;
-  height: 40px;
+  height: 35px;
   padding: 0 50px;
   display: block;
 
   text-align: center;
   text-decoration: none;
-  line-height: 40px;
+  line-height: 38px;
+  border: none;
+  cursor: pointer;
   background-color: $grey-light;
 
   &:hover,

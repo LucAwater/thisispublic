@@ -11,7 +11,24 @@
     margin-right: 80px;
   }
 
-  .current{
-    background: gold;
+  .search-form{
+    width: auto;
+    float: right;
+    margin-right: 0;
+
+    .search{
+      width: auto;
+      float: left;
+    }
+
+    button{
+      float: left;
+      padding: 0 15px;
+
+      &:hover,
+      &:focus{
+        background-color: transparent;
+      }
+    }
   }
 }

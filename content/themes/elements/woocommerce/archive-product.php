@@ -66,11 +66,10 @@ get_header( 'shop' ); ?>
 
           // Search
           echo
-          '<a class="search" href="javascript:;">
-            <form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
-              <input type="search" class="search" placeholder="Search" value="" name="s" title="" />
-            </form>
-          </a>';
+          '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+            <input type="search" class="search" value="" name="s" title="" />
+            <button type="submit">search</button>
+          </form>';
 
         echo '</div>';
 

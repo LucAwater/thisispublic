@@ -21,6 +21,7 @@ select{
 
   background: $grey;
   border: none;
+  outline: 0;
   line-height: 38px !important;
 }
 
@@ -39,7 +40,8 @@ input{
 }
 
 input[type="submit"],
-input[type="search"]{
+input[type="search"],
+button{
   @include appearance( none );
 }
 
