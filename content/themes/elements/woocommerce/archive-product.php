@@ -41,9 +41,6 @@ get_header( 'shop' ); ?>
       echo '<p class="woocommerce-info">You must be logged in to view products.</p>';
     // If user is logged in, continue looping products
     else:
-      if( is_shop() ){
-        echo do_shortcode('[product_brand_list]');
-      } else {
         echo '<div class="filter">';
 
           // Brand filter
@@ -129,7 +126,6 @@ get_header( 'shop' ); ?>
 
         <?php
         endif;
-      }// end of product loop
     endif; ?><!-- end of user login check -->
 
 	<?php

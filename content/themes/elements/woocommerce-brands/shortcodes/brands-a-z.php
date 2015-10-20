@@ -4,7 +4,7 @@
  *
  * @usedby [product_brand_list]
  */
-if (is_tax( 'product_brand' )) {
+if( is_tax('product_brand') || is_shop() ){
   echo '<ul class="brands">';
     $terms = get_the_terms($post->id, 'product_brand');
     $current_brand = $terms[0]->slug;

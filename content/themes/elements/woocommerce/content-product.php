@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product, $woocommerce_loop;
 
 // Get brand(s) product belongs to
-$brand = get_the_terms( get_the_ID(), 'product_brand' );
+$brand = get_the_terms( $product_ID, 'product_brand' );
 
 // Get gender
 $gender = get_the_terms( get_the_ID(), 'gender' );
