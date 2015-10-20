@@ -1,7 +1,7 @@
 .products .product,
 .brands .brand{
   padding: 0 40px;
-  margin-bottom: 80px;
+  margin-bottom: 80px !important;
   display: block;
 
   > a.has-content{
@@ -32,7 +32,7 @@
   > a.has-content{
     > div{
       padding: 20px;
-      
+
       text-align: center;
     }
   }
