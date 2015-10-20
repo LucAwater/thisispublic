@@ -7,8 +7,11 @@
       var brandCurrent = $('#select-brand li.current a');
       var genderCurrent = $('#select-gender li.current a');
 
+      // Check which filter is clicked
       var clickedParent = $(this).closest('ul');
+
       clickedParent.children().removeClass('current');
+
       if( clickedParent.attr('id') === 'select-brand'){
         $('#select-brand li').removeClass('current');
         $(this).closest('li').addClass('current');
@@ -19,14 +22,19 @@
         var genderCurrent = $(this);
       }
 
+      // Get filter values
       var brandVal = brandCurrent.attr('title');
       var genderVal = genderCurrent.attr('title');
 
+      // Get products
       var products = document.getElementsByClassName('product');
       var productsLength = products.length;
 
+      // Loop through products
       for(var i = 0; i < productsLength; i++){
         $(products[i]).addClass('hidden');
+
+        // Get product brand and gender
         var productGender = products[i].getAttribute('data-gender');
         var productBrand = products[i].getAttribute('data-brand');
 
@@ -53,6 +61,7 @@
         }
       };
 
+      // Recalculate isotope
       var masonry = $('.isotope-masonry');
 
       masonry.isotope({
