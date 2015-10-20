@@ -48,7 +48,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	$classes[] = 'last';
 }
 ?>
-<li <?php post_class( $classes ); ?> data-gender="<?php echo $gender[0]->slug; ?>">
+<li <?php post_class( $classes ); ?> data-gender="<?php echo $gender[0]->slug; ?>" data-brand="<?php echo $brand[0]->slug; ?>">
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
