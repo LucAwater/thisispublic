@@ -8,13 +8,11 @@
 h1{
   @extend %base;
 
-  font-size: 2.250em; //36px
+  font-size: 1.563em; //25px
 }
 
 h2{
   @extend h1;
-
-  font-size: 2em; //24px
 }
 
 h3{
