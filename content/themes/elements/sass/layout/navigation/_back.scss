@@ -1,5 +1,4 @@
-.back,
-.woocommerce-message p{
+.back{
   height: 80px;
   margin-top: -80px;
   line-height: 80px;
@@ -7,8 +6,7 @@
 
 body.archive,
 body.search{
-  .back,
-  .woocommerce-message p{
+  .back{
     margin-top: 0;
   }
 }

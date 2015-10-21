@@ -26,6 +26,7 @@ if ( $myaccount_page_id ) {
 </div>
 
 <div class="account-content account-edit">
+  <h2>Change account details:</h2>
   <form action="" method="post">
 
   	<?php do_action( 'woocommerce_edit_account_form_start' ); ?>
@@ -46,6 +47,7 @@ if ( $myaccount_page_id ) {
   	</p>
 
   	<fieldset>
+      <h2>Change password:</h2>
   		<p class="form-row form-row-wide">
   			<label for="password_current"><?php _e( 'Current Password (leave blank to leave unchanged)', 'woocommerce' ); ?></label>
   			<input type="password" class="input-text" name="password_current" id="password_current" />

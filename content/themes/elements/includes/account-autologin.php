@@ -21,11 +21,11 @@ function user_autologout(){
 add_action('woocommerce_registration_redirect', 'user_autologout', 2);
 
 function registration_message(){
-  $not_approved_message = '<p class="registration">Send in your registration application today!<br /> NOTE: Your account will be held for moderation and you will be unable to login until it is approved.</p>';
+  $not_approved_message = '<div class="woocommerce-message"><p class="registration">Send in your registration application today!<br /> NOTE: Your account will be held for moderation and you will be unable to login until it is approved.</p></div>';
 
   if( isset($_REQUEST['approved']) ){
     $approved = $_REQUEST['approved'];
-    if ($approved == 'false')  echo '<p class="registration successful">Registration successful! You will be notified upon approval of your account.</p>';
+    if ($approved == 'false')  echo '<div class="woocommerce-message"><p class="registration successful">Registration successful! You will be notified upon approval of your account.</p></div>';
     else echo $not_approved_message;
   }
   else echo $not_approved_message;
