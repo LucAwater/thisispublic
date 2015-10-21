@@ -55,7 +55,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	<a href="<?php the_permalink(); ?>" data-hover="view this product">
 
 		<?php
-			echo '<div>';
+			echo '<div class="thumb-content">';
         echo '<p>' . $brand[0]->name . '</p>';
   			/**
   			 * woocommerce_shop_loop_item_title hook
@@ -74,7 +74,11 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
         $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
         echo '<img src="' . $thumbnail[0] . '">';
+
+
       echo '</div>';
+
+      echo '<div class="overlay-thumb"><p>view product</p></div>';
 		?>
 
     <?php

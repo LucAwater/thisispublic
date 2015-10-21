@@ -1,13 +1,28 @@
 .products .product{
   > a.has-content{
-    > div{
+    .thumb-content{
       padding: 20px;
+    }
+
+    .overlay-thumb:after{
+      border: none;
     }
   }
 
-  > a.has-content:hover{
-    &:before{
-      border: none;
+  .button{
+    @include hide( .3s );
+
+    right: 40px;
+    position: absolute;
+  }
+
+  &:hover{
+    .button{
+      @include show( .3s );
+    }
+
+    a.has-content .overlay-thumb{
+      @include show( .3s );
     }
   }
 }
