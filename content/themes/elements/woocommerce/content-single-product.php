@@ -44,27 +44,31 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
     </div>';
 
     // Product images
-    echo '<ul class="product-images">';
-      $attachment_ids = $product->get_gallery_attachment_ids();
+    echo '<div class="product-images">';
+      echo '<ul>';
+        $attachment_ids = $product->get_gallery_attachment_ids();
 
-      foreach( $attachment_ids as $attachment_id ) {
-        echo '<li><img src="' . wp_get_attachment_url( $attachment_id ) . '"></li>';
-      }
-    echo '</ul>';
+        foreach( $attachment_ids as $attachment_id ) {
+          echo '<li><img src="' . wp_get_attachment_url( $attachment_id ) . '"></li>';
+        }
+      echo '</ul>';
+    echo '</div>';
 
     // Product info
     echo '<div class="product-info">';
-      $title = get_the_title();
-      $description = get_field('description');
+      echo '<div>';
+        $title = get_the_title();
+        $description = get_field('description');
 
-      echo '<p>' . $brand[0]->name . '</p>';
-      echo '<h1>' . $title . '</h1>';
-      echo $description;
+        echo '<p>' . $brand[0]->name . '</p>';
+        echo '<h1>' . $title . '</h1>';
+        echo $description;
 
-      // Download button
-      do_action( 'woocommerce_single_product_summary' );
+        // Download button
+        do_action( 'woocommerce_single_product_summary' );
 
-      echo '<p>download a .zip ﬁle with all high ressolution images</p>';
+        echo '<p>download a .zip ﬁle with all high ressolution images</p>';
+      echo '</div>';
     echo '</div>';
     ?>
 

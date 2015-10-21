@@ -18,9 +18,20 @@ body.single-product main{
     float: left;
 
     width: 50%;
+    padding: 0 20px 0 40px;
 
-    li{
-      margin-bottom: 50px;
+    > ul{
+      padding: 40px;
+
+      background-color: $white;
+
+      li{
+        margin-bottom: 50px;
+      }
+
+      li:last-child{
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -28,10 +39,25 @@ body.single-product main{
     float: right;
 
     width: 50%;
-    padding: 50px;
+    padding: 0 40px 0 20px;
 
-    h1, p{
-      margin-bottom: 16px;
+    > div{
+      padding: 40px 40px 20px 40px;
+
+      background-color: $white;
+
+      h1{
+        margin-bottom: 40px;
+      }
+
+      p{
+        margin-bottom: 20px;
+      }
+
+      .button{
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
     }
   }
 }

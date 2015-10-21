@@ -1,6 +1,7 @@
 button,
 .button{
   @extend p;
+  @include avenir-light;
 
   width: auto;
   max-width: 250px;
@@ -13,10 +14,11 @@ button,
   line-height: 38px;
   border: none;
   cursor: pointer;
-  background-color: $grey-light;
+  color: $white;
+  background-color: $black;
 
   &:hover,
   &:focus{
-    background-color: $grey;
+    // background-color: $grey;
   }
 }
