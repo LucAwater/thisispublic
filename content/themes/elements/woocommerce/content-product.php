@@ -49,48 +49,50 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 }
 ?>
 <li <?php post_class( $classes ); ?> data-gender="<?php echo $gender[0]->slug; ?>" data-brand="<?php echo $brand[0]->slug; ?>">
+  <div>
 
-	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
+  	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<a href="<?php the_permalink(); ?>" data-hover="view this product">
+  	<a href="<?php the_permalink(); ?>" data-hover="view this product">
 
-		<?php
-			echo '<div class="thumb-content">';
-        echo '<p>' . $brand[0]->name . '</p>';
-  			/**
-  			 * woocommerce_shop_loop_item_title hook
-  			 *
-  			 * @hooked woocommerce_template_loop_product_title - 10
-  			 */
-  			do_action( 'woocommerce_shop_loop_item_title' );
+  		<?php
+  			echo '<div class="thumb-content">';
+          echo '<p>' . $brand[0]->name . '</p>';
+    			/**
+    			 * woocommerce_shop_loop_item_title hook
+    			 *
+    			 * @hooked woocommerce_template_loop_product_title - 10
+    			 */
+    			do_action( 'woocommerce_shop_loop_item_title' );
 
-  			/**
-  			 * woocommerce_after_shop_loop_item_title hook
-  			 *
-  			 * @hooked woocommerce_template_loop_rating - 5
-  			 * @hooked woocommerce_template_loop_price - 10
-  			 */
-  			do_action( 'woocommerce_after_shop_loop_item_title' );
+    			/**
+    			 * woocommerce_after_shop_loop_item_title hook
+    			 *
+    			 * @hooked woocommerce_template_loop_rating - 5
+    			 * @hooked woocommerce_template_loop_price - 10
+    			 */
+    			do_action( 'woocommerce_after_shop_loop_item_title' );
 
-        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-        echo '<img src="' . $thumbnail[0] . '">';
+          $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+          echo '<img src="' . $thumbnail[0] . '">';
 
 
-      echo '</div>';
+        echo '</div>';
 
-      echo '<div class="overlay-thumb"><p>view product</p></div>';
-		?>
+        echo '<div class="overlay-thumb"><p>view product</p></div>';
+  		?>
 
-    <?php
-    /**
-     * woocommerce_after_shop_loop_item hook
-     *
-     * @hooked woocommerce_template_loop_add_to_cart - 10
-     */
-    do_action( 'woocommerce_after_shop_loop_item' );
+      <?php
+      /**
+       * woocommerce_after_shop_loop_item hook
+       *
+       * @hooked woocommerce_template_loop_add_to_cart - 10
+       */
+      do_action( 'woocommerce_after_shop_loop_item' );
 
-    ?>
+      ?>
 
-  </a>
+    </a>
 
+  </div>
 </li>

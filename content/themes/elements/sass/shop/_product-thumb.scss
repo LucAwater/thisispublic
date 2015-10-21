@@ -1,28 +1,34 @@
 .products .product{
-  > a.has-content{
-    .thumb-content{
-      padding: 20px;
+  > div{
+    a.has-content{
+      .thumb-content{
+        padding: 20px;
+      }
+
+      .overlay-thumb{
+        height: 100%;
+      }
+
+      .overlay-thumb:after{
+        border: none;
+      }
     }
 
-    .overlay-thumb:after{
-      border: none;
-    }
-  }
+    a.button{
+      @include hide( .3s );
 
-  .button{
-    @include hide( .3s );
-
-    right: 40px;
-    position: absolute;
-  }
-
-  &:hover{
-    .button{
-      @include show( .3s );
+      right: 0px;
+      position: absolute;
     }
 
-    a.has-content .overlay-thumb{
-      @include show( .3s );
+    &:hover{
+      .button{
+        @include show( .3s );
+      }
+
+      a.has-content .overlay-thumb{
+        @include show( .3s );
+      }
     }
   }
 }
