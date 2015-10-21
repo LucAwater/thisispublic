@@ -44,8 +44,8 @@ get_header( 'shop' ); ?>
       echo '<div class="filter is-fullwidth">';
         // Current brand and gender
         if( is_shop() ){
-          echo '<a class="filter-current" title="brand-current" data-current="all">brand: <span>All</span></a>';
-          echo '<a class="filter-current" title="gender-current" data-current="all">gender: <span>All</span></a>';
+          echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
+          echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         } else {
           echo '<a class="filter-current" title="brand-current" data-current="' . $current_brand . '">' . $brand_terms[0]->name . '</a>';
           echo '<a class="filter-current" title="gender-current" data-current="all">All</a>';
@@ -58,9 +58,9 @@ get_header( 'shop' ); ?>
         $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
 
         echo '<ul id="select-gender" class="filter-options">';
-          echo '<li class="current"><a class="tax-filter" title="all">All</a></li>';
+          echo '<li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>';
           foreach ( $genders as $gender ) {
-            echo '<li><a class="tax-filter" title="' . $gender->slug . '">' . $gender->name . '</a></li>';
+            echo '<li><a class="tax-filter" title="' . $gender->slug . '" data-parent="gender">' . $gender->name . '</a></li>';
           }
         echo '</ul>';
 

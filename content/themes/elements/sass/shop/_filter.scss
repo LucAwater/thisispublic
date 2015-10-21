@@ -7,14 +7,12 @@
   .search-form{
     float: left;
     display: inline-block;
-    margin-right: 80px;
     line-height: 80px;
   }
 
   .search-form{
     width: auto;
     float: right;
-    margin-right: 0;
 
     .search{
       width: auto;
@@ -34,8 +32,18 @@
 }
 
 .filter{
+  .filter-current{
+    padding: 0 40px;
+
+    text-decoration: none;
+
+    &.is-active{
+      background-color: $grey;
+    }
+  }
+
   ul.filter-options{
-    @include hide( .3s );
+    @include hide( 0s );
 
     top: 80px;
     left: 0;
@@ -48,7 +56,7 @@
     background-color: $grey;
 
     &.is-active{
-      @include show( .3s );
+      @include show( 0s );
     }
 
     li:first-child{
