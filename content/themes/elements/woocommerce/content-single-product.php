@@ -67,7 +67,7 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
         // Download button
         do_action( 'woocommerce_single_product_summary' );
 
-        echo '<p>download a .zip ﬁle with all high ressolution images</p>';
+        echo '<p class="is-grey">download a .zip ﬁle with all high ressolution images</p>';
       echo '</div>';
     echo '</div>';
     ?>
