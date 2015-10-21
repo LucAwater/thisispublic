@@ -51,3 +51,7 @@ span,
 label{
   @extend p;
 }
+
+strong{
+  @include avenir-medium;
+}
