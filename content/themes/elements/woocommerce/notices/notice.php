@@ -18,5 +18,5 @@ if ( ! $messages ){
 ?>
 
 <?php foreach ( $messages as $message ) : ?>
-	<div class="woocommerce-info"><?php echo wp_kses_post( $message ); ?></div>
+	<div class="woocommerce-info"><p><?php echo wp_kses_post( $message ); ?></p></div>
 <?php endforeach; ?>

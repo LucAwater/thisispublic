@@ -1,5 +1,6 @@
 button,
-.button{
+.button,
+input[type="submit"]{
   @extend p;
   @include avenir-light;
 

@@ -13,7 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wc_print_notices(); ?>
 
-<p class="myaccount_user">
+<div class="account-content account-details">
+  <h2>Welcome <?php echo $current_user->display_name; ?></h2>
+  <p>To edit you password and account details click <a href="<?php echo wc_customer_edit_account_url(); ?>">here</a></p>
+  <a class="button" href="<?php echo wc_get_endpoint_url( 'customer-logout', '', wc_get_page_permalink( 'myaccount' ) ); ?>">Log out</a>
+</div>
+<!-- <p>
 	<?php
 	printf(
 		__( 'Hello <strong>%1$s</strong> (not %1$s? <a href="%2$s">Sign out</a>).', 'woocommerce' ) . ' ',
@@ -25,9 +30,9 @@ wc_print_notices(); ?>
 		wc_customer_edit_account_url()
 	);
 	?>
-</p>
+</p> -->
 
-<?php do_action( 'woocommerce_before_my_account' ); ?>
+<!-- <?php do_action( 'woocommerce_before_my_account' ); ?>
 
 <?php wc_get_template( 'myaccount/my-downloads.php' ); ?>
 
@@ -35,4 +40,4 @@ wc_print_notices(); ?>
 
 <?php wc_get_template( 'myaccount/my-address.php' ); ?>
 
-<?php do_action( 'woocommerce_after_my_account' ); ?>
+<?php do_action( 'woocommerce_after_my_account' ); ?> -->

@@ -24,8 +24,13 @@ h3{
 p{
   @extend %base;
 
-  font-size: 0.938em; //15px;
+  font-size: 0.938em; //15px
   line-height: 1.5;
+
+  a{
+    font-size: 0.938em; //15px
+    text-decoration: underline;
+  }
 }
 
 a{
@@ -35,8 +40,14 @@ a{
   line-height: 1.5;
   color: $black;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover{
     text-decoration: underline;
   }
+}
+
+span,
+label{
+  @extend p;
 }

@@ -1,0 +1,14 @@
+.back,
+.woocommerce-message p{
+  height: 80px;
+  margin-top: -80px;
+  line-height: 80px;
+}
+
+body.archive,
+body.search{
+  .back,
+  .woocommerce-message p{
+    margin-top: 0;
+  }
+}
