@@ -12,69 +12,190 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 (function($) {
 
   function productFilter(){
-    var trigger = $('a.tax-filter');
+    var brandCurrent = $('#select-brand li.current a');
+    var genderCurrent = $('#select-gender li.current a');
 
-    trigger.click( function() {
-      var brandCurrent = $('#select-brand li.current a');
-      var genderCurrent = $('#select-gender li.current a');
+    // Get filter values
+    var brandVal = brandCurrent.attr('title');
+    var genderVal = genderCurrent.attr('title');
 
-      var clickedParent = $(this).closest('ul');
-      clickedParent.children().removeClass('current');
-      if( clickedParent.attr('id') === 'select-brand'){
-        $('#select-brand li').removeClass('current');
-        $(this).closest('li').addClass('current');
-        var brandCurrent = $(this);
-      } else {
-        $('#select-gender li').removeClass('current');
-        $(this).closest('li').addClass('current');
-        var genderCurrent = $(this);
-      }
+    // Get products
+    var products = document.getElementsByClassName('product');
+    var productsLength = products.length;
 
-      var brandVal = brandCurrent.attr('title');
-      var genderVal = genderCurrent.attr('title');
+    // Loop through products
+    for(var i = 0; i < productsLength; i++){
+      $(products[i]).addClass('hidden');
 
-      var products = document.getElementsByClassName('product');
-      var productsLength = products.length;
+      // Get product brand and gender
+      var productGender = products[i].getAttribute('data-gender');
+      var productBrand = products[i].getAttribute('data-brand');
 
-      for(var i = 0; i < productsLength; i++){
-        $(products[i]).addClass('hidden');
-        var productGender = products[i].getAttribute('data-gender');
-        var productBrand = products[i].getAttribute('data-brand');
-
-        if(brandVal === 'all' && genderVal === 'all'){
+      if(brandVal === 'all' && genderVal === 'all'){
+        $(products[i]).removeClass('hidden');
+      } else if(brandVal === 'all'){
+        if(productGender === genderVal){
           $(products[i]).removeClass('hidden');
-        } else if(brandVal === 'all'){
-          if(productGender === genderVal){
-            $(products[i]).removeClass('hidden');
-          } else {
-            // stay hidden
-          }
-        } else if(genderVal === 'all'){
-          if(productBrand === brandVal){
-            $(products[i]).removeClass('hidden');
-          } else {
-            // stay hidden
-          }
         } else {
-          if(productGender === genderVal && productBrand === brandVal){
-            $(products[i]).removeClass('hidden');
-          } else {
-            // stay hidden
-          }
+          // stay hidden
         }
-      };
+      } else if(genderVal === 'all'){
+        if(productBrand === brandVal){
+          $(products[i]).removeClass('hidden');
+        } else {
+          // stay hidden
+        }
+      } else {
+        if(productGender === genderVal && productBrand === brandVal){
+          $(products[i]).removeClass('hidden');
+        } else {
+          // stay hidden
+        }
+      }
+    };
 
-      var masonry = $('.isotope-masonry');
+    // Recalculate isotope
+    var masonry = $('.isotope-masonry');
 
-      masonry.isotope({
-        filter: '.product:not(.hidden)',
-        layoutMode: 'masonry',
-        transitionDuration: '0.2s'
-      });
+    masonry.isotope({
+      filter: '.product:not(.hidden)',
+      layoutMode: 'masonry',
+      transitionDuration: '0.2s'
     });
   };
 
-  productFilter();
+  if( $('body').hasClass('tax-product_brand') ){
+    productFilter();
+  };
+
+
+  // Click function uses $(this), so needs a tweaked version of the function
+  var trigger = $('a.tax-filter');
+
+  trigger.click( function() {
+    var brandCurrent = $('#select-brand li.current a');
+    var genderCurrent = $('#select-gender li.current a');
+
+    // Check which filter is clicked
+    var clickedParent = $(this).closest('ul');
+
+    clickedParent.children().removeClass('current');
+
+    if( clickedParent.attr('id') === 'select-brand'){
+      $('#select-brand li').removeClass('current');
+      $(this).closest('li').addClass('current');
+      var brandCurrent = $(this);
+    } else {
+      $('#select-gender li').removeClass('current');
+      $(this).closest('li').addClass('current');
+      var genderCurrent = $(this);
+    }
+
+    // Get filter values
+    var brandVal = brandCurrent.attr('title');
+    var genderVal = genderCurrent.attr('title');
+
+    // Get products
+    var products = document.getElementsByClassName('product');
+    var productsLength = products.length;
+
+    // Loop through products
+    for(var i = 0; i < productsLength; i++){
+      $(products[i]).addClass('hidden');
+
+      // Get product brand and gender
+      var productGender = products[i].getAttribute('data-gender');
+      var productBrand = products[i].getAttribute('data-brand');
+
+      if(brandVal === 'all' && genderVal === 'all'){
+        $(products[i]).removeClass('hidden');
+      } else if(brandVal === 'all'){
+        if(productGender === genderVal){
+          $(products[i]).removeClass('hidden');
+        } else {
+          // stay hidden
+        }
+      } else if(genderVal === 'all'){
+        if(productBrand === brandVal){
+          $(products[i]).removeClass('hidden');
+        } else {
+          // stay hidden
+        }
+      } else {
+        if(productGender === genderVal && productBrand === brandVal){
+          $(products[i]).removeClass('hidden');
+        } else {
+          // stay hidden
+        }
+      }
+    };
+
+    // Recalculate isotope
+    var masonry = $('.isotope-masonry');
+
+    masonry.isotope({
+      filter: '.product:not(.hidden)',
+      layoutMode: 'masonry',
+      transitionDuration: '0.2s'
+    });
+  });
+
+  // Showing/hiding dropdown
+  var filterCurrent = $('.filter-current');
+
+  filterCurrent.click( function() {
+    $('.filter-current').removeClass('is-active');
+    $('.filter-options').removeClass('is-active');
+
+    $('main').append('<div class="overlay"></div>');
+
+    var target = $(this).attr('data-target');
+    var targetOptions = $('#select-' + target);
+
+    $(this).toggleClass('is-active');
+    targetOptions.toggleClass('is-active');
+
+    $('.overlay').click( function() {
+      $('.filter-current').removeClass('is-active');
+      $('.filter-options').removeClass('is-active');
+      $(this).remove();
+    });
+  });
+
+  trigger.click( function() {
+    $('.filter-current').removeClass('is-active');
+    $('.filter-options').removeClass('is-active');
+    $('.overlay').remove();
+  });
+
+
+
+  var filterOption = $('ul.filter-options li a');
+
+  // Giving filter-current updated data
+  filterOption.click( function() {
+    var optionVal = $(this).attr('title');
+    var optionParentVal = $(this).attr('data-parent');
+    var optionParent = $('.filter').find("[data-target='" + optionParentVal + "']");
+
+    optionParent.attr('data-current', optionVal);
+    optionParentContent = optionParent.find('span');
+    optionParentContent.text(optionVal[0].toUpperCase() + optionVal.substr(1));
+  });
+
+  // Positioning filter options
+  function filterOptionsPos(){
+    var filterCurrent = $('.filter-current');
+
+    for(var i = 0; i < filterCurrent.length; i++){
+      var filterCurrentVal = $(filterCurrent[i]).children('span');
+      var targetVal = $(filterCurrent[i]).attr('data-target');
+      var target = $('#select-' + targetVal);
+      target.css("padding-left", filterCurrentVal.offset().left);
+    };
+  };
+
+  filterOptionsPos();
 
 }( jQuery ));
 !function(e){function s(){var s=e(".hero"),i=e(".hero-banner"),t=e("header"),h=t.height(),o=window.innerHeight-h;s.css("height",o),i.css("height",o);var n=e(".is-stretched-wrapper"),r=n.width(),d=n.height(),a=e(".is-stretched-object"),c=a.width()/a.height();a.css("min-height",d),d*c>r?(a.removeClass("is-stretched-wide"),a.addClass("is-stretched-high")):(a.removeClass("is-stretched-high"),a.addClass("is-stretched-wide"));var l=e(".arrow-scroll");l.css("top",o-30),l.click(function(){e("html, body").animate({scrollTop:o+20},500)});var g=e(".hero .section-body");g.addClass("is-visible-0.7s"),waypoint=new Waypoint({element:e(".hero .section-body"),offset:"10%",handler:function(){g.toggleClass("is-visible-0.7s"),g.toggleClass("is-hidden-0.7s")}})}e("section.hero").length>0&&(s(),e(window).on("resize",function(){s()}))}(jQuery);
