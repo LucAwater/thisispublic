@@ -136,22 +136,28 @@
     $('.filter-current').removeClass('is-active');
     $('.filter-options').removeClass('is-active');
 
+    $('main').append('<div class="overlay"></div>');
+
     var target = $(this).attr('data-target');
     var targetOptions = $('#select-' + target);
 
     $(this).toggleClass('is-active');
     targetOptions.toggleClass('is-active');
-  });
 
-  $('header').click( function() {
-    $('.filter-current').removeClass('is-active');
-    $('.filter-options').removeClass('is-active');
+    $('.overlay').click( function() {
+      $('.filter-current').removeClass('is-active');
+      $('.filter-options').removeClass('is-active');
+      $(this).remove();
+    });
   });
 
   trigger.click( function() {
     $('.filter-current').removeClass('is-active');
     $('.filter-options').removeClass('is-active');
+    $('.overlay').remove();
   });
+
+
 
   var filterOption = $('ul.filter-options li a');
 
