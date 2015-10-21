@@ -9,7 +9,7 @@ if( is_tax('product_brand') || is_shop() ){
   $current_brand = $brand_terms[0]->slug;
 
   echo '<ul id="select-brand" class="filter-options">';
-    if( is_shop() ){
+    if( !is_tax('product_brand') ){
       echo '<li class="current"><a class="tax-filter" title="all" data-parent="brand">All</a></li>';
     } else {
       echo '<li><a class="tax-filter" title="all" data-parent="brand">All</a></li>';
@@ -17,10 +17,12 @@ if( is_tax('product_brand') || is_shop() ){
 
     foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :
       foreach ( $product_brands[ $i ] as $brand ) {
-        if( !is_shop() && $brand->slug === $current_brand ){
-          echo '<li class="current"><a class="tax-filter" title="' . $brand->slug . '">' . $brand->name . '</a></li>';
-        } else {
-          echo '<li><a class="tax-filter" title="' . $brand->slug . '" data-parent="brand">' . $brand->name . '</a></li>';
+        if( is_tax('product_brand') ){
+          if( $brand->slug === $current_brand ){
+            echo '<li class="current"><a class="tax-filter" title="' . $brand->slug . '">' . $brand->name . '</a></li>';
+          } else {
+            echo '<li><a class="tax-filter" title="' . $brand->slug . '" data-parent="brand">' . $brand->name . '</a></li>';
+          }
         }
       }
     endif;

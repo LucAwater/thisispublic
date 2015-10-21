@@ -42,13 +42,20 @@ get_header( 'shop' ); ?>
     // If user is logged in, continue looping products
     else:
       echo '<div class="filter is-fullwidth">';
+        echo
+        '<div class="back">
+          <a class="link-arrow link-arrow-left" href="' . home_url() . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back home</a>
+        </div>';
+
         // Current brand and gender
+        $brand_terms = get_the_terms($post->id, 'product_brand');
+
         if( is_shop() ){
           echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         } else {
-          echo '<a class="filter-current" title="brand-current" data-current="' . $current_brand . '">' . $brand_terms[0]->name . '</a>';
-          echo '<a class="filter-current" title="gender-current" data-current="all">All</a>';
+          echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
+          echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         }
 
         // List of brands

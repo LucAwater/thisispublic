@@ -4,7 +4,8 @@
   padding: 0 80px;
 
   .filter-current,
-  .search-form{
+  .search-form,
+  .back{
     float: left;
     display: inline-block;
     line-height: 80px;
@@ -29,6 +30,10 @@
       }
     }
   }
+}
+
+.back{
+  padding-right: 40px;
 }
 
 .filter{

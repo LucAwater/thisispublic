@@ -32,6 +32,9 @@ a{
 
   line-height: 1.5;
   color: black;
-  text-decoration: underline;
   cursor: pointer;
+
+  &:hover{
+    text-decoration: underline;
+  }
 }
