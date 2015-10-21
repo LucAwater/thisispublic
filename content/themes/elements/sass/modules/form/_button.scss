@@ -4,21 +4,23 @@ button,
   @include avenir-light;
 
   width: auto;
-  max-width: 250px;
-  height: 35px;
+  max-width: 200px;
+  height: 40px;
   padding: 0 50px;
   display: block;
 
   text-align: center;
   text-decoration: none;
-  line-height: 38px;
+  line-height: 42px;
   border: none;
   cursor: pointer;
   color: $white;
+  text-transform: lowercase;
   background-color: $black;
 
   &:hover,
   &:focus{
     // background-color: $grey;
+    text-decoration: none;
   }
 }
