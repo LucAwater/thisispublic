@@ -41,27 +41,27 @@ get_header( 'shop' ); ?>
       echo '<p class="woocommerce-info">You must be logged in to view products.</p>';
     // If user is logged in, continue looping products
     else:
-      echo '<div class="filter">';
+      echo '<div class="filter is-fullwidth">';
+        // Current brand and gender
+        if( is_shop() ){
+          echo '<a class="filter-current" title="brand-current" data-current="all">brand: <span>All</span></a>';
+          echo '<a class="filter-current" title="gender-current" data-current="all">gender: <span>All</span></a>';
+        } else {
+          echo '<a class="filter-current" title="brand-current" data-current="' . $current_brand . '">' . $brand_terms[0]->name . '</a>';
+          echo '<a class="filter-current" title="gender-current" data-current="all">All</a>';
+        }
 
-        // Brand filter
-        // Get current brand
-        // if (is_tax( 'product_brand' )) {
-        //   $terms = get_the_terms($post->id, 'product_brand');
-        //   echo '<p>' . $terms[0]->name . '</p>';
-        // } else {
-        //   echo '<p>All</p>';
-        // }
-
-        // List rest of brands
+        // List of brands
         echo do_shortcode('[product_brand_list]');
 
         // Gender filter
-        $genders = $terms = get_terms( 'gender', 'orderby=count&hide_empty=0' );
-        echo '<ul id="select-gender">';
-        echo '<li class="current"><a class="tax-filter" title="all">All</a></li>';
-        foreach ( $genders as $gender ) {
-          echo '<li><a class="tax-filter" title="' . $gender->slug . '">' . $gender->name . '</a></li>';
-        }
+        $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
+
+        echo '<ul id="select-gender" class="filter-options">';
+          echo '<li class="current"><a class="tax-filter" title="all">All</a></li>';
+          foreach ( $genders as $gender ) {
+            echo '<li><a class="tax-filter" title="' . $gender->slug . '">' . $gender->name . '</a></li>';
+          }
         echo '</ul>';
 
         // Search

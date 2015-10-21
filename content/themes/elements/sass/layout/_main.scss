@@ -8,3 +8,7 @@ main{
   background: $grey-light;
   z-index: $zIndex-main;
 }
+
+body.archive main{
+  padding-top: 0;
+}
