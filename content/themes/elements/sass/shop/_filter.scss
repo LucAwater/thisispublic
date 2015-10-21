@@ -13,7 +13,11 @@
   }
 
   .search-form{
+    @include flex;
+    @include align-items( center );
+
     width: auto;
+    height: 80px;
     float: right;
 
     .search{

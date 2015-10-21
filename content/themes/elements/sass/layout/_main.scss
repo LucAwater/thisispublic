@@ -9,6 +9,9 @@ main{
   z-index: $zIndex-main;
 }
 
-body.archive main{
-  padding-top: 0;
+body.archive,
+body.search{
+  main{
+    padding-top: 0;
+  }
 }
