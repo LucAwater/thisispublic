@@ -43,17 +43,17 @@
     });
 
     // Fade Content on scroll
-    var hero_content = $('.hero .section-body');
-    hero_content.addClass('is-visible-0.7s');
-
-    waypoint = new Waypoint({
-      element: $('.hero .section-body'),
-      offset: '10%',
-      handler: function() {
-        hero_content.toggleClass('is-visible-0.7s');
-        hero_content.toggleClass('is-hidden-0.7s');
-      }
-    });
+    // var hero_content = $('.hero .section-body');
+    // hero_content.addClass('is-visible-0.7s');
+    //
+    // waypoint = new Waypoint({
+    //   element: $('.hero .section-body'),
+    //   offset: '10%',
+    //   handler: function() {
+    //     hero_content.toggleClass('is-visible-0.7s');
+    //     hero_content.toggleClass('is-hidden-0.7s');
+    //   }
+    // });
   };
 
   if($('section.hero').length > 0) {

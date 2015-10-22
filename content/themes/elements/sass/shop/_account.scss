@@ -4,18 +4,20 @@ body.woocommerce-account{
   }
 
   .woocommerce-message{
-    margin-bottom: 0;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .back{
-    margin-bottom: -40px;
+    max-width: 800px;
+    margin: -40px auto;
   }
 }
 
 .account-content{
-  max-width: 600px;
+  max-width: 800px;
   padding: 40px;
-  margin-top: 40px;
+  margin: 40px auto 0;
 
   background-color: $white;
 
