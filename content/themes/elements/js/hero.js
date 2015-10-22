@@ -8,10 +8,9 @@
     // Determine hero height
     var header = $('header');
     var header_height = header.height();
-    var hero_height = window.innerHeight - header_height;
+    var hero_height = hero.height();
 
     // Apply heights
-    hero.css("height", hero_height);
     hero_banner.css("height", hero_height);
 
     // Shape the stretched object

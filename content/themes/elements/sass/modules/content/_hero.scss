@@ -1,54 +1,111 @@
 section.hero{
-  height: 90vh;
-  overflow: hidden;
-  
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
   .hero-banner{
-    position: fixed;
-    overflow: hidden;
+    width: 100%;
+
+    div{
+      width: 100%;
+      height: 100%;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
-  
+
   .section-body{
-    top: 50%;
-    left: 50%;
-    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
     position: absolute;
-    @include transform( translate(-50%, -50%) );
+
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 50px;
   }
 }
 
 // Scroll arrow
 .arrow-scroll{
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background: $white;
-  border-radius: 100%;
   left: 0;
   right: 0;
+  top: calc(90% - 30px);
   margin: auto;
+  position: absolute;
   z-index: $zIndex-arrow;
-  
+
+  width: 60px;
+  height: 60px;
+
+  background: $white;
+  border-radius: 100%;
+
   img{
-    width: 30px;
+    @include transition( .3s );
+    @include transform( rotate(90deg) );
+
     top: 20px;
     left: 15px;
     position: absolute;
     z-index: $zIndex-arrow;
-    @include transition( .3s );
-    @include transform( rotate(90deg) );
+
+    width: 30px;
   }
-  
+
   &:hover{
     img{
-      top: 25px;
       @include transition( .3s );
+
+      top: 25px;
     }
   }
 }
 
+
 // Remove fixed positioning on mobile devices
 body.is-mobile{
-  section.hero .hero-banner{
+  section.hero .section-hero-banner{
     position: relative;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .section_hero{
+    .section_header{
+      height: 25%;
+    }
+
+    .section_content{
+      @include transform( translate(0) );
+
+      top: auto;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+
+      width: auto;
+      height: calc(100% - 100px);
+      padding: 0;
+
+      img{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+
+        width: 90%;
+        margin: auto;
+
+
+        &:nth-child(2){
+          display: none;
+        }
+      }
+    }
   }
 }
