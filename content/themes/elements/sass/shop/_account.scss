@@ -1,6 +1,21 @@
+body.woocommerce-account{
+  main{
+    padding-top: 120px;
+  }
+
+  .woocommerce-message{
+    margin-bottom: 0;
+  }
+
+  .back{
+    margin-bottom: -40px;
+  }
+}
+
 .account-content{
   max-width: 600px;
   padding: 40px;
+  margin-top: 40px;
 
   background-color: $white;
 
