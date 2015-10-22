@@ -101,6 +101,7 @@ get_header( 'shop' ); ?>
       elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
         wc_get_template( 'loop/no-products-found.php' );
       endif;
+      wp_reset_postdata();
     endif; ?><!-- end of user login check -->
 
 	<?php
