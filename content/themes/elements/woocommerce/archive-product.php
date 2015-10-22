@@ -89,16 +89,12 @@ get_header( 'shop' ); ?>
       if( $loop->have_posts() ):
         woocommerce_product_loop_start();
           while( $loop->have_posts() ) : $loop->the_post();
-            if ( is_user_logged_in() ){
-              global $current_user;
-              $current_user_role = $current_user->roles[0];
+            global $current_user;
+            $current_user_role = $current_user->roles[0];
+            $user_level = get_the_terms( $product_ID, 'userlevel' );
 
-              // Custom user level
-              $user_level = get_field( 'user_level' );
-
-              if( $current_user_role === 'administrator' || in_array($current_user_role, $user_level) ){
-                wc_get_template_part( 'content', 'product' );
-              }
+            if( $current_user_role === 'administrator' || $current_user_role === $user_level[0]->slug || $user_level[0]->slug === 'level_all' ){
+              wc_get_template_part( 'content', 'product' );
             }
           endwhile;
         woocommerce_product_loop_end();
