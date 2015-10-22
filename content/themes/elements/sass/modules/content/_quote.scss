@@ -13,3 +13,10 @@ section.quote{
     }
   }
 }
+
+@media #{$small-only}{
+  section.quote{
+    padding-top: $section-spacing;
+    padding-bottom: $section-spacing;
+  }
+}

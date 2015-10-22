@@ -6,6 +6,6 @@
 @media #{$small-only}{
   .is-fullwidth{
     width: calc(100% + #{$side-margin-small});
-    margin-left: -$side-margin-small;
+    margin-left: -$side-margin-small / 2;
   }
 }
