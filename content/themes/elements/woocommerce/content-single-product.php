@@ -40,7 +40,7 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
 
     echo
     '<div class="product-back">
-      <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">go back</a>
+      <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to ' . $brand[0]->name . '</a>
     </div>';
 
     // Product images

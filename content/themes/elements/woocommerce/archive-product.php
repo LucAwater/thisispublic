@@ -44,7 +44,7 @@ get_header( 'shop' ); ?>
       echo '<div class="filter is-fullwidth">';
         echo
         '<div class="back">
-          <a class="link-arrow link-arrow-left" href="' . home_url() . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back home</a>
+          <a class="link-arrow link-arrow-left" href="' . home_url() . '/brands"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to all brands</a>
         </div>';
 
         // Current brand and gender
