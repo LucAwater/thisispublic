@@ -24,4 +24,19 @@ input[type="submit"]{
     // background-color: $grey;
     text-decoration: none;
   }
+
+  &.button-sec{
+    @include avenir;
+    @include transition( .2s );
+
+    color: $black;
+    border: thin solid $black;
+    background-color: transparent;
+
+    &:hover,
+    &:focus{
+      border: thin solid $grey;
+      background-color: $grey;
+    }
+  }
 }

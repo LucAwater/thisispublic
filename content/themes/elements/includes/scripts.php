@@ -22,7 +22,7 @@ function enqueue_theme_scripts() {
     wp_enqueue_script( 'hero', get_template_directory_uri() . '/js/hero.js', 'jquery', false, true );
     wp_enqueue_script( 'link-heading', get_template_directory_uri() . '/js/link-heading.js', 'jquery', false, true );
     wp_enqueue_script( 'download-button', get_template_directory_uri() . '/js/download-button.js', 'jquery', false, true );
-    // wp_enqueue_script( 'init-isotope', get_template_directory_uri() . '/js/init-isotope.js', 'jquery', false, true );
+    wp_enqueue_script( 'init-isotope', get_template_directory_uri() . '/js/init-isotope.js', 'jquery', false, true );
     wp_enqueue_script( 'init-skrollr', get_template_directory_uri() . '/js/init-skrollr.js', 'jquery', false, true );
  	else:
 		// All concatenated and compressed JS in one file:
