@@ -198,8 +198,20 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
   filterOptionsPos();
 
 }( jQuery ));
-!function(e){function s(){var s=e(".hero"),i=e(".hero-banner"),t=e("header"),h=t.height(),o=window.innerHeight-h;s.css("height",o),i.css("height",o);var n=e(".is-stretched-wrapper"),r=n.width(),d=n.height(),a=e(".is-stretched-object"),c=a.width()/a.height();a.css("min-height",d),d*c>r?(a.removeClass("is-stretched-wide"),a.addClass("is-stretched-high")):(a.removeClass("is-stretched-high"),a.addClass("is-stretched-wide"));var l=e(".arrow-scroll");l.css("top",o-30),l.click(function(){e("html, body").animate({scrollTop:o+20},500)});var g=e(".hero .section-body");g.addClass("is-visible-0.7s"),waypoint=new Waypoint({element:e(".hero .section-body"),offset:"10%",handler:function(){g.toggleClass("is-visible-0.7s"),g.toggleClass("is-hidden-0.7s")}})}e("section.hero").length>0&&(s(),e(window).on("resize",function(){s()}))}(jQuery);
+!function(e){function h(){var h=e(".hero"),s=e(".hero-banner"),t=e("header"),i=(t.height(),h.height());s.css("height",i);var r=e(".is-stretched-wrapper"),c=r.width(),o=r.height(),d=e(".is-stretched-object"),n=d.width()/d.height();d.css("min-height",o),o*n>c?(d.removeClass("is-stretched-wide"),d.addClass("is-stretched-high")):(d.removeClass("is-stretched-high"),d.addClass("is-stretched-wide"));var a=e(".arrow-scroll");a.css("top",i-30),a.click(function(){e("html, body").animate({scrollTop:i+20},500)})}e("section.hero").length>0&&(h(),e(window).on("resize",function(){h()}))}(jQuery);
 !function(a){a("a:has(h1, h2, h3, p, div, img)").addClass("has-content")}(jQuery);
 !function(n){function i(){var i=n("a.product_type_simple");i.click(function(){n(this).html("Download again!")})}i()}(jQuery);
 !function(o){if(o(".isotope").length>0){var e=o(".isotope-masonry");o("main").imagesLoaded(function(){e.isotope({layoutMode:"masonry"})})}}(jQuery);
 !function(n){if(n(".parallax").length>0){skrollr.init({render:function(n){}})}}(jQuery);
+!function(e){if(e(".hero").length>0){e("body").addClass("has-hero");new Waypoint({element:e("header"),handler:function(){e("header").toggleClass("is-fixed")}})}}(jQuery);
+(function($) {
+
+  if ($('section.slider').length > 0) {
+    var object = $('section.slider');
+
+    object.slider({
+      lightbox: false
+    });
+  };
+
+}( jQuery ));

@@ -22,7 +22,8 @@ gulp.task('minify-js', function () {
       './content/themes/elements/js/download-button.js',
       './content/themes/elements/js/init-isotope.js',
       './content/themes/elements/js/init-skrollr.js',
-      './content/themes/elements/js/init-waypoints.js'
+      './content/themes/elements/js/init-waypoints.js',
+      './content/themes/elements/js/init-slider.js'
     ])
     .pipe(uglify())
     .pipe(gulp.dest('./content/themes/elements/js/min'));
@@ -47,7 +48,8 @@ gulp.task('concat', function () {
       './content/themes/elements/js/min/download-button.js',
       './content/themes/elements/js/min/init-isotope.js',
       './content/themes/elements/js/min/init-skrollr.js',
-      './content/themes/elements/js/min/init-waypoints.js'
+      './content/themes/elements/js/min/init-waypoints.js',
+      './content/themes/elements/js/init-slider.js'
     ]) // path to your files
     .pipe(concat('app.js'))  // concat and name it "concat.js"
     .pipe(gulp.dest('./content/themes/elements/js'));
