@@ -22,3 +22,9 @@ body.woocommerce-account{
     padding-right: $side-margin;
   }
 }
+
+body.single-post{
+  main{
+    background-color: $white;
+  }
+}

@@ -1,13 +1,16 @@
 <?php
 get_header();
 
-echo '<div class="post">';
+echo '<div class="single-post">';
   $title = get_the_title();
   $date = get_the_date();
   $content = get_the_content();
 
-  echo '<h2>' . $title . '</h2>';
-  echo '<p>' . $date . '</p>';
+  echo
+  '<div class="post-header">
+    <h2>' . $title . '</h2>
+    <p>' . $date . '</p>
+  </div>';
 
   // Loop into ACF groups
   if( have_rows('post') ):
