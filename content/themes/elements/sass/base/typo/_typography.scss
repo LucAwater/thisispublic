@@ -36,8 +36,24 @@ p{
   }
 }
 
-article p{
-  font-size: 1.188em; //19px
+article{
+  p, a{
+    line-height: normal;
+    margin-bottom: 1em;
+  }
+
+  p{
+    font-size: 1.188em; //19px
+  }
+
+  a{
+    font-size: 1em;
+    text-decoration: underline;
+  }
+
+  span{
+    font-size: 1em;
+  }
 }
 
 a{
