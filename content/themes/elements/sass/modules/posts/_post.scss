@@ -14,6 +14,16 @@ div.single-post{
     h2, p{
       margin-bottom: 40px;
     }
+
+    p a{
+      padding-left: 40px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus{
+        text-decoration: underline;
+      }
+    }
   }
 
   section.slider{

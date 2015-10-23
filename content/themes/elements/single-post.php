@@ -9,7 +9,7 @@ echo '<div class="single-post">';
   echo
   '<div class="post-header">
     <h2>' . $title . '</h2>
-    <p>' . $date . '</p>
+    <p>' . $date . ' <a class="is-grey" href="' . home_url() . '/news">back to overview</a></p>
   </div>';
 
   // Loop into ACF groups
