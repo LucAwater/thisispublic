@@ -2,7 +2,6 @@ button,
 .button,
 input[type="submit"]{
   @extend p;
-  @include avenir-light;
 
   width: auto;
   max-width: 250px;
@@ -26,7 +25,6 @@ input[type="submit"]{
   }
 
   &.button-sec{
-    @include avenir;
     @include transition( .2s );
 
     color: $black;

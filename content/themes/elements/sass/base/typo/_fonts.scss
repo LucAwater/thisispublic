@@ -1,25 +1,26 @@
+@import url("//hello.myfonts.net/count/2f7f3e");
+
+
+@font-face {font-family: 'AvenirNextLTPro-Light';src: url('../webfonts/2F7F3E_0_0.eot');src: url('../webfonts/2F7F3E_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2F7F3E_0_0.woff2') format('woff2'),url('../webfonts/2F7F3E_0_0.woff') format('woff'),url('../webfonts/2F7F3E_0_0.ttf') format('truetype');}
+
 @mixin avenir{
-  font-family: 'Avenir Next Pro', 'sans-serif';
+  font-family: 'AvenirNextLTPro-Light', 'sans-serif';
   font-style: normal;
   font-weight: normal;
 }
 
-@mixin avenir-bold{
-  font-family: 'Avenir Next Pro Bold', 'sans-serif';
+@mixin chronicle-display{
+  font-family: "Chronicle Display A", "Chronicle Display B";
   font-style: normal;
+  font-weight: 400;
 }
 
-@mixin avenir-medium{
-  font-family: 'Avenir Next Pro Medium', 'sans-serif';
+@mixin chronicle{
+  font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
   font-style: normal;
-}
+  font-weight: 400;
 
-@mixin avenir-light{
-  font-family: 'Avenir Next Pro UltraLight', 'sans-serif';
-  font-style: normal;
-}
-
-div#mfPreviewBarShow,
-#mfPreviewBar{
-  display: none !important;
+  &.is-bold{
+    font-weight: 700;
+  }
 }

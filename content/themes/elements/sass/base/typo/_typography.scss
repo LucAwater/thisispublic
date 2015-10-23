@@ -12,7 +12,10 @@ h1{
 }
 
 h2{
-  @extend h1;
+  @extend %base;
+  @include chronicle-display;
+
+  font-size: 2.5em; //40px
 }
 
 h3{
@@ -33,11 +36,13 @@ p{
   }
 }
 
-a{
-  @extend %base;
+article p{
+  font-size: 1.188em; //19px
+}
 
-  font-size: 0.938em; //15px;
-  line-height: 1.5;
+a{
+  @extend p;
+
   color: $black;
   cursor: pointer;
   text-decoration: none;
@@ -50,8 +55,4 @@ a{
 span,
 label{
   @extend p;
-}
-
-strong{
-  @include avenir-medium;
 }
