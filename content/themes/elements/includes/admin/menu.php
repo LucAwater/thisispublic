@@ -19,7 +19,7 @@ function menu_order( $menu_order ) {
     'upload.php', //Media
     'edit.php', //Posts
     'edit.php?post_type=page', //Pages
-    'footer', //Footer information
+    'company', //Extra information
     'woocommerce',
     'separator-last',
 
