@@ -7,7 +7,7 @@ $b_caption = get_sub_field( 'quote_b_caption' );
 echo
 '<section class="quote is-fullwidth">
   <div class="section-body row is-aligned-center">
-    <h1>' . $b_content . '</h2>
+    <h2>' . $b_content . '</h2>
     <p>' . $b_caption . '</p>
   </div>
 </section>';
