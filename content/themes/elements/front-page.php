@@ -14,34 +14,34 @@ if( have_rows('page') ):
   endwhile;
 endif;
 
-// Post query
-$query = array(
-    'post_type' => 'post',
+// The Query
+$args = array(
     'order'     => 'DESC',
     'orderby'   => 'date'
 );
-$loop = new WP_Query($query);
 
-if( $loop->have_posts() ):
+query_posts( $args );
 
-  echo '<ul class="posts s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">';
-    while( $loop->have_posts() ) : $loop->the_post();
+echo '<ul class="posts s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">';
 
-      echo
-      '<li>
-        ' . get_the_post_thumbnail( $post_ID, 'medium' ) . '
-        <div>
-          <p class="is-grey">' . get_the_category()[0]->name . ' | ' . get_the_date() . '</p>
-          <h3>' . get_the_title() . '</h3>
-          <a class="button button-sec" href="' . get_permalink() . '">More</a>
-        </div>
-      </li>';
+// The Loop
+while ( have_posts() ) : the_post();
+  $category = get_the_category();
+  echo
+  '<li>
+    ' . get_the_post_thumbnail( $post_ID, 'medium' ) . '
+    <div>
+      <p class="is-grey">' . $category[0]->cat_name . ' | ' . get_the_date() . '</p>
+      <h3>' . get_the_title() . '</h3>
+      <a class="button button-sec" href="' . get_permalink() . '">More</a>
+    </div>
+  </li>';
+endwhile;
 
-    endwhile;
-  echo '</ul>';
-endif;
+echo '</ul>';
 
-wp_reset_postdata();
+// Reset Query
+wp_reset_query();
 
 get_footer();
 ?>
