@@ -3,6 +3,7 @@ header{
   @include align-items( center );
   @include justify-content( flex-start );
 
+  top: 0;
   left: 0;
   position: fixed;
   z-index: $zIndex-header;
@@ -25,13 +26,32 @@ header{
 
 body.has-hero{
   header{
+    top: auto;
     bottom: -80px;
     position: absolute;
 
-    &.is-fixed{
-      top: 0;
-      bottom: auto;
+    .trigger-menu{
+      top: 17.5px;
+      right: 70px;
       position: fixed;
+
+      width: 45px;
+      height: 45px;
+      padding: 10px;
+
+      background-color: $white;
+    }
+  }
+
+  header.is-fixed{
+    top: 0;
+    bottom: auto;
+    position: fixed;
+
+    .trigger-menu{
+      position: absolute;
+
+      background-color: transparent;
     }
   }
 }
