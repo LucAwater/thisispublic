@@ -86,7 +86,7 @@
         ?>
       </ul>
 
-      <div class="menu-info">
+      <div class="company-contact">
         <?php
         $company_contact = get_field('company_contact', 'option');
 
