@@ -8,7 +8,7 @@ $o_b_layout = get_sub_field( 'gridPri_o_b_layout' );
 
 // Content (variables)
 $h_title = get_sub_field( 'gridPri_h_title' );
-$h_text = preg_replace( '/<p>/', '<p class="s-4 columns is-aligned-' . $o_h_align . '">', get_sub_field( 'gridPri_h_text' ) );
+$h_text = preg_replace( '/<p>/', '<p class="is-aligned-' . $o_h_align . '">', get_sub_field( 'gridPri_h_text' ) );
 $b_images = get_sub_field( 'gridPri_b_images' );
 
 // Output
