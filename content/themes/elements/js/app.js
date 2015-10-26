@@ -200,10 +200,40 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 }( jQuery ));
 !function(e){function h(){var h=e(".hero"),s=e(".hero-banner"),t=e("header"),i=(t.height(),h.height());s.css("height",i);var r=e(".is-stretched-wrapper"),c=r.width(),o=r.height(),d=e(".is-stretched-object"),n=d.width()/d.height();d.css("min-height",o),o*n>c?(d.removeClass("is-stretched-wide"),d.addClass("is-stretched-high")):(d.removeClass("is-stretched-high"),d.addClass("is-stretched-wide"));var a=e(".arrow-scroll");a.css("top",i-30),a.click(function(){e("html, body").animate({scrollTop:i+20},500)})}e("section.hero").length>0&&(h(),e(window).on("resize",function(){h()}))}(jQuery);
 !function(a){a("a:has(h1, h2, h3, p, div, img)").addClass("has-content")}(jQuery);
+(function($) {
+
+  function activateMenu() {
+    var header = $('header');
+    var main = $('main');
+    var menu = $('div.menu');
+    var menuOpen = $('a.menu-open');
+    var menuClose = $('a.menu-close');
+
+    menuOpen.click( function() {
+      header.addClass('menu-active');
+      menu.addClass('is-active');
+
+      main.append('<div class="overlay"></div>');
+
+      $('.overlay').click( function() {
+        header.removeClass('menu-active');
+        menu.removeClass('is-active');
+        $(this).remove();
+      });
+    });
+
+    menuClose.click( function() {
+      header.removeClass('menu-active');
+      menu.removeClass('is-active');
+    });
+  };
+
+  activateMenu();
+
+}( jQuery ));
 !function(n){function i(){var i=n("a.product_type_simple");i.click(function(){n(this).html("Download again!")})}i()}(jQuery);
 !function(o){if(o(".isotope").length>0){var e=o(".isotope-masonry");o("main").imagesLoaded(function(){e.isotope({layoutMode:"masonry"})})}}(jQuery);
 !function(n){if(n(".parallax").length>0){skrollr.init({render:function(n){}})}}(jQuery);
-!function(e){if(e(".hero").length>0){e("body").addClass("has-hero");new Waypoint({element:e("header"),handler:function(){e("header").toggleClass("is-fixed")}})}}(jQuery);
 (function($) {
 
   if ($('section.slider').length > 0) {
