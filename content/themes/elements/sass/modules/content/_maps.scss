@@ -1,0 +1,28 @@
+section.maps{
+  background-color: $grey-light;
+
+  .section-header{
+    margin-bottom: $section-spacing;
+    
+    p{
+      margin-bottom: 1em;
+    }
+  }
+
+  .section-body{
+    max-width: none !important;
+    width: calc(100% + (#{$side-margin} * 2)) !important;
+    margin-left: -$side-margin !important;
+
+    height: 0;
+    padding-bottom: 60%;
+  }
+}
+
+@media #{$small-only}{
+  section.maps .section-body{
+    max-width: none !important;
+    width: calc(100% + (#{$side-margin-small} * 2)) !important;
+    margin-left: -$side-margin-small !important;
+  }
+}

@@ -31,6 +31,9 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
+  <!-- Google Maps dependency -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>

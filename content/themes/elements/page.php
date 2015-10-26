@@ -26,6 +26,8 @@ if( have_rows('page') ): $i_par = 0;
       include( locate_template('content/slider.php') );
     elseif( get_row_layout() == 'parallax' ): $i_par++;
       include( locate_template('content/parallax.php') );
+    elseif( get_row_layout() == 'maps' ):
+      include( locate_template('content/maps.php') );
     endif;
 
   endwhile;

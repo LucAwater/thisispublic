@@ -1,11 +1,13 @@
 .is-fullwidth{
-  width: calc(100% + #{$side-margin});
-  margin-left: -$side-margin / 2;
+  max-width: none !important;
+  width: calc(100% + #{$side-margin}) !important;
+  margin-left: -$side-margin / 2 !important;
 }
 
 @media #{$small-only}{
   .is-fullwidth{
-    width: calc(100% + #{$side-margin-small});
-    margin-left: -$side-margin-small / 2;
+    max-width: none !important;
+    width: calc(100% + #{$side-margin-small}) !important;
+    margin-left: -$side-margin-small / 2 !important;
   }
 }
