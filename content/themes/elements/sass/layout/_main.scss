@@ -16,6 +16,13 @@ body.home{
   }
 }
 
+body.page-template-default{
+  main{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 body.woocommerce-account{
   main{
     padding-left: $side-margin;

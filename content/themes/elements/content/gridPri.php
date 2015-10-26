@@ -18,7 +18,7 @@ echo '<section class="grid grid-pri' . (( $o_menu == true ) ? ' has-anchor" id="
   if( $h_title || $h_text ):
     echo
     '<div class="section-header row is-pos-' . $o_h_pos . '">
-      <h2 class="s-4 columns is-aligned-' . $o_h_align . '">' . $h_title . '</h2>
+      <h2 class="is-aligned-' . $o_h_align . '">' . $h_title . '</h2>
       ' . $h_text . '
     </div>';
   endif;
