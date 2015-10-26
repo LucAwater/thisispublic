@@ -12,16 +12,6 @@ header{
   height: 80px;
 
   background-color: $white;
-
-  .link-logo{
-    width: auto;
-    height: 35%;
-    margin-right: 50px;
-
-    img{
-      height: 100%;
-    }
-  }
 }
 
 body.has-hero{
@@ -30,7 +20,7 @@ body.has-hero{
     bottom: -80px;
     position: absolute;
 
-    .trigger-menu{
+    .menu-open{
       top: 17.5px;
       right: 70px;
       position: fixed;
@@ -48,7 +38,7 @@ body.has-hero{
     bottom: auto;
     position: fixed;
 
-    .trigger-menu{
+    .menu-open{
       position: absolute;
 
       background-color: transparent;

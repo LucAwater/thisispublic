@@ -14,12 +14,14 @@ $zIndex10:  1000;
 $zIndex11:  1100;
 
 // zIndex implementations
-$zIndex-main:           $zIndex9;
+$zIndex-main:           $zIndex8;
 
-$zIndex-parallax:       $zIndex10;
-$zIndex-overlay:        $zIndex10;
+$zIndex-parallax:       $zIndex9;
+$zIndex-overlay:        $zIndex9;
 
-$zIndex-header:         $zIndex11;
-$zIndex-footer:         $zIndex11;
-$zIndex-arrow:          $zIndex11;
-$zIndex-filterOptions:  $zIndex11;
+$zIndex-header:         $zIndex10;
+$zIndex-footer:         $zIndex10;
+$zIndex-arrow:          $zIndex10;
+$zIndex-filterOptions:  $zIndex10;
+
+$zIndex-menu:           $zIndex11;

@@ -46,10 +46,35 @@
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
 
-    <?php include( 'includes/nav.php' ); ?>
-
-    <a class="trigger trigger-menu"><i></i></a>
+    <a class="menu-open"><i></i></a>
   </header>
+
+  <!-- Menu -->
+  <div class="menu">
+    <div class="menu-header">
+      <a class="link-logo" href="<?php echo home_url(); ?>">
+        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-white.svg">
+      </a>
+
+      <a class="menu-close"><i></i></a>
+    </div>
+
+    <div class="menu-content">
+      <ul class="menu-nav">
+        <li><a href=""><h3>PUBLIC Imagebank</h3></a></li>
+        <li><a href=""><h3>News / Cases</h3></a></li>
+        <li><a href=""><h3>About PUBLIC</h3></a></li>
+        <li><a href=""><h3>Contact</h3></a></li>
+      </ul>
+
+      <ul class="social">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
 
   <?php
   // Hero section (must be placed before main)
