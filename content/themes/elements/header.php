@@ -80,6 +80,14 @@
         endif;
         ?>
       </ul>
+
+      <div class="menu-info">
+        <?php
+        $company_contact = get_field('company_contact', 'option');
+
+        echo '<p>' . $company_contact . '</p>';
+        ?>
+      </div>
     </div>
   </div>
 

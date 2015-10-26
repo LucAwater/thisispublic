@@ -6,7 +6,7 @@ div.menu{
 
   width: 100%;
 
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.9);
 
   .menu-header{
     @include flex;
@@ -29,6 +29,8 @@ div.menu{
 
 div.menu .menu-content{
   ul.menu-nav{
+    margin-bottom: 40px;
+
     li{
       margin-bottom: 20px;
 
@@ -38,6 +40,13 @@ div.menu .menu-content{
         color: $white;
       }
     }
+  }
+
+  div.menu-info{
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    padding: 40px 0;
   }
 }
 
