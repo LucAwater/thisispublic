@@ -1,0 +1,32 @@
+div.single-post{
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 40px;
+
+  .post-header,
+  article{
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .post-header{
+    h2, p{
+      margin-bottom: 40px;
+    }
+
+    p a{
+      padding-left: 40px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  section.slider{
+    padding-top: 0;
+  }
+}

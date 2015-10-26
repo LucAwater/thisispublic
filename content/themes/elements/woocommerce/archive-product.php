@@ -40,59 +40,69 @@ get_header( 'shop' ); ?>
     if( ! is_user_logged_in() ):
       echo '<p class="woocommerce-info">You must be logged in to view products.</p>';
     // If user is logged in, continue looping products
-    else: ?>
-      <?php if ( have_posts() ) : ?>
+    else:
+      echo '<div class="filter is-fullwidth">';
+        echo
+        '<div class="back">
+          <a class="link-arrow link-arrow-left" href="' . home_url() . '/brands"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to all brands</a>
+        </div>';
 
-        <!-- <?php
-          /**
-           * woocommerce_before_shop_loop hook
-           *
-           * @hooked woocommerce_result_count - 20
-           * @hooked woocommerce_catalog_ordering - 30
-           */
-          do_action( 'woocommerce_before_shop_loop' );
-        ?> -->
+        // Current brand and gender
+        $brand_terms = get_the_terms($post->id, 'product_brand');
 
-        <?php woocommerce_product_loop_start(); ?>
+        if( is_shop() ){
+          echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
+          echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
+        } else {
+          echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
+          echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
+        }
 
-          <?php woocommerce_product_subcategories(); ?>
+        // List of brands
+        echo do_shortcode('[product_brand_list]');
 
-          <?php while ( have_posts() ) : the_post(); ?>
+        // Gender filter
+        $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
 
-            <?php
-            if ( is_user_logged_in() ){
-              global $current_user;
-              $current_user_role = $current_user->roles[0];
+        echo '<ul id="select-gender" class="filter-options">';
+          echo '<li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>';
+          foreach ( $genders as $gender ) {
+            echo '<li><a class="tax-filter" title="' . $gender->slug . '" data-parent="gender">' . $gender->name . '</a></li>';
+          }
+        echo '</ul>';
 
-              // Custom user level
-              $user_level = get_field( 'user_level' );
+        // Search
+        echo
+        '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+          <input type="search" class="search" value="" name="s" title="" />
+          <button type="submit">search</button>
+        </form>';
 
-              if( $current_user_role === 'administrator' || in_array($current_user_role, $user_level) ){
-                wc_get_template_part( 'content', 'product' );
-              }
+      echo '</div>';
+
+      // Post query
+      $query = array(
+          'post_type' => 'product'
+      );
+      $loop = new WP_Query($query);
+
+      if( $loop->have_posts() ):
+        woocommerce_product_loop_start();
+          while( $loop->have_posts() ) : $loop->the_post();
+            global $current_user;
+            $current_user_role = $current_user->roles[0];
+            $user_level = get_the_terms( $product_ID, 'userlevel' );
+
+            if( $current_user_role === 'administrator' || $current_user_role === $user_level[0]->slug || $user_level[0]->slug === 'level_all' ){
+              wc_get_template_part( 'content', 'product' );
             }
-            ?>
-
-          <?php endwhile; // end of the loop. ?>
-
-        <?php woocommerce_product_loop_end(); ?>
-
-        <?php
-          /**
-           * woocommerce_after_shop_loop hook
-           *
-           * @hooked woocommerce_pagination - 10
-           */
-          do_action( 'woocommerce_after_shop_loop' );
-        ?>
-
-      <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-        <?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
-      <?php endif; ?>
-    <?php endif;
-    ?>
+          endwhile;
+        woocommerce_product_loop_end();
+      elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
+        wc_get_template( 'loop/no-products-found.php' );
+      endif;
+      wp_reset_postdata();
+    endif; ?><!-- end of user login check -->
 
 	<?php
 		/**

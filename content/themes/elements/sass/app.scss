@@ -22,12 +22,16 @@
   "layout/_header",
   "layout/_footer",
 
-  "layout/navigation/_menu.scss",
-  "layout/navigation/_nav.scss";
+  "layout/navigation/_menu",
+  "layout/navigation/_menu-triggers",
+  "layout/navigation/_arrow",
+  "layout/navigation/_back";
 
 // MODULE
 @import
   "modules/form/_button",
+  "modules/form/_input",
+  "modules/form/_search",
 
   "modules/slider/_slider",
   "modules/slider/_slider-bullets",
@@ -36,14 +40,25 @@
   "modules/content/_section",
   "modules/content/_hero",
   "modules/content/_text",
+  "modules/content/_quote",
   "modules/content/_image",
   "modules/content/_grid",
-  "modules/content/_parallax";
+  "modules/content/_parallax",
+
+  "modules/posts/_post-thumb",
+  "modules/posts/_post",
+
+  "modules/_social";
 
 // SHOP
 @import
   "shop/_product",
-  "shop/_product-thumb";
+  "shop/_thumb",
+  "shop/_brand-thumb",
+  "shop/_product-thumb",
+  "shop/_filter",
+  "shop/_account",
+  "shop/_woocommerce-message";
 
 // STATE
 @import
@@ -53,4 +68,5 @@
   "states/_typography",
   "states/_stretch",
   "states/_resizing",
-  "states/_fullwidth";
+  "states/_fullwidth",
+  "states/_menu";

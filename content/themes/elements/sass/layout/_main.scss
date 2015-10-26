@@ -3,8 +3,28 @@ main{
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  padding-top: 90px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-  background: $white;
+  background: $grey-light;
   z-index: $zIndex-main;
+}
+
+body.home{
+  main{
+    padding-top: 0;
+  }
+}
+
+body.woocommerce-account{
+  main{
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+  }
+}
+
+body.single-post{
+  main{
+    background-color: $white;
+  }
 }

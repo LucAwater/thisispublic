@@ -3,31 +3,34 @@ section{
   overflow: hidden;
   padding-top: $section-spacing;
   padding-bottom: $section-spacing;
-  background: $white;
-  
+  padding-left: $side-margin;
+  padding-right: $side-margin;
+
+  background-color: $white;
+
   .section-header,
   .section-body{
     clear: both;
   }
-  
+
   .section-header{
     margin-bottom: $section-spacing / 2;
   }
 }
 
-// First and last sections get extra padding
-main section:first-child{
-  padding-top: $section-spacing * 2;
-}
-
-main section:last-child{
-  padding-bottom: $section-spacing * 2;
-}
-
 .section-header{
   max-width: 600px;
-  
+
   h2{
     margin-bottom: $section-spacing / 4;
+  }
+}
+
+@media #{$small-only}{
+  section{
+    padding-top: $section-spacing / 2;
+    padding-bottom: $section-spacing / 2;
+    padding-left: $side-margin-small;
+    padding-right: $side-margin-small;
   }
 }

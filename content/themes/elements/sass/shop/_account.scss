@@ -1,0 +1,52 @@
+body.woocommerce-account{
+  main{
+    padding-top: 120px;
+  }
+
+  .woocommerce-message{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back{
+    max-width: 800px;
+    margin: -40px auto;
+  }
+}
+
+.account-content{
+  max-width: 800px;
+  padding: 40px;
+  margin: 40px auto 0;
+
+  background-color: $white;
+
+  p{
+    margin-bottom: 20px;
+  }
+
+  h2, h3{
+    margin-bottom: 10px;
+  }
+
+  .button{
+    margin: 0;
+  }
+}
+
+.account-content form{
+  p{
+    margin-bottom: 10px;
+  }
+
+  fieldset{
+    padding: 60px 0 40px;
+    border: none;
+  }
+}
+
+.account-login{
+  .col-1{
+    margin-bottom: 80px;
+  }
+}

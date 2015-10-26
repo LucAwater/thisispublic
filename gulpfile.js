@@ -16,11 +16,15 @@ gulp.task('minify-js', function () {
       './content/themes/elements/js/vendor/slider.js',
       './content/themes/elements/js/pageload.js',
       './content/themes/elements/js/resize.js',
+      './content/themes/elements/js/product-filter.js',
       './content/themes/elements/js/hero.js',
       './content/themes/elements/js/link-heading.js',
+      './content/themes/elements/js/menu.js',
       './content/themes/elements/js/download-button.js',
       './content/themes/elements/js/init-isotope.js',
-      './content/themes/elements/js/init-skrollr.js'
+      './content/themes/elements/js/init-skrollr.js',
+      './content/themes/elements/js/init-waypoints.js',
+      './content/themes/elements/js/init-slider.js'
     ])
     .pipe(uglify())
     .pipe(gulp.dest('./content/themes/elements/js/min'));
@@ -39,12 +43,21 @@ gulp.task('concat', function () {
       './content/themes/elements/js/min/slider.js',
       './content/themes/elements/js/min/pageload.js',
       './content/themes/elements/js/min/resize.js',
+      './content/themes/elements/js/product-filter.js',
       './content/themes/elements/js/min/hero.js',
       './content/themes/elements/js/min/link-heading.js',
+      './content/themes/elements/js/menu.js',
       './content/themes/elements/js/min/download-button.js',
       './content/themes/elements/js/min/init-isotope.js',
-      './content/themes/elements/js/min/init-skrollr.js'
+      './content/themes/elements/js/min/init-skrollr.js',
+      './content/themes/elements/js/min/init-waypoints.js',
+      './content/themes/elements/js/init-slider.js'
     ]) // path to your files
     .pipe(concat('app.js'))  // concat and name it "concat.js"
     .pipe(gulp.dest('./content/themes/elements/js'));
+});
+
+gulp.task('default', function () {
+  gulp.run('minify-js');
+  gulp.run('concat');
 });

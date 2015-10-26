@@ -1,0 +1,22 @@
+section.quote{
+  padding-top: $section-spacing * 2;
+  padding-bottom: $section-spacing * 2;
+  margin-bottom: 40px;
+
+  .section-body{
+    max-width: 800px;
+
+    text-align: center;
+
+    h2{
+      margin-bottom: 80px;
+    }
+  }
+}
+
+@media #{$small-only}{
+  section.quote{
+    padding-top: $section-spacing;
+    padding-bottom: $section-spacing;
+  }
+}

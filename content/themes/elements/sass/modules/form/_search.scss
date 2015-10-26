@@ -1,0 +1,24 @@
+.search-form{
+  width: 250px;
+  height: 35px;
+  display: inline-block;
+
+  .search{
+    width: 100%;
+    padding-left: .5em;
+    cursor: text;
+
+    background-color: transparent;
+    border-bottom: thin solid $black;
+
+    &::-webkit-input-placeholder{
+      color: $grey-dark;
+    }
+
+    &:focus{
+      &::-webkit-input-placeholder{
+        color: $grey-dark;
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 button,
-.button{
+.button,
+input[type="submit"]{
+  @extend p;
+
   width: auto;
   max-width: 250px;
   height: 40px;
@@ -8,11 +11,30 @@ button,
 
   text-align: center;
   text-decoration: none;
-  line-height: 40px;
-  background-color: $grey-light;
+  line-height: 42px;
+  border: none;
+  cursor: pointer;
+  color: $white;
+  text-transform: lowercase;
+  background-color: $black;
 
   &:hover,
   &:focus{
-    background-color: $grey;
+    // background-color: $grey;
+    text-decoration: none;
+  }
+
+  &.button-sec{
+    @include transition( .2s );
+
+    color: $black;
+    border: thin solid $black;
+    background-color: transparent;
+
+    &:hover,
+    &:focus{
+      border: thin solid $grey;
+      background-color: $grey;
+    }
   }
 }

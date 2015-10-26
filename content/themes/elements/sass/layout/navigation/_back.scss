@@ -1,0 +1,12 @@
+.back{
+  height: 80px;
+  margin-top: -40px;
+  line-height: 80px;
+}
+
+body.archive,
+body.search{
+  .back{
+    margin-top: 0;
+  }
+}

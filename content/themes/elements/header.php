@@ -25,19 +25,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts from MyFonts (30 day trial) -->
-  <script type="text/javascript">
-    (function() {
-        var path = '//easy.myfonts.net/v2/js?sid=210860(font-family=Avenir+Next+Pro+Bold)&sid=217165(font-family=Avenir+Next+Pro)&sid=217166(font-family=Avenir+Next+Pro+Medium)&sid=217815(font-family=Avenir+Next+Pro+UltraLight)&key=IBeNvfaI2F',
-            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-            trial = document.createElement('script');
-        trial.type = 'text/javascript';
-        trial.async = true;
-        trial.src = protocol + path;
-        var head = document.getElementsByTagName("head")[0];
-        head.appendChild(trial);
-    })();
-  </script>
+  <!-- Fonts from Typography.com -->
+  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/680076/784108/css/fonts.css" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
@@ -46,7 +35,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
   <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -57,10 +46,55 @@
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
 
-    <?php include( 'includes/nav.php' ); ?>
-
-    <!-- <a class="trigger trigger-menu"><i></i></a> -->
+    <a class="menu-open"><i></i></a>
   </header>
+
+  <!-- Menu -->
+  <div class="menu">
+    <div class="menu-header">
+      <a class="link-logo" href="<?php echo home_url(); ?>">
+        <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo-white.svg">
+      </a>
+
+      <a class="menu-close"><i></i></a>
+    </div>
+
+    <div class="menu-content">
+      <?php
+      $nav = array(
+        'theme_location'  => 'menu_primary',
+        'container'       => '',
+        'link_before'     => '<h3>',
+        'link_after'      => '</h3>',
+        'items_wrap'      => '<ul class="menu-nav">%3$s</ul>'
+      );
+
+      wp_nav_menu( $nav );
+      ?>
+
+      <ul class="social">
+        <?php
+        if( have_rows('company_platforms', 'option') ):
+          while( have_rows('company_platforms', 'option') ): the_row();
+            $platform_name = get_sub_field( 'company_platform', 'option' );
+            $platform_link = get_sub_field( 'company_platform_link', 'option' );
+
+            echo '<li><a href="' . $platform_link . '" target="_blank"><img src="' . get_template_directory_uri() . '/img/social/' . $platform_name . '.svg"></a></li>';
+
+          endwhile;
+        endif;
+        ?>
+      </ul>
+
+      <div class="menu-info">
+        <?php
+        $company_contact = get_field('company_contact', 'option');
+
+        echo '<p>' . $company_contact . '</p>';
+        ?>
+      </div>
+    </div>
+  </div>
 
   <?php
   // Hero section (must be placed before main)

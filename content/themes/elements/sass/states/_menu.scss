@@ -1,0 +1,14 @@
+div.menu{
+  @include transition( .2s );
+  @include transform( translateY(-100%) );
+
+  &.is-active{
+    @include transform( translateY(0) );
+  }
+}
+
+header.menu-active{
+  a.menu-open{
+    @include hide( .2s );
+  }
+}

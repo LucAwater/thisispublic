@@ -1,23 +1,47 @@
 header{
   @include flex;
   @include align-items( center );
-  @include justify-content( space-between );
+  @include justify-content( flex-start );
 
-  // left: 0;
-  // position: fixed;
-  // z-index: $zIndex-header;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: $zIndex-header;
 
   width: 100%;
-  height: 60px;
+  height: 80px;
 
-  background-color: $grey-light;
+  background-color: $white;
+}
 
-  .link-logo{
-    width: auto;
-    height: 80%;
+body.has-hero{
+  header{
+    top: auto;
+    bottom: -80px;
+    position: absolute;
 
-    img{
-      height: 100%;
+    .menu-open{
+      top: 17.5px;
+      right: 70px;
+      position: fixed;
+
+      width: 45px;
+      height: 45px;
+      padding: 10px;
+
+      background-color: $white;
+    }
+  }
+
+  header.is-fixed{
+    top: 0;
+    bottom: auto;
+    position: fixed;
+
+    .menu-open{
+      position: absolute;
+
+      background-color: transparent;
     }
   }
 }

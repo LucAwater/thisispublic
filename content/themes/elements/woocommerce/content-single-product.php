@@ -14,6 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+
+$brand = get_the_terms( get_the_ID(), 'product_brand' );
 ?>
 
 <?php
@@ -34,26 +36,39 @@ global $product;
 
   <div class="summary entry-summary">
     <?php
-    $attachment_ids = $product->get_gallery_attachment_ids();
+    $shop_link = home_url() . "/brand/" . $brand[0]->slug;
 
-    echo '<ul class="product-images">';
+    echo
+    '<div class="product-back">
+      <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to ' . $brand[0]->name . '</a>
+    </div>';
 
-      foreach( $attachment_ids as $attachment_id ) {
-        echo '<li><img src="' . wp_get_attachment_url( $attachment_id ) . '"></li>';
-      }
+    // Product images
+    echo '<div class="product-images">';
+      echo '<ul>';
+        $attachment_ids = $product->get_gallery_attachment_ids();
 
-    echo '</ul>';
+        foreach( $attachment_ids as $attachment_id ) {
+          echo '<li><img src="' . wp_get_attachment_url( $attachment_id ) . '"></li>';
+        }
+      echo '</ul>';
+    echo '</div>';
 
+    // Product info
     echo '<div class="product-info">';
-      $title = get_the_title();
-      $description = get_field('description');
+      echo '<div>';
+        $title = get_the_title();
+        $description = get_field('description');
 
-      echo '<h1>' . $title . '</h1>';
-      echo $description;
+        echo '<p>' . $brand[0]->name . '</p>';
+        echo '<h1>' . $title . '</h1>';
+        echo $description;
 
-      // Download button
-      do_action( 'woocommerce_single_product_summary' );
+        // Download button
+        do_action( 'woocommerce_single_product_summary' );
 
+        echo '<p class="is-grey">download a .zip ﬁle with all high ressolution images</p>';
+      echo '</div>';
     echo '</div>';
     ?>
 
