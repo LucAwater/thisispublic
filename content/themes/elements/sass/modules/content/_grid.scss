@@ -3,8 +3,6 @@ section.grid{
     width: 100%;
 
     li{
-      margin-bottom: 50px;
-
       > *{
         margin-bottom: 15px;
       }
@@ -22,6 +20,8 @@ section.grid-sec{
 
   ul{
     li{
+      margin-bottom: 80px;
+
       > *{
         margin-bottom: 0;
       }
