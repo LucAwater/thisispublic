@@ -2,7 +2,7 @@
 
   function activateMenu() {
     var header = $('header');
-    var main = $('main');
+    var body = $('body');
     var menu = $('div.menu');
     var menuOpen = $('a.menu-open');
     var menuClose = $('a.menu-close');
@@ -11,7 +11,7 @@
       header.addClass('menu-active');
       menu.addClass('is-active');
 
-      main.append('<div class="overlay"></div>');
+      body.append('<div class="overlay"></div>');
 
       $('.overlay').click( function() {
         header.removeClass('menu-active');
@@ -23,6 +23,8 @@
     menuClose.click( function() {
       header.removeClass('menu-active');
       menu.removeClass('is-active');
+
+      $('.overlay').remove();
     });
   };
 
