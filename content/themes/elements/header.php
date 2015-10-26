@@ -60,12 +60,17 @@
     </div>
 
     <div class="menu-content">
-      <ul class="menu-nav">
-        <li><a href=""><h3>PUBLIC Imagebank</h3></a></li>
-        <li><a href=""><h3>News / Cases</h3></a></li>
-        <li><a href=""><h3>About PUBLIC</h3></a></li>
-        <li><a href=""><h3>Contact</h3></a></li>
-      </ul>
+      <?php
+      $nav = array(
+        'theme_location'  => 'menu_primary',
+        'container'       => '',
+        'link_before'     => '<h3>',
+        'link_after'      => '</h3>',
+        'items_wrap'      => '<ul class="menu-nav">%3$s</ul>'
+      );
+
+      wp_nav_menu( $nav );
+      ?>
 
       <ul class="social">
         <?php
