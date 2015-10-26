@@ -5,7 +5,7 @@ $h_text = get_sub_field( 'maps_h_text' );
 $b_location = get_sub_field('maps_b_location');
 
 // Output
-echo '<section id="contact" class="maps">';
+echo '<section id="contact" class="maps has-no-pad-bottom">';
 
   // Grid header
   if( $h_title || $h_text ):
