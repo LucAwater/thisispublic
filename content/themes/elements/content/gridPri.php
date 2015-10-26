@@ -18,7 +18,7 @@ echo '<section class="grid grid-pri' . (( $o_menu == true ) ? ' has-anchor" id="
   if( $h_title || $h_text ):
     echo
     '<div class="section-header row is-pos-' . $o_h_pos . '">
-      <h2 class="s-4 columns is-aligned-' . $o_h_align . '">' . $h_title . '</h2>
+      <h2 class="is-aligned-' . $o_h_align . '">' . $h_title . '</h2>
       ' . $h_text . '
     </div>';
   endif;
@@ -28,9 +28,9 @@ echo '<section class="grid grid-pri' . (( $o_menu == true ) ? ' has-anchor" id="
     echo '<div class="section-body row">';
 
     if( $o_b_layout == 'masonry' ){
-      echo '<ul class="s-grid-1 m-grid-2 l-grid-4 row isotope isotope-masonry">';
+      echo '<ul class="s-grid-2 m-grid-4 l-grid-6 row isotope isotope-masonry">';
     } else {
-      echo '<ul class="s-grid-1 m-grid-2 l-grid-4 row">';
+      echo '<ul class="s-grid-2 m-grid-4 l-grid-6 row">';
     }
         foreach( $b_images as $image ):
           echo '<li><img src="' . $image['sizes']['large'] . '" width="' . $image['width'] . '" height="' . $image['height'] . '"></li>';

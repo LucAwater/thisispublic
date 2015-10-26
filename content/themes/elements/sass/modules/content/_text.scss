@@ -1,14 +1,22 @@
 section.text{
   text-align: center;
-  
+
   .section-body{
     max-width: 600px;
     margin: auto;
-    
+
     h2,
     p,
     a{
       margin-bottom: 1em;
+    }
+
+    div.is-aligned-left{
+      text-align: left;
+    }
+
+    div.is-aligned-center{
+      text-align: center;
     }
   }
 }

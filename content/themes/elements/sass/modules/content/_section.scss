@@ -16,6 +16,12 @@ section{
   .section-header{
     margin-bottom: $section-spacing / 2;
   }
+
+  .section-body{
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+  }
 }
 
 .section-header{

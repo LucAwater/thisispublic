@@ -2,7 +2,7 @@
 function enqueue_theme_scripts() {
   // Unregister standard jQuery and reregister as google code.
   wp_deregister_script('jquery');
-  wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', null, false, true );
+  wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', true, true );
 	wp_enqueue_script( 'jquery' );
 
 	if( WP_DEBUG ):

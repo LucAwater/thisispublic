@@ -31,11 +31,19 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
 
+  <!-- Google Maps dependency -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+global $post;
+$body_class = 'page-' . $post->post_name;
+?>
+
+<body <?php body_class($body_class); ?>>
   <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -86,7 +94,7 @@
         ?>
       </ul>
 
-      <div class="menu-info">
+      <div class="company-contact">
         <?php
         $company_contact = get_field('company_contact', 'option');
 
