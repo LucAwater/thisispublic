@@ -13,6 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) {
   exit; // Exit if accessed directly
 }
 
+// Check if user is logged in
+if( ! is_user_logged_in() ):
+  echo '<p class="woocommerce-error">You must be logged in to view products. Click <a href="' . home_url() . '/account">here</a> to login or register</p>';
+// If user is logged in, continue looping products
+else:
+
 global $product;
 
 $brand = get_the_terms( get_the_ID(), 'product_brand' );
@@ -89,4 +95,7 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
 
 </div><!-- #product-<?php the_ID(); ?> -->
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php do_action( 'woocommerce_after_single_product' );
+
+endif;
+?>

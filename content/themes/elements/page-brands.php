@@ -38,7 +38,7 @@ get_header( 'shop' ); ?>
     <?php
     // Check if user is logged in
     if( ! is_user_logged_in() ):
-      echo '<p class="woocommerce-info">You must be logged in to view products.</p>';
+      echo '<p class="woocommerce-error">You must be logged in to view products. Click <a href="' . home_url() . '/account">here</a> to login or register</p>';
     // If user is logged in, continue looping products
     else:
       echo do_shortcode('[product_brand_list]');
