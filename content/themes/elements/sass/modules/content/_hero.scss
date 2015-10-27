@@ -6,8 +6,17 @@ section.hero{
 
   .hero-banner{
     position: fixed;
-    
+
     width: 100%;
+
+    div{
+      width: 100%;
+      height: 100%;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
 
   .section-body{
