@@ -25,7 +25,7 @@ echo '<section class="grid grid-pri' . (( $o_menu == true ) ? ' has-anchor" id="
 
   // Grid content
   if( $b_images ):
-    echo '<div class="section-body row">';
+    echo '<div class="section-body">';
 
     if( $o_b_layout == 'masonry' ){
       echo '<ul class="s-grid-2 m-grid-4 l-grid-6 row isotope isotope-masonry">';

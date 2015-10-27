@@ -74,3 +74,10 @@ section.grid ul.isotope-masonry{
     }
   }
 }
+
+@media #{$small-only}{
+  section.grid .s-grid-1 li{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
