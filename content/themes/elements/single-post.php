@@ -25,7 +25,7 @@ echo '<div class="single-post">';
     endwhile;
   endif;
 
-  echo '<article>' . $content . '</article>';
+  echo '<article>' . wpautop($content) . '</article>';
 echo '</div>';
 
 get_footer();

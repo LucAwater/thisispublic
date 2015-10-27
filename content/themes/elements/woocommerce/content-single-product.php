@@ -62,7 +62,7 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
 
         echo '<p>' . $brand[0]->name . '</p>';
         echo '<h1>' . $title . '</h1>';
-        echo $description;
+        echo wpautop($description);
 
         // Download button
         do_action( 'woocommerce_single_product_summary' );
