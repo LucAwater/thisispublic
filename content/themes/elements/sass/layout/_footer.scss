@@ -18,6 +18,10 @@ footer .footer-content{
   color: $white;
   text-align: center;
 
+  a, p{
+    color: $white;
+  }
+
   .company-contact{
     p{
       margin-bottom: 1em;
