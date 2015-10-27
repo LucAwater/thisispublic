@@ -1,0 +1,1 @@
+!function($){function e(){i.get(0).paused?(i.get(0).play(),t.addClass("is-active")):(i.get(0).pause(),t.removeClass("is-active"))}var i=$("video"),t=$(".video-button");i.click(function(){e()}),t.click(function(){e()})}(jQuery);

@@ -84,7 +84,7 @@ define( 'WP_DEBUG_DISPLAY', false );
 // Increase memory
 // ===============
 
-define( 'WP_MEMORY_LIMIT', '128M' );
+define( 'WP_MEMORY_LIMIT', '256M' );
 
 // ===================
 // Bootstrap WordPress
