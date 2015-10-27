@@ -1,6 +1,6 @@
 <?php
 $choices = get_sub_field( 'video_options' );
-echo '<section class="video">';
+echo '<section class="video has-no-pad">';
 
     if( $choices === 'embed' ){
       // get iframe HTML
