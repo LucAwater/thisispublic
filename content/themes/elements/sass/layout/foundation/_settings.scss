@@ -37,11 +37,10 @@ $section-spacing: rem-calc(80);
 //
 // Media Query Ranges
 //
-
 $small-range: (0em, 31.250em);//0 - 500
-$medium-range: (31.313em, 62.5em);//501 - 1000
-$large-range: (62.563em, 87.438em);//1001 - 1399
-$xlarge-range: (87.500em, 119.938em);//1400 - 1919
+$medium-range: (31.313em, 47.938em);//501 - 767
+$large-range: (48em, 79.938em);//768 - 1279
+$xlarge-range: (80em, 119.938em);//1280 - 1919
 $xxlarge-range: (120em);//1920 - beyond
 
 $screen: "only screen";

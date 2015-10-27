@@ -15,8 +15,8 @@ echo '<section class="hero has-no-pad">';
   // Hero background image
   if( $banner ):
     echo
-    '<div class="hero-banner is-stretched-wrapper">
-      <img class="is-stretched-object" src="' . $banner['sizes']['large'] . '" width="' . $banner['width'] . '" height="' . $banner['height'] . '">
+    '<div class="hero-banner">
+      <div style="background-image:url(' . $banner['sizes']['large'] . ');"></div>
     </div>';
   endif;
 

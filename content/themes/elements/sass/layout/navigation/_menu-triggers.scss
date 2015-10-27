@@ -62,7 +62,8 @@ a.menu-close i{
 }
 
 @media #{$small-only}{
-  a.menu-open{
+  a.menu-open,
+  a.menu-close{
     right: $side-margin-small;
   }
 }

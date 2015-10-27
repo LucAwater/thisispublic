@@ -1,0 +1,49 @@
+#mc_embed_signup{
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  display: inline-block;
+  margin-bottom: 40px;
+
+  input[type="email"]{
+    width: 70%;
+    float: left;
+    margin-bottom: 0;
+  }
+
+  input[type="submit"]{
+    @include chronicle;
+
+    width: 30%;
+    padding: 0;
+
+    text-transform: capitalize;
+    background-color: $grey-dark;
+  }
+}
+
+#mc_embed_signup{
+  div.mce_inline_error{
+    @extend p;
+
+    width: 100%;
+    margin-top: 1em !important;
+    display: inline-block;
+
+    text-align: center;
+    background-color: $red !important;
+  }
+
+  #mce-responses{
+    width: 100%;
+    max-width: rem-calc(350);
+    margin: auto;
+    margin-top: 1em;
+
+    .response{
+      @extend p;
+
+      text-align: center;
+    }
+  }
+}

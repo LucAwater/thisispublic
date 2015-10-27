@@ -13,8 +13,18 @@ footer{
 
 footer .footer-content{
   width: 100%;
-  padding: 40px;
+  padding: 40px 0;
 
   color: $white;
   text-align: center;
+
+  a, p{
+    color: $white;
+  }
+
+  .company-contact{
+    p{
+      margin-bottom: 1em;
+    }
+  }
 }

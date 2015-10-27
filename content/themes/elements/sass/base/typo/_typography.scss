@@ -8,7 +8,7 @@
 h1{
   @extend %base;
 
-  font-size: 1.563em; //25px
+  font-size: 1.313em; //21px
 }
 
 h2{
@@ -20,18 +20,16 @@ h2{
 
 h3{
   @extend h1;
-
-  font-size: 1.313em; //21px
 }
 
 p{
   @extend %base;
 
-  font-size: 0.938em; //15px
+  font-size: 0.875em; //14px
   line-height: 1.5;
 
   a{
-    font-size: 0.938em; //15px
+    font-size: 1em; //14px
     text-decoration: underline;
   }
 }
@@ -43,7 +41,7 @@ article{
   }
 
   p{
-    font-size: 1.188em; //19px
+    font-size: 1em; //16px
   }
 
   a{
@@ -71,4 +69,16 @@ a{
 span,
 label{
   @extend p;
+}
+
+@media #{$medium-down}{
+  h1, h3{
+    font-size: 1.188em; //19px
+  }
+}
+
+@media #{$small-only}{
+  h2{
+    font-size: 1.563em; //25px
+  }
 }

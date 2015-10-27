@@ -3,12 +3,10 @@
   if ($('.hero').length > 0) {
     $('body').addClass('has-hero');
 
-    var waypoint = new Waypoint({
-      element: $('header'),
-      handler: function() {
-        $('header').toggleClass("is-fixed");
-      }
-    });
+    var sticky = new Waypoint.Sticky({
+      element: $('header')[0],
+      stuckClass: 'is-fixed'
+    })
   }
 
 }( jQuery ));

@@ -1,1 +1,1 @@
-!function(e){if(e(".hero").length>0){e("body").addClass("has-hero");new Waypoint({element:e("header"),handler:function(){e("header").toggleClass("is-fixed")}})}}(jQuery);
+!function(e){if(e(".hero").length>0){e("body").addClass("has-hero");new Waypoint.Sticky({element:e("header")[0],stuckClass:"is-fixed"})}}(jQuery);

@@ -6,17 +6,30 @@
 
     text-align: center;
 
+    img{
+      width: 100%;
+    }
+
     div{
-      padding: 20px;
+      padding: 20px 40px;
 
       background-color: $white;
+
+      p{
+        @include chronicle;
+      }
 
       p, h2{
         margin-bottom: 20px;
       }
 
       .button{
+        max-width: 200px;
         margin: 20px auto;
+
+        font-weight: bold;
+        line-height: 38px;
+        text-transform: capitalize;
       }
     }
   }
@@ -28,5 +41,11 @@
 
   div{
     font-size: 16px;
+  }
+}
+
+@media #{$small-only}{
+  .posts li{
+    padding: 0 20px;
   }
 }

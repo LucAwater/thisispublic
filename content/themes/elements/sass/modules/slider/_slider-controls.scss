@@ -41,3 +41,9 @@
     }
   }
 }
+
+@media #{$medium-down}{
+  .slider-controls{
+    display: none;
+  }
+}

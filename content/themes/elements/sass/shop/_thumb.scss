@@ -81,3 +81,10 @@
     }
   }
 }
+
+@media #{$small-only}{
+  .products .product,
+  .brands .brand{
+    padding: 0 20px;
+  }
+}

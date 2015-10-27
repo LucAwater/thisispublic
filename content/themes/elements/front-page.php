@@ -22,7 +22,7 @@ $args = array(
 
 query_posts( $args );
 
-echo '<ul class="posts s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">';
+echo '<ul class="posts s-grid-1 l-grid-2 xl-grid-3 isotope isotope-masonry">';
 
 // The Loop
 while ( have_posts() ) : the_post();
