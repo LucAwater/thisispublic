@@ -14,7 +14,7 @@
 
   <!-- META TAGS -->
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
-  <meta name="description" content="">
+  <meta name="description" content="In a society where digital and physical worlds interlace and valuable relationships arise everyday, everywhere. You need Public_">
 
   <meta property="og:title" content="">
   <meta property="og:site_name" content="">
