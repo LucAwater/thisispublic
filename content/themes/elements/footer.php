@@ -3,7 +3,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <p class="margin-b20">Sign up to receive PUBLIC communications</p>
+      <p class="margin-b20">Sign up to our newsletter</p>
       <!-- Mailchimp signup form -->
       <div id="mc_embed_signup">
         <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
