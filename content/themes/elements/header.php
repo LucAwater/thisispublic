@@ -40,7 +40,13 @@
 
 <?php
 global $post;
-$body_class = 'page-' . $post->post_name;
+
+$detect = new Mobile_Detect;
+if( $detect->isMobile() || $detect->isTablet() ){
+  $body_class = 'is-touch page-' . $post->post_name;
+} else {
+  $body_class = 'page-' . $post->post_name;
+}
 ?>
 
 <body <?php body_class($body_class); ?>>

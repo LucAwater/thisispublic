@@ -42,7 +42,7 @@ section.hero{
 }
 
 // Remove fixed positioning on mobile devices
-body.is-mobile{
+body.is-touch{
   section.hero .hero-banner{
     position: relative;
   }
