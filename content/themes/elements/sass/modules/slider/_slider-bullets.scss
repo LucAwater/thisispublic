@@ -31,3 +31,9 @@
     }
   }
 }
+
+@media #{$medium-down}{
+  .slider-bullets{
+    bottom: .5em;
+  }
+}

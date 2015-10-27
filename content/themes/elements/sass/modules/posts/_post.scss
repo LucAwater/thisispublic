@@ -1,8 +1,6 @@
 div.single-post{
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-top: 40px;
+  padding: 40px;
 
   .post-header,
   article{
@@ -28,5 +26,11 @@ div.single-post{
 
   section.slider{
     padding-top: 0;
+  }
+}
+
+@media #{$small-only}{
+  div.single-post{
+    padding: 40px 20px;
   }
 }
