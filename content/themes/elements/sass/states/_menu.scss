@@ -12,3 +12,7 @@ header.menu-active{
     @include hide( .2s );
   }
 }
+
+body.menu-active{
+  overflow: hidden;
+}

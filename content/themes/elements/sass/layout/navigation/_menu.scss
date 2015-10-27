@@ -3,8 +3,10 @@ div.menu{
   left: 0;
   position: fixed;
   z-index: $zIndex-menu;
+  overflow-y: scroll;
 
   width: 100%;
+  height: 100%;
 
   background-color: rgba(0,0,0,.9);
 
