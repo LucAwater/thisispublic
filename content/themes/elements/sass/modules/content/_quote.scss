@@ -13,7 +13,7 @@ section.quote{
   }
 }
 
-@media #{$small-only}{
+@media #{$medium-down}{
   section.quote{
     padding-top: $section-spacing;
     padding-bottom: $section-spacing;
