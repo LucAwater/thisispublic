@@ -60,3 +60,15 @@ div.company-contact{
     height: 100%;
   }
 }
+
+@media #{$small-only}{
+  div.menu{
+    .menu-header{
+      padding: 0 40px;
+    }
+
+    .menu-content{
+      padding: 20px 40px;
+    }
+  }
+}
