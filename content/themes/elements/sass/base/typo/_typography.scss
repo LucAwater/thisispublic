@@ -72,3 +72,15 @@ span,
 label{
   @extend p;
 }
+
+@media #{$medium-down}{
+  h1, h3{
+    font-size: 1.188em; //19px
+  }
+}
+
+@media #{$small-only}{
+  h2{
+    font-size: 1.563em; //25px
+  }
+}
