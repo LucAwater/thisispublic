@@ -8,7 +8,7 @@
 h1{
   @extend %base;
 
-  font-size: 1.313em; //25px
+  font-size: 1.313em; //21px
 }
 
 h2{
@@ -25,11 +25,11 @@ h3{
 p{
   @extend %base;
 
-  font-size: 0.875em; //15px
+  font-size: 0.875em; //14px
   line-height: 1.5;
 
   a{
-    font-size: 0.875em; //15px
+    font-size: 0.875em; //14px
     text-decoration: underline;
   }
 }
@@ -41,7 +41,7 @@ article{
   }
 
   p{
-    font-size: 1em; //19px
+    font-size: 1em; //16px
   }
 
   a{

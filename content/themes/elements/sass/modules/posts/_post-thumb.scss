@@ -15,12 +15,21 @@
 
       background-color: $white;
 
+      p{
+        @include chronicle;
+      }
+
       p, h2{
         margin-bottom: 20px;
       }
 
       .button{
+        max-width: 200px;
         margin: 20px auto;
+
+        font-weight: bold;
+        line-height: 38px;
+        text-transform: capitalize;
       }
     }
   }
