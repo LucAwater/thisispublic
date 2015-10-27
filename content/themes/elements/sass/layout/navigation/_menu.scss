@@ -41,6 +41,10 @@ div.menu .menu-content{
 
         color: $white;
       }
+
+      a:hover{
+        text-decoration: underline;
+      }
     }
   }
 }
