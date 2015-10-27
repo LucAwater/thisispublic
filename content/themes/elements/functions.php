@@ -19,7 +19,6 @@ require_once('includes/account-autologin.php');
 require_once('includes/account-approved.php');
 require_once('includes/cart-update.php');
 require_once('includes/download-button.php');
-require_once('includes/translate-months.php');
 require_once('woocommerce/woo-functions.php');
 
 // Add support for woocommerce
