@@ -18,6 +18,8 @@ echo '<div class="single-post">';
 
       if( get_row_layout() === 'slider' ):
         include( locate_template('content/slider.php') );
+      elseif( get_row_layout() === 'video' ):
+        include( locate_template('content/video.php') );
       endif;
 
     endwhile;
