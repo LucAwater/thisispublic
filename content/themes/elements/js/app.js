@@ -211,12 +211,14 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
     var menuClose = $('a.menu-close');
 
     menuOpen.click( function() {
+      body.addClass('menu-active');
       header.addClass('menu-active');
       menu.addClass('is-active');
 
       body.append('<div class="overlay"></div>');
 
       $('.overlay').click( function() {
+        body.removeClass('menu-active');
         header.removeClass('menu-active');
         menu.removeClass('is-active');
         $(this).remove();
@@ -224,6 +226,7 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
     });
 
     menuClose.click( function() {
+      body.removeClass('menu-active');
       header.removeClass('menu-active');
       menu.removeClass('is-active');
 
@@ -235,6 +238,7 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 
 }( jQuery ));
 !function(n){function i(){var i=n("a.product_type_simple");i.click(function(){n(this).html("Download again!")})}i()}(jQuery);
+!function(e){function i(){t.get(0).paused?(t.get(0).play(),c.addClass("is-active")):(t.get(0).pause(),c.removeClass("is-active"))}var t=e("video"),c=e(".video-button");t.click(function(){i()}),c.click(function(){i()})}(jQuery);
 !function(o){if(o(".isotope").length>0){var e=o(".isotope-masonry");o("main").imagesLoaded(function(){e.isotope({layoutMode:"masonry"})})}}(jQuery);
 !function(n){if(n(".parallax").length>0){skrollr.init({render:function(n){}})}}(jQuery);
 !function(e){if(e(".hero").length>0){e("body").addClass("has-hero");new Waypoint.Sticky({element:e("header")[0],stuckClass:"is-fixed"})}}(jQuery);
