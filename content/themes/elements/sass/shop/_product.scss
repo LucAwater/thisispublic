@@ -59,3 +59,33 @@
     }
   }
 }
+
+@media screen and (max-width: 1000px){
+  .summary{
+    @include flex;
+    @include flex-direction( column-reverse );
+
+    .product-images,
+    .product-info{
+      width: 100%;
+      padding: 0 40px;
+    }
+
+    .product-info{
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media #{$small-only}{
+  .product{
+    .product-back{
+      padding: 0 20px;
+    }
+
+    .product-images,
+    .product-info{
+      padding: 0 20px;
+    }
+  }
+}

@@ -40,14 +40,13 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+  <div class="product-back">
+    <a class="link-arrow link-arrow-left" href="<?php echo $shop_link; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">back to <?php echo $brand[0]->name; ?></a>
+  </div>
+
   <div class="summary entry-summary">
     <?php
     $shop_link = home_url() . "/brand/" . $brand[0]->slug;
-
-    echo
-    '<div class="product-back">
-      <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to ' . $brand[0]->name . '</a>
-    </div>';
 
     // Product images
     echo '<div class="product-images">';
