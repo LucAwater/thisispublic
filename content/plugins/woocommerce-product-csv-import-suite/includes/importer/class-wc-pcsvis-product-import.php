@@ -817,7 +817,7 @@ class WC_PCSVIS_Product_Import extends WP_Importer {
 			if ( ! empty( $post['post_status'] ) ) {
 				$postdata['post_status'] = $post['post_status'];
 			}
-			if ( ! empty( $post['menu_order'] ) ) {
+			if ( isset( $post['menu_order'] ) ) {
 				$postdata['menu_order'] = $post['menu_order'];
 			}
 			if ( ! empty( $post['comment_status'] ) ) {

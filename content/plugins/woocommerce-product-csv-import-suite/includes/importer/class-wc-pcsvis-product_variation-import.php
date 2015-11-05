@@ -90,6 +90,18 @@ class WC_PCSVIS_Product_Variation_Import extends WC_PCSVIS_Product_Import {
 
 		} else {
 
+			$processing_product_sku   = '';
+			if ( ! empty( $post['sku'] ) ) {
+				$processing_product_sku = $post['sku'];
+			}
+
+			if ( $this->variation_exists( $post_parent, $processing_product_id, $processing_product_sku ) ) {
+				$this->add_import_result( 'skipped', __( 'Variation already exists', 'woocommerce-product-csv-import-suite' ), $processing_product_id, get_the_title( $post['post_parent'] ), $processing_product_sku );
+				WC_Product_CSV_Import_Suite::log( sprintf( __( '> &#8220;%s&#8221; already exists.', 'woocommerce-product-csv-import-suite' ), esc_html( $post['post_title'] ) ), true );
+				unset( $post );
+				return;
+			}
+
 			// Insert product
 			WC_Product_CSV_Import_Suite::log( __('> Inserting variation.', 'woocommerce-product-csv-import-suite') );
 
@@ -236,6 +248,41 @@ class WC_PCSVIS_Product_Variation_Import extends WC_PCSVIS_Product_Import {
 		clean_post_cache( $post_id );
 
 		unset( $post );
+	}
+
+	/**
+	 * Checks to see if a variation exists for a specific parent based on ID or SKU
+	 * @param  int $parent_id   The ID of the parent product
+	 * @param  int $id          The ID for the variation
+	 * @param  string $sku      The SKU for the variation
+	 * @return bool             True if the variation exists, false if not
+	 */
+	public function variation_exists( $parent_id, $id, $sku = '' ) {
+		global $wpdb;
+
+		// SKU Check
+		if ( $sku ) {
+			$post_exists_sku = $wpdb->get_var( $wpdb->prepare( "
+				SELECT $wpdb->posts.ID
+				FROM $wpdb->posts
+				LEFT JOIN $wpdb->postmeta ON ( $wpdb->posts.ID = $wpdb->postmeta.post_id )
+				WHERE $wpdb->posts.post_status IN ( 'publish', 'private', 'draft', 'pending', 'future' )
+				AND $wpdb->postmeta.meta_key = '_sku' AND $wpdb->postmeta.meta_value = '%s'
+			", $sku ) );
+
+			if ( $post_exists_sku ) {
+				return true;
+			}
+		}
+
+		// ID check
+		$query = $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_type = 'product_variation' AND post_parent = %d AND ID = %d AND post_status IN ( 'publish', 'private', 'draft', 'pending', 'future' )", $parent_id, $id );
+		$posts_that_exist = $wpdb->get_col( $query );
+		if ( $posts_that_exist ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**

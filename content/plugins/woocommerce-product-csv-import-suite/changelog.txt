@@ -1,5 +1,9 @@
 *** Product CSV Import Suite Changelog ***
 
+2015.11.04 - version 1.10.5
+* Fix - menu_order will now update correctly if you merge in products with a menu_order of 0.
+* Fix - The variation importer now catches duplicate SKUs/IDs when importing (just like the product importer).
+
 2015.10.07 - version 1.10.4
 * Tweak - Improved process.
 * Tweak - Import 20 per run.
