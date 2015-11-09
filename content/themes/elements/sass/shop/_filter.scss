@@ -27,7 +27,7 @@
 
     button{
       @include avenir;
-      
+
       float: left;
       padding: 0 15px;
 
@@ -38,6 +38,10 @@
       &:focus{
         background-color: transparent;
       }
+    }
+
+    .search-trigger{
+      display: none;
     }
   }
 }
@@ -88,4 +92,77 @@
 
   width: 100%;
   height: 100%;
+}
+
+@media #{$medium-down}{
+  .filter{
+    // Remove some elements
+    .back,
+    a[title="gender-current"]{
+      display: none;
+    }
+
+    // Brand
+    a[title="brand-current"]{
+      margin-left: -40px;
+    }
+
+    // Search field
+    .search-form{
+      input[type="search"]{
+        display: none;
+      }
+
+      button{
+        display: none;
+        margin-right: -15px;
+      }
+
+      .search-trigger{
+        height: 40px;
+        display: block;
+
+        line-height: 42px;
+      }
+    }
+
+    .search-form.is-active{
+      top: 0;
+      left: 0;
+      position: absolute;
+
+      width: 100%;
+      padding: 0 80px;
+
+      background-color: $grey;
+
+      input[type="search"]{
+        width: 100%;
+        display: block;
+      }
+
+      button{
+        display: block;
+      }
+
+      .search-trigger{
+        display: none;
+      }
+    }
+  }
+}
+
+@media #{$small-only}{
+  .filter{
+    padding: 0 40px;
+
+    a[title="brand-current"]{
+      padding: 0 20px;
+      margin-left: -20px;
+    }
+
+    .search-form.is-active{
+      padding: 0 40px;
+    }
+  }
 }
