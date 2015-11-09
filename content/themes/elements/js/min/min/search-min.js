@@ -1,0 +1,1 @@
+!function(r){function e(){trigger=r(".search-trigger"),searchForm=r("form.search-form"),trigger.click(function(){searchForm.addClass("is-active"),r(".overlay").length<1&&r("main").append('<div class="overlay"></div>'),r(".overlay").click(function(){searchForm.removeClass("is-active"),r(this).remove()})})}e()}(jQuery);
