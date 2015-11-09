@@ -136,7 +136,9 @@
     $('.filter-current').removeClass('is-active');
     $('.filter-options').removeClass('is-active');
 
-    $('main').append('<div class="overlay"></div>');
+    if( $('.overlay').length < 1 ) {
+      $('main').append('<div class="overlay"></div>');
+    }
 
     var target = $(this).attr('data-target');
     var targetOptions = $('#select-' + target);

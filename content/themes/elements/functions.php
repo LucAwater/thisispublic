@@ -14,6 +14,7 @@ require_once('includes/admin/custom-roles.php');
 require_once('includes/admin/free-products.php');
 require_once('includes/admin/tax-gender.php');
 require_once('includes/admin/tax-userlevel.php');
+require_once('includes/admin/tax-season.php');
 
 require_once('includes/account-autologin.php');
 require_once('includes/account-approved.php');

@@ -32,6 +32,7 @@
     '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
       <input type="search" class="search" value="" name="s" title="" />
       <button type="submit">search</button>
+      <p class="search-trigger">search</p>
     </form>';
 
   echo '</div>';
