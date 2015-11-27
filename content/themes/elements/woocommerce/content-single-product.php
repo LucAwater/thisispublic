@@ -68,7 +68,7 @@ else:
         echo '<div class="product-info">';
           echo '<div>';
             $title = get_the_title();
-            $description = get_field('description');
+            $description = get_the_content();
 
             echo '<p>' . $brand[0]->name . '</p>';
             echo '<h1>' . $title . '</h1>';
