@@ -74,7 +74,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
     			do_action( 'woocommerce_after_shop_loop_item_title' );
 
           $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-          echo '<img src="' . $thumbnail[0] . '">';
+          echo '<img class="lazy" data-original="' . $thumbnail[0] . '">';
 
 
         echo '</div>';

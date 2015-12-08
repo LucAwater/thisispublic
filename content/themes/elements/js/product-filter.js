@@ -1,5 +1,10 @@
 (function($) {
 
+  $('img.lazy').lazyload({
+    threshold: 10,
+    effect: "fadeIn"
+  });
+
   function productFilter(){
     var brandCurrent = $('#select-brand li.current a');
     var genderCurrent = $('#select-gender li.current a');
@@ -42,6 +47,12 @@
         }
       }
     };
+
+    // Re-initialize lazyload
+    $('.product:not(hidden)').lazyload({
+      threshold: 10,
+      effect: "fadeIn"
+    });
 
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
@@ -119,6 +130,12 @@
       }
     };
 
+    // Re-initialize lazyload
+    $('.product:not(hidden)').lazyload({
+      threshold: 10,
+      effect: "fadeIn"
+    });
+
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
 
@@ -159,11 +176,9 @@
     $('.overlay').remove();
   });
 
-
-
+  // Giving filter-current updated data
   var filterOption = $('ul.filter-options li a');
 
-  // Giving filter-current updated data
   filterOption.click( function() {
     var optionVal = $(this).attr('title');
     var optionParentVal = $(this).attr('data-parent');
