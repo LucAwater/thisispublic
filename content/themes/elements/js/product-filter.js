@@ -1,7 +1,8 @@
 (function($) {
 
   $('img.lazy').lazyload({
-    threshold: -200
+    threshold: 10,
+    effect: "fadeIn"
   });
 
   function productFilter(){
@@ -49,7 +50,8 @@
 
     // Re-initialize lazyload
     $('.product:not(hidden)').lazyload({
-      threshold: -200
+      threshold: 10,
+      effect: "fadeIn"
     });
 
     // Recalculate isotope
@@ -130,7 +132,8 @@
 
     // Re-initialize lazyload
     $('.product:not(hidden)').lazyload({
-      threshold: -200
+      threshold: 10,
+      effect: "fadeIn"
     });
 
     // Recalculate isotope
