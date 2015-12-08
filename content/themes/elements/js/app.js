@@ -12,6 +12,10 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 !function(n){}(jQuery);
 (function($) {
 
+  $('img.lazy').lazyload({
+    threshold: -200
+  });
+
   function productFilter(){
     var brandCurrent = $('#select-brand li.current a');
     var genderCurrent = $('#select-gender li.current a');
@@ -54,6 +58,9 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
         }
       }
     };
+
+    // Re-initialize lazyload
+    $('.product:not(hidden)').lazyload();
 
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
@@ -131,6 +138,9 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
       }
     };
 
+    // Re-initialize lazyload
+    $('.product:not(hidden)').lazyload();
+
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
 
@@ -171,11 +181,9 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
     $('.overlay').remove();
   });
 
-
-
+  // Giving filter-current updated data
   var filterOption = $('ul.filter-options li a');
 
-  // Giving filter-current updated data
   filterOption.click( function() {
     var optionVal = $(this).attr('title');
     var optionParentVal = $(this).attr('data-parent');
