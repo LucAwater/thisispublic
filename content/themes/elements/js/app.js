@@ -13,7 +13,8 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 (function($) {
 
   $('img.lazy').lazyload({
-    threshold: -200
+    threshold: 10,
+    effect: "fadeIn"
   });
 
   function productFilter(){
@@ -60,7 +61,10 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
     };
 
     // Re-initialize lazyload
-    $('.product:not(hidden)').lazyload();
+    $('.product:not(hidden)').lazyload({
+      threshold: 10,
+      effect: "fadeIn"
+    });
 
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
@@ -139,7 +143,10 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
     };
 
     // Re-initialize lazyload
-    $('.product:not(hidden)').lazyload();
+    $('.product:not(hidden)').lazyload({
+      threshold: 10,
+      effect: "fadeIn"
+    });
 
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
