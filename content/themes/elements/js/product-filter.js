@@ -48,7 +48,9 @@
     };
 
     // Re-initialize lazyload
-    $('.product:not(hidden)').lazyload();
+    $('.product:not(hidden)').lazyload({
+      threshold: -200
+    });
 
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
@@ -127,7 +129,9 @@
     };
 
     // Re-initialize lazyload
-    $('.product:not(hidden)').lazyload();
+    $('.product:not(hidden)').lazyload({
+      threshold: -200
+    });
 
     // Recalculate isotope
     var masonry = $('.isotope-masonry');
