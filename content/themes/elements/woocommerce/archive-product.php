@@ -81,15 +81,15 @@ get_header( 'shop' ); ?>
 
       echo '</div>';
 
-      // Post query
+      // // Post query
       $query = array(
-          'post_type' => 'product'
+          'post_type' => 'product',
       );
-      $loop = new WP_Query($query);
+      $wp_query = new WP_Query($query);
 
-      if( $loop->have_posts() ):
+      if( $wp_query->have_posts() ):
         woocommerce_product_loop_start();
-          while( $loop->have_posts() ) : $loop->the_post();
+          while( $wp_query->have_posts() ) : $wp_query->the_post();
             global $current_user;
             $current_user_role = $current_user->roles[0];
             $user_level = get_the_terms( $product_ID, 'userlevel' );
@@ -103,7 +103,10 @@ get_header( 'shop' ); ?>
         wc_get_template( 'loop/no-products-found.php' );
       endif;
       wp_reset_postdata();
-    endif; ?><!-- end of user login check -->
+
+      echo do_shortcode('[AjaxWPQSF id=2610]');
+      ?>
+    <?php endif; ?><!-- end of user login check -->
 
 	<?php
 		/**
