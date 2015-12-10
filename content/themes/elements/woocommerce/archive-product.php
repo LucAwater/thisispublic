@@ -81,9 +81,10 @@ get_header( 'shop' ); ?>
 
       echo '</div>';
 
-      // // Post query
+      // Post query
       $query = array(
           'post_type' => 'product',
+          'posts_per_page' => 9
       );
       $wp_query = new WP_Query($query);
 
@@ -103,8 +104,6 @@ get_header( 'shop' ); ?>
         wc_get_template( 'loop/no-products-found.php' );
       endif;
       wp_reset_postdata();
-
-      echo do_shortcode('[AjaxWPQSF id=2610]');
       ?>
     <?php endif; ?><!-- end of user login check -->
 

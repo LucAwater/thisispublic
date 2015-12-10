@@ -1,84 +1,53 @@
 <?php
-//Get Genre Filters
-function get_genre_filters()
-{
-	$terms = get_terms('product_brand');
-	$filters_html = false;
-
-	if( $terms ):
-		$filters_html = '<ul>';
-
-		foreach( $terms as $term )
-		{
-			$term_id = $term->term_id;
-			$term_name = $term->name;
-
-			$filters_html .= '<li class="term_id_'.$term_id.'">'.$term_name.'<input type="checkbox" name="filter_genre[]" value="'.$term_id.'"></li>';
-		}
-		$filters_html .= '<li class="clear-all">Clear All</li>';
-		$filters_html .= '</ul>';
-
-		return $filters_html;
-	endif;
-}
-
 //Enqueue Ajax Scripts
-function enqueue_genre_ajax_scripts() {
-    wp_register_script( 'genre-ajax-js', get_template_directory_uri() . '/js/ajax-query.js', array( 'jquery' ), '', true );
-    wp_localize_script( 'genre-ajax-js', 'ajax_genre_params', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-		wp_enqueue_script( 'genre-ajax-js' );
+add_action( 'wp_enqueue_scripts', 'ajax_filter_scripts' );
+function ajax_filter_scripts() {
+  wp_enqueue_script( 'filter', get_template_directory_uri() . '/js/ajax-query.js', array('jquery'), '1.0', true );
+
+  wp_localize_script( 'filter', 'ajaxfilter', array(
+    'ajax_url' => admin_url( 'admin-ajax.php' )
+  ));
 }
-add_action('wp_enqueue_scripts', 'enqueue_genre_ajax_scripts');
 
-//Add Ajax Actions
-add_action('wp_ajax_genre_filter', 'ajax_genre_filter');
-add_action('wp_ajax_nopriv_genre_filter', 'ajax_genre_filter');
+// add category nicenames in body and post class
+function post_cats($classes) {
+  global $post;
 
-//Construct Loop & Results
-function ajax_genre_filter()
-{
-	$query_data = $_GET;
+  foreach((get_the_category($post->ID)) as $category)
+    $classes[] = $category->category_nicename;
+  return $classes;
+}
 
-	$genre_terms = ($query_data['brands']) ? explode(',',$query_data['brands']) : false;
+add_action( 'wp_ajax_nopriv_ajax_filter', 'ajax_filter' );
+add_action( 'wp_ajax_ajax_filter', 'ajax_filter' );
 
-	$tax_query = ($genre_terms) ? array( array(
-		'taxonomy' => 'product_brand',
-		'field' => 'id',
-		'terms' => $genre_terms
-	) ) : false;
+function ajax_filter(){
+  $query_data = $_POST;
+  $category = $query_data['category'];
 
-	$search_value = ($query_data['search']) ? $query_data['search'] : false;
+  // Post query
+  $query = array(
+      'post_type' => 'product',
+      'product_brand' => $category,
+      'posts_per_page' => 9
+  );
+  $wp_query = new WP_Query($query);
 
-	$paged = (isset($query_data['paged']) ) ? intval($query_data['paged']) : 1;
+  if( $wp_query->have_posts() ):
+    while( $wp_query->have_posts() ) : $wp_query->the_post();
+      global $current_user;
+      $current_user_role = $current_user->roles[0];
+      $user_level = get_the_terms( $product_ID, 'userlevel' );
 
-	$book_args = array(
-		'post_type' => 'product',
-		's' => $search_value,
-		'posts_per_page' => 2,
-		'tax_query' => $tax_query,
-		'paged' => $paged
-	);
-	$book_loop = new WP_Query($book_args);
+      if( $current_user_role === 'administrator' || $current_user_role === $user_level[0]->slug || $user_level[0]->slug === 'level_all' ){
+        wc_get_template_part( 'content', 'product' );
+      }
+    endwhile;
+  elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
+    wc_get_template( 'loop/no-products-found.php' );
+  endif;
+  wp_reset_postdata();
 
-	if( $book_loop->have_posts() ):
-		while( $book_loop->have_posts() ): $book_loop->the_post();
-			get_template_part('content');
-		endwhile;
-
-		echo '<div class="genre-filter-navigation">';
-		$big = 999999999;
-		echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, $paged ),
-			'total' => $book_loop->max_num_pages
-		) );
-		echo '</div>';
-	else:
-		get_template_part('content-none');
-	endif;
-	wp_reset_postdata();
-
-	die();
+  die();
 }
 ?>

@@ -47,18 +47,17 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	$classes[] = 'last';
 }
-if( $woocommerce_loop['loop'] > 5 ){
-  array_push($classes, "hidden");
-}
 
-// print_r($classes);
+// Always add 'product' class
+array_push($classes, 'product');
+
 ?>
 <li <?php post_class( $classes ); ?> data-gender="<?php echo $gender[0]->slug; ?>" data-brand="<?php echo $brand[0]->slug; ?>">
   <div>
 
   	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-  	<a href="<?php the_permalink(); ?>" data-hover="view this product">
+  	<a href="<?php the_permalink(); ?>" data-hover="view this product" class="has-content">
 
   		<?php
   			echo '<div class="thumb-content">';
