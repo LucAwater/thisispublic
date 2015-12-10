@@ -6,6 +6,9 @@
 // Includes
 require_once('includes/scripts.php');
 
+require_once('includes/ajax-query.php');
+require_once('includes/ajax-more.php');
+
 require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');
@@ -16,7 +19,6 @@ require_once('includes/admin/tax-gender.php');
 require_once('includes/admin/tax-userlevel.php');
 require_once('includes/admin/tax-season.php');
 
-require_once('includes/ajax-query.php');
 require_once('includes/account-autologin.php');
 require_once('includes/account-approved.php');
 require_once('includes/cart-update.php');

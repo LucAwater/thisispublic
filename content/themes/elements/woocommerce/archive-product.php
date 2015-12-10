@@ -51,10 +51,10 @@ get_header( 'shop' ); ?>
         $brand_terms = get_the_terms($post->id, 'product_brand');
 
         if( is_shop() ){
-          echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
+          echo '<a id="testingshit" class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         } else {
-          echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
+          echo '<a id="testingshit" class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         }
 
@@ -105,6 +105,8 @@ get_header( 'shop' ); ?>
       endif;
       wp_reset_postdata();
       ?>
+
+      <a id="more-posts" class="button">Load 30 more</a>
     <?php endif; ?><!-- end of user login check -->
 
 	<?php
