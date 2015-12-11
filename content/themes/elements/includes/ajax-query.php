@@ -23,13 +23,21 @@ add_action( 'wp_ajax_ajax_filter', 'ajax_filter' );
 
 function ajax_filter(){
   $query_data = $_POST;
-  $category = $query_data['category'];
+  $brand = $query_data['brand'];
+  $gender = $query_data['gender'];
+
+  if( $brand === 'all' ){
+    $brand = '';
+  } else {
+    $brand = $brand;
+  }
 
   // Post query
   $query = array(
       'post_type' => 'product',
-      'product_brand' => $category,
-      'posts_per_page' => 9
+      'product_brand' => $brand,
+      'posts_per_page' => 9,
+      'gender' => $gender
   );
   $wp_query = new WP_Query($query);
 

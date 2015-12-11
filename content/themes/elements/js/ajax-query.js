@@ -1,34 +1,57 @@
 jQuery(document).ready( function($) {
 
-  $('#select-brand li').on( 'click', 'a', function() {
-    var cat_id = jQuery(this).attr('title');
+  var option = $('ul.filter-options li a');
 
-    jQuery.ajax({
+  option.click( function() {
+    var clicked = $(this);
+    var clickedParent = clicked.data('parent');
+
+    if(clickedParent == 'brand'){
+      var brand_current = $(this).attr('title');
+      var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
+    } else if(clickedParent == 'gender'){
+      var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
+      var gender_current = $(this).attr('title');
+    }
+
+    $.ajax({
       url : ajaxfilter.ajax_url,
       type : 'post',
       data : {
         action : 'ajax_filter',
-        category: cat_id
+        brand: brand_current,
+        gender: gender_current
       },
       success : function( response ) {
-        jQuery('ul.products').html(response);
+        $('ul.products').html(response);
       }
-    });
+    }).then( function(){
+      var masonry = $('.isotope-masonry');
+      var items = $('.product');
 
-    // Re-initialize lazyload
-    $('.product').lazyload({
-      threshold: 10,
-      effect: "fadeIn"
+      masonry.isotope( 'reloadItems' ).isotope();
     });
+  });
 
-    // Recalculate isotope
-    var masonry = $('.isotope-masonry');
-
-    masonry.isotope({
-      filter: '.product',
-      layoutMode: 'masonry',
-      transitionDuration: '0.2s'
-    });
-  })
+  // $('#select-brand li').on( 'click', 'a', function() {
+  //   var cat_id = $(this).attr('title');
+  //
+  //   $.ajax({
+  //     url : ajaxfilter.ajax_url,
+  //     type : 'post',
+  //     data : {
+  //       action : 'ajax_filter',
+  //       category: cat_id
+  //     },
+  //     success : function( response ) {
+  //       $('ul.products').html(response);
+  //     }
+  //   }).then( function(){
+  //     var masonry = $('.isotope-masonry');
+  //     var items = $('.product');
+  //
+  //     masonry.isotope( 'reloadItems' ).isotope();
+  //   });
+  // });
 
 })

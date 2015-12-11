@@ -51,11 +51,13 @@ get_header( 'shop' ); ?>
         $brand_terms = get_the_terms($post->id, 'product_brand');
 
         if( is_shop() ){
-          echo '<a id="testingshit" class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
+          echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">category: <span>All</span></a>';
         } else {
-          echo '<a id="testingshit" class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
+          echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">category: <span>All</span></a>';
         }
 
         // List of brands
@@ -71,6 +73,16 @@ get_header( 'shop' ); ?>
           }
         echo '</ul>';
 
+        // Tag filter
+        $tags = get_field('tags_selected', 'option');
+
+        echo '<ul id="select-tag" class="filter-options">';
+          echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+          foreach ( $tags as $tag ) {
+            echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
+          }
+        echo '</ul>';
+
         // Search
         echo
         '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
@@ -82,10 +94,19 @@ get_header( 'shop' ); ?>
       echo '</div>';
 
       // Post query
-      $query = array(
-          'post_type' => 'product',
-          'posts_per_page' => 9
-      );
+      if( is_shop() ){
+        $query = array(
+            'post_type' => 'product',
+            'posts_per_page' => 9
+        );
+      } else {
+        $query = array(
+            'post_type' => 'product',
+            'posts_per_page' => 9,
+            'product_brand' => $brand_terms[0]->slug
+        );
+      }
+
       $wp_query = new WP_Query($query);
 
       if( $wp_query->have_posts() ):
