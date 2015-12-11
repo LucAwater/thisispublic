@@ -15,12 +15,14 @@ add_action( 'wp_ajax_ajax_more', 'ajax_more' );
 function ajax_more(){
   $query_data = $_POST;
   $category = $query_data['category'];
+  $offset = $query_data['product_count'];
 
   // Post query
   $query = array(
       'post_type' => 'product',
       'product_brand' => $category,
-      'posts_per_page' => 9
+      'posts_per_page' => 9,
+      'offset' => $offset
   );
   $wp_query = new WP_Query($query);
 

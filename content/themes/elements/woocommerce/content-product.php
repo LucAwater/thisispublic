@@ -77,8 +77,13 @@ array_push($classes, 'product');
     			 */
     			do_action( 'woocommerce_after_shop_loop_item_title' );
 
-          $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-          echo '<img class="lazy" data-original="' . $thumbnail[0] . '">';
+          if( has_post_thumbnail() ){
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+          } else {
+            $thumbnail = get_template_directory_uri() . '/img/thumb.png';
+          }
+
+          echo '<img src="' . $thumbnail . '">';
 
 
         echo '</div>';
