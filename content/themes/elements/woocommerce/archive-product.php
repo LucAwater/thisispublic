@@ -127,7 +127,7 @@ get_header( 'shop' ); ?>
       wp_reset_postdata();
       ?>
 
-      <a id="more-posts" class="button">Load 30 more<span class="loader"></span></a>
+      <a id="more-posts" class="button">Load more<span class="loader"></span></a>
     <?php endif; ?><!-- end of user login check -->
 
 	<?php

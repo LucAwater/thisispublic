@@ -1,14 +1,17 @@
 jQuery(document).ready( function($) {
 
   $('body').on( 'click', '#more-posts', function() {
-    var current = $('a[title="brand-current"]').find('span').text().toLowerCase();
-
     // Start loading animation on button
     $(this).addClass('is-loading');
 
     var button = document.getElementById('more-posts');
     var buttonText = button.childNodes[0];
     buttonText.nodeValue = 'loading...';
+
+    // Get all current filter values
+    var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
+    var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
+    var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
 
     // Count already loaded products
     var product_count = $('.product').length;
@@ -19,7 +22,9 @@ jQuery(document).ready( function($) {
       type : 'post',
       data : {
         action : 'ajax_more',
-        category: current,
+        brand: brand_current,
+        gender: gender_current,
+        tag: tag_current,
         product_count: product_count
       },
       success : function( response ) {
@@ -28,7 +33,7 @@ jQuery(document).ready( function($) {
         $('#more-posts').removeClass('is-loading');
         var button = document.getElementById('more-posts');
         var buttonText = button.childNodes[0];
-        buttonText.nodeValue = 'load 30 more';
+        buttonText.nodeValue = 'load more';
       }
     }).then( function(){
       var masonry = $('.isotope-masonry');

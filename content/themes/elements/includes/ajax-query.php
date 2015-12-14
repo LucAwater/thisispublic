@@ -25,19 +25,64 @@ function ajax_filter(){
   $query_data = $_POST;
   $brand = $query_data['brand'];
   $gender = $query_data['gender'];
+  $tag = $query_data['tag'];
 
-  if( $brand === 'all' ){
-    $brand = '';
+  // Build the tax query
+  $tax_query = array('relation' => 'AND');
+
+  if ( $brand == 'all') {
+    $terms = get_terms( 'product_brand' );
+    $term_ids = wp_list_pluck( $terms, 'term_id' );
+    $tax_query[] =  array(
+      'taxonomy' => 'product_brand',
+      'field' => 'term_id',
+      'terms' => $term_ids
+    );
   } else {
-    $brand = $brand;
+    $tax_query[] =  array(
+      'taxonomy' => 'product_brand',
+      'field' => 'slug',
+      'terms' => $brand
+    );
+  }
+
+  if ( $gender == 'all') {
+    $terms = get_terms( 'gender' );
+    $term_ids = wp_list_pluck( $terms, 'term_id' );
+    $tax_query[] =  array(
+      'taxonomy' => 'gender',
+      'field' => 'term_id',
+      'terms' => $term_ids
+    );
+  } else {
+    $tax_query[] =  array(
+      'taxonomy' => 'gender',
+      'field' => 'slug',
+      'terms' => $gender
+    );
+  }
+
+  if ( $tag == 'all') {
+    $terms = get_terms( 'product_tag' );
+    $term_ids = wp_list_pluck( $terms, 'term_id' );
+    $tax_query[] =  array(
+      'taxonomy' => 'product_tag',
+      'field' => 'term_id',
+      'terms' => $term_ids
+    );
+  } else {
+    $tax_query[] =  array(
+      'taxonomy' => 'product_tag',
+      'field' => 'slug',
+      'terms' => $tag
+    );
   }
 
   // Post query
   $query = array(
-      'post_type' => 'product',
-      'product_brand' => $brand,
-      'posts_per_page' => 9,
-      'gender' => $gender
+    'post_type' => 'product',
+    'posts_per_page' => 9,
+    'tax_query' => $tax_query
   );
   $wp_query = new WP_Query($query);
 
