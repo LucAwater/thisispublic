@@ -25,7 +25,7 @@ jQuery(document).ready( function($) {
         brand: brand_current,
         gender: gender_current,
         tag: tag_current,
-        product_count: product_count
+        offset: product_count
       },
       success : function( response ) {
         jQuery('ul.products').append(response);
@@ -39,7 +39,7 @@ jQuery(document).ready( function($) {
       var masonry = $('.isotope-masonry');
       var items = $('.product');
 
-      masonry.isotope( 'reloadItems' ).isotope();
+      masonry.isotope( 'reloadItems' ).isotope({itemSelector: '.product'});
     });
   });
 

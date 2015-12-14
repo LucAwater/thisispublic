@@ -17,6 +17,7 @@ function ajax_more(){
   $brand = $query_data['brand'];
   $gender = $query_data['gender'];
   $tag = $query_data['tag'];
+  $offset = $query_data['offset'];
 
   // Build the tax query
   $tax_query = array('relation' => 'AND');
@@ -73,7 +74,8 @@ function ajax_more(){
   $query = array(
     'post_type' => 'product',
     'posts_per_page' => 9,
-    'tax_query' => $tax_query
+    'tax_query' => $tax_query,
+    'offset' => $offset
   );
   $wp_query = new WP_Query($query);
 
@@ -88,7 +90,7 @@ function ajax_more(){
       }
     endwhile;
   elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
-    wc_get_template( 'loop/no-products-found.php' );
+    echo '<p id="no-more-products">No more products for this selection</p>';
   endif;
   wp_reset_postdata();
 
