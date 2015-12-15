@@ -33,7 +33,8 @@
   }
 }
 
-#more-posts{
+#more-posts,
+#more-products{
   margin: auto;
 
   .loader{
@@ -72,6 +73,7 @@
   }
 }
 
+#no-more-posts,
 #no-more-products{
   top: auto !important;
   bottom: 0;

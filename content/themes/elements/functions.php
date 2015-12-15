@@ -8,6 +8,7 @@ require_once('includes/scripts.php');
 
 require_once('includes/ajax-query.php');
 require_once('includes/ajax-more.php');
+require_once('includes/ajax-more-posts.php');
 
 require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');

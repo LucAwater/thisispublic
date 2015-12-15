@@ -1,10 +1,10 @@
 jQuery(document).ready( function($) {
 
-  $('body').on( 'click', '#more-posts', function() {
+  $('body').on( 'click', '#more-products', function() {
     // Start loading animation on button
     $(this).addClass('is-loading');
 
-    var button = document.getElementById('more-posts');
+    var button = document.getElementById('more-products');
     var buttonText = button.childNodes[0];
     buttonText.nodeValue = 'loading...';
 
@@ -30,8 +30,8 @@ jQuery(document).ready( function($) {
       success : function( response ) {
         jQuery('ul.products').append(response);
 
-        $('#more-posts').removeClass('is-loading');
-        var button = document.getElementById('more-posts');
+        $('#more-products').removeClass('is-loading');
+        var button = document.getElementById('more-products');
         var buttonText = button.childNodes[0];
         buttonText.nodeValue = 'load more';
       }
