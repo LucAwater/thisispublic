@@ -64,7 +64,7 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
                 $title = $file['brand_files_title'];
 
                 if(! empty($url) ){
-                  echo '<a class="link-arrow link-arrow-right" href="' . $url . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $title . '</a>';
+                  echo '<a class="link-arrow link-arrow-right" href="' . $url . '" download><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $title . '</a>';
                 }
               }
               ?>

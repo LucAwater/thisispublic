@@ -4,27 +4,28 @@
   display: block;
 
   > div{
-    width: 100%;
-    display: block;
-
-    img{
+    a.has-content{
       width: 100%;
       display: block;
+
+      img{
+        width: 100%;
+      }
+
+      .thumb-content{
+        padding: 40px;
+
+        background-color: $white;
+
+        h3{
+          margin-bottom: 40px;
+        }
+      }
     }
 
-    .thumb-content{
-      padding: 40px;
-
-      background-color: $white;
+    a.button{
+      float: right;
     }
-
-    .thumb-content:first-child{
-      padding: 20px 40px 10px;
-    }
-  }
-
-  a.button{
-    float: right;
   }
 }
 
