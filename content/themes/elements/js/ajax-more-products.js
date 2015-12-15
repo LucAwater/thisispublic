@@ -18,10 +18,10 @@ jQuery(document).ready( function($) {
 
     // The ajax call
     jQuery.ajax({
-      url : ajaxmore.ajax_url,
+      url : ajaxmoreproducts.ajax_url,
       type : 'post',
       data : {
-        action : 'ajax_more',
+        action : 'ajax_more_products',
         brand: brand_current,
         gender: gender_current,
         tag: tag_current,

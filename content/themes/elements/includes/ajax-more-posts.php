@@ -1,14 +1,4 @@
 <?php
-// //Enqueue Ajax Scripts
-add_action( 'wp_enqueue_scripts', 'ajax_more_posts_scripts' );
-function ajax_more_posts_scripts() {
-  wp_enqueue_script( 'more-posts', get_template_directory_uri() . '/js/ajax-more-posts.js', array('jquery'), '1.0', true );
-
-  wp_localize_script( 'more-posts', 'ajaxmoreposts', array(
-    'ajax_url' => admin_url( 'admin-ajax.php' )
-  ));
-}
-
 add_action( 'wp_ajax_nopriv_ajax_more_posts', 'ajax_more_posts' );
 add_action( 'wp_ajax_ajax_more_posts', 'ajax_more_posts' );
 

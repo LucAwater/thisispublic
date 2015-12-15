@@ -1,27 +1,8 @@
 <?php
-//Enqueue Ajax Scripts
-add_action( 'wp_enqueue_scripts', 'ajax_filter_scripts' );
-function ajax_filter_scripts() {
-  wp_enqueue_script( 'filter', get_template_directory_uri() . '/js/ajax-query.js', array('jquery'), '1.0', true );
+add_action( 'wp_ajax_nopriv_ajax_filter_products', 'ajax_filter_products' );
+add_action( 'wp_ajax_ajax_filter_products', 'ajax_filter_products' );
 
-  wp_localize_script( 'filter', 'ajaxfilter', array(
-    'ajax_url' => admin_url( 'admin-ajax.php' )
-  ));
-}
-
-// add category nicenames in body and post class
-function post_cats($classes) {
-  global $post;
-
-  foreach((get_the_category($post->ID)) as $category)
-    $classes[] = $category->category_nicename;
-  return $classes;
-}
-
-add_action( 'wp_ajax_nopriv_ajax_filter', 'ajax_filter' );
-add_action( 'wp_ajax_ajax_filter', 'ajax_filter' );
-
-function ajax_filter(){
+function ajax_filter_products(){
   $query_data = $_POST;
   $brand = $query_data['brand'];
   $gender = $query_data['gender'];

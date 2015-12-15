@@ -25,10 +25,10 @@ jQuery(document).ready( function($) {
     console.log(tag_current);
 
     $.ajax({
-      url : ajaxfilter.ajax_url,
+      url : ajaxfilterproducts.ajax_url,
       type : 'post',
       data : {
-        action : 'ajax_filter',
+        action : 'ajax_filter_products',
         brand: brand_current,
         gender: gender_current,
         tag: tag_current

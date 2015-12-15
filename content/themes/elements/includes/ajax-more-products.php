@@ -1,18 +1,8 @@
 <?php
-// //Enqueue Ajax Scripts
-// add_action( 'wp_enqueue_scripts', 'ajax_more_scripts' );
-// function ajax_more_scripts() {
-//   wp_enqueue_script( 'more', get_template_directory_uri() . '/js/ajax-more.js', array('jquery'), '1.0', true );
-//
-//   wp_localize_script( 'more', 'ajaxmore', array(
-//     'ajax_url' => admin_url( 'admin-ajax.php' )
-//   ));
-// }
+add_action( 'wp_ajax_nopriv_ajax_more_products', 'ajax_more_products' );
+add_action( 'wp_ajax_ajax_more_products', 'ajax_more_products' );
 
-add_action( 'wp_ajax_nopriv_ajax_more', 'ajax_more' );
-add_action( 'wp_ajax_ajax_more', 'ajax_more' );
-
-function ajax_more(){
+function ajax_more_products(){
   $query_data = $_POST;
   $brand = $query_data['brand'];
   $gender = $query_data['gender'];
