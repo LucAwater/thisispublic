@@ -20,9 +20,8 @@ jQuery(document).ready( function($) {
       var tag_current = $(this).attr('title');
     }
 
-    console.log(brand_current);
-    console.log(gender_current);
-    console.log(tag_current);
+    $(this).parent().children('li').removeClass('current');
+    $(this).parent().addClass('current');
 
     $.ajax({
       url : ajaxfilterproducts.ajax_url,

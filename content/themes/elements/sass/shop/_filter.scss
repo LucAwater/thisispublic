@@ -4,7 +4,7 @@
   padding: 0 80px;
   z-index: $zIndex-filterOptions;
 
-  > *{
+  > a, > p, > div{
     float: left;
     display: inline-block;
     line-height: 80px;
@@ -78,6 +78,10 @@
 
     li:first-child{
       margin-bottom: 40px;
+    }
+
+    li.current a{
+      text-decoration: underline;
     }
   }
 }
