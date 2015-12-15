@@ -20,7 +20,7 @@ jQuery(document).ready( function($) {
       var tag_current = $(this).attr('title');
     }
 
-    $(this).parent().children('li').removeClass('current');
+    $(this).parents('ul').children('li').removeClass('current');
     $(this).parent().addClass('current');
 
     $.ajax({
