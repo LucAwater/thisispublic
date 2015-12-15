@@ -26,6 +26,18 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
     endif;
   echo '</ul>';
 } else {
+  echo '<div class="filter is-fullwidth">';
+    echo '<p>Public_ Imagebank</p>';
+
+    // Search
+    echo
+    '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+      <input type="search" class="search" value="" name="s" title="" />
+      <button type="submit">search</button>
+      <p class="search-trigger">search</p>
+    </form>';
+  echo '</div>';
+
   echo '<ul class="brands s-grid-1 l-grid-2 xl-grid-3 isotope isotope-masonry">';
     foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :
       foreach ( $product_brands[ $i ] as $brand ) {

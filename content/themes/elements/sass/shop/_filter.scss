@@ -4,9 +4,7 @@
   padding: 0 80px;
   z-index: $zIndex-filterOptions;
 
-  .filter-current,
-  .search-form,
-  .back{
+  > *{
     float: left;
     display: inline-block;
     line-height: 80px;
