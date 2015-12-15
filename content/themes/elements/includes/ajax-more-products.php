@@ -80,7 +80,13 @@ function ajax_more_products(){
       }
     endwhile;
   elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
-    echo '<p id="no-more-products">No more products for this selection</p>';
+    ?>
+    <script type="text/javascript">
+    var button = document.getElementById("more-products");
+    $(button).disabled = true;
+    $(button).addClass('is-disabled');
+    </script>
+    <?php
   endif;
   wp_reset_postdata();
 
