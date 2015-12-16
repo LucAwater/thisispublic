@@ -1,0 +1,46 @@
+section.testimonials{
+  .section-header{
+    text-align: center;
+  }
+
+  .section-body{
+    li{
+      margin-bottom: 30px;
+
+      text-align: center;
+
+      p:first-child{
+        @include chronicle;
+
+        margin-bottom: 1em;
+
+        font-style: italic;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px){
+  section.testimonials{
+    .section-body{
+      li{
+        width: 50%;
+      }
+
+      li:nth-child(n+3){
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px){
+  section.testimonials{
+    .section-body{
+      li:nth-child(n){
+        width: 100%;
+        display: inline;
+      }
+    }
+  }
+}
