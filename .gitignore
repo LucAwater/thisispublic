@@ -45,6 +45,6 @@ local-config.php
 *.sass-cache*
 content/languages/*
 *.codekit
-*.codekit
+content/themes/elements/config.codekit
 *.map
 *-ck-source-map-reference.coffee

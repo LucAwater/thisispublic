@@ -22,6 +22,8 @@ if( have_rows('page') ): $i_par = 0;
       include( locate_template('content/gridPri.php') );
     elseif( get_row_layout() == 'grid_secondary' ):
       include( locate_template('content/gridSec.php') );
+    elseif( get_row_layout() == 'testimonials' ):
+      include( locate_template('content/testimonials.php') );
     elseif( get_row_layout() == 'slider' ):
       include( locate_template('content/slider.php') );
     elseif( get_row_layout() == 'parallax' ): $i_par++;

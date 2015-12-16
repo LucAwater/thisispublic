@@ -8,5 +8,12 @@ if( function_exists('acf_add_options_page') ){
     'menu_slug'   => 'company',
     'redirect'    => false
   ));
+
+  acf_add_options_page( array(
+    'page_title'  => 'Tag Filter',
+    'menu_title'  => 'Tag Filter',
+    'menu_slug'   => 'tag-filter',
+    'redirect'    => false
+  ));
 }
 ?>

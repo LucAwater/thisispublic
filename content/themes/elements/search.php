@@ -8,25 +8,6 @@
       <a class="link-arrow link-arrow-left" href="' . $shop_link . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to all products</a>
     </div>';
 
-    // Current brand and gender
-    $brand_terms = get_the_terms($post->id, 'product_brand');
-
-    echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
-    echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
-
-    // List of brands
-    echo do_shortcode('[product_brand_list]');
-
-    // Gender filter
-    $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
-
-    echo '<ul id="select-gender" class="filter-options">';
-      echo '<li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>';
-      foreach ( $genders as $gender ) {
-        echo '<li><a class="tax-filter" title="' . $gender->slug . '" data-parent="gender">' . $gender->name . '</a></li>';
-      }
-    echo '</ul>';
-
     // Search
     echo
     '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
@@ -41,21 +22,36 @@
   <h1 class="is-aligned-center margin-t50 margin-b80">Search results for: <?php the_search_query(); ?></h1>
 
     <?php
-    if( have_posts() ):
+    // TEMPORARILY show all tags
+    function woocommerce_product_loop_tags() {
+      global $post, $product;
 
-      echo '<ul class="products s-grid-1 m-grid-2 l-grid-3 isotope isotope-masonry">';
+      $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
 
-      while( have_posts() ): the_post();
+      echo $product->get_tags( ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) . ' ', '.</span>' );
+    }
 
-        include('woocommerce/content-product.php');
+    // The query
+    $result = get_search_query();
+    $query = array(
+      'post_type' => 'product',
+      'posts_per_page' => 9,
+      's' => $result
+    );
+    $wp_query = new WP_Query($query);
 
-      endwhile;
-
-      echo '</ul>';
-
-    else:
-      echo '<p class="is-aligned-center">no products found</p>';
+    // The loop
+    if( $wp_query->have_posts() ):
+      woocommerce_product_loop_start();
+        while( $wp_query->have_posts() ) : $wp_query->the_post();
+          wc_get_template_part( 'content', 'product' );
+        endwhile;
+      woocommerce_product_loop_end();
     endif;
+    wp_reset_postdata();
+
+    // Load more results
+    echo '<a id="more-results" class="button">Load more<span class="loader"></span></a>';
     ?>
 
 <?php get_footer(); ?>

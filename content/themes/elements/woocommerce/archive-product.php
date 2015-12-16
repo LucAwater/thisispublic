@@ -53,9 +53,11 @@ get_header( 'shop' ); ?>
         if( is_shop() ){
           echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">category: <span>All</span></a>';
         } else {
           echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">category: <span>All</span></a>';
         }
 
         // List of brands
@@ -71,25 +73,45 @@ get_header( 'shop' ); ?>
           }
         echo '</ul>';
 
+        // Tag filter
+        $tags = get_field('tags_selected', 'option');
+
+        echo '<ul id="select-tag" class="filter-options">';
+          echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+          foreach ( $tags as $tag ) {
+            echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
+          }
+        echo '</ul>';
+
         // Search
         echo
-        '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
-          <input type="search" class="search" value="" name="s" title="" />
-          <button type="submit">search</button>
+        '<form id="search-form" role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+          <input id="search-field" type="search" class="search" value="" name="s" title="" />
+          <button id="search-button" type="submit">search</button>
           <p class="search-trigger">search</p>
         </form>';
 
       echo '</div>';
 
       // Post query
-      $query = array(
-          'post_type' => 'product'
-      );
-      $loop = new WP_Query($query);
+      if( is_shop() ){
+        $query = array(
+            'post_type' => 'product',
+            'posts_per_page' => 9
+        );
+      } else {
+        $query = array(
+            'post_type' => 'product',
+            'posts_per_page' => 9,
+            'product_brand' => $brand_terms[0]->slug
+        );
+      }
 
-      if( $loop->have_posts() ):
+      $wp_query = new WP_Query($query);
+
+      if( $wp_query->have_posts() ):
         woocommerce_product_loop_start();
-          while( $loop->have_posts() ) : $loop->the_post();
+          while( $wp_query->have_posts() ) : $wp_query->the_post();
             global $current_user;
             $current_user_role = $current_user->roles[0];
             $user_level = get_the_terms( $product_ID, 'userlevel' );
@@ -103,7 +125,10 @@ get_header( 'shop' ); ?>
         wc_get_template( 'loop/no-products-found.php' );
       endif;
       wp_reset_postdata();
-    endif; ?><!-- end of user login check -->
+      ?>
+
+      <a id="more-products" class="button">Load more<span class="loader"></span></a>
+    <?php endif; ?><!-- end of user login check -->
 
 	<?php
 		/**

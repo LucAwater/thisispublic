@@ -47,13 +47,17 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 	$classes[] = 'last';
 }
+
+// Always add 'product' class
+array_push($classes, 'product');
+
 ?>
 <li <?php post_class( $classes ); ?> data-gender="<?php echo $gender[0]->slug; ?>" data-brand="<?php echo $brand[0]->slug; ?>">
   <div>
 
   	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-  	<a href="<?php the_permalink(); ?>" data-hover="view this product">
+  	<a href="<?php the_permalink(); ?>" data-hover="view this product" class="has-content">
 
   		<?php
   			echo '<div class="thumb-content">';
@@ -73,8 +77,13 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
     			 */
     			do_action( 'woocommerce_after_shop_loop_item_title' );
 
-          $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-          echo '<img class="lazy" data-original="' . $thumbnail[0] . '">';
+          if( has_post_thumbnail() ){
+            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )[0];
+          } else {
+            $thumbnail = get_template_directory_uri() . '/img/thumb.png';
+          }
+
+          echo '<img src="' . $thumbnail . '">';
 
 
         echo '</div>';
