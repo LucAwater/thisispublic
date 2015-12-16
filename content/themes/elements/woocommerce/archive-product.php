@@ -112,7 +112,7 @@ get_header( 'shop' ); ?>
       if( $wp_query->have_posts() ):
         woocommerce_product_loop_start();
           while( $wp_query->have_posts() ) : $wp_query->the_post();
-            wc_get_template_part( 'content', 'product' );
+            echo '<pre>product</pre>';
           endwhile;
         woocommerce_product_loop_end();
       elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
