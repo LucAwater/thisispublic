@@ -52,26 +52,16 @@ get_header( 'shop' ); ?>
 
         if( is_shop() ){
           echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">tag: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
-          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">category: <span>All</span></a>';
         } else {
           echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">tag: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
-          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">category: <span>All</span></a>';
         }
 
-        // List of brands
+        // Brand filter
         echo do_shortcode('[product_brand_list]');
-
-        // Gender filter
-        $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
-
-        echo '<ul id="select-gender" class="filter-options">';
-          echo '<li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>';
-          foreach ( $genders as $gender ) {
-            echo '<li><a class="tax-filter" title="' . $gender->slug . '" data-parent="gender">' . $gender->name . '</a></li>';
-          }
-        echo '</ul>';
 
         // Tag filter
         $tags = get_field('tags_selected', 'option');
@@ -82,6 +72,16 @@ get_header( 'shop' ); ?>
             foreach ( $tags as $tag ) {
               echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
             }
+          }
+        echo '</ul>';
+
+        // Gender filter
+        $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
+
+        echo '<ul id="select-gender" class="filter-options">';
+          echo '<li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>';
+          foreach ( $genders as $gender ) {
+            echo '<li><a class="tax-filter" title="' . $gender->slug . '" data-parent="gender">' . $gender->name . '</a></li>';
           }
         echo '</ul>';
 
