@@ -58,6 +58,15 @@
       var target = $('#select-' + targetVal);
       target.css("padding-left", filterCurrentVal.offset().left);
     };
+
+    $(window).on('resize', function() {
+      for(var i = 0; i < filterCurrent.length; i++){
+        var filterCurrentVal = $(filterCurrent[i]).children('span');
+        var targetVal = $(filterCurrent[i]).attr('data-target');
+        var target = $('#select-' + targetVal);
+        target.css("padding-left", filterCurrentVal.offset().left);
+      };
+    });
   };
 
   filterUpdateCurrent();
