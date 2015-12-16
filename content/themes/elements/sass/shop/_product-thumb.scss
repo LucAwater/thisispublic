@@ -34,7 +34,8 @@
 }
 
 #more-posts,
-#more-products{
+#more-products,
+#more-results{
   margin: auto;
 
   .loader{
@@ -74,7 +75,8 @@
 }
 
 #no-more-posts,
-#no-more-products{
+#no-more-products,
+#more-results{
   top: auto !important;
   bottom: 0;
   left: 0 !important;

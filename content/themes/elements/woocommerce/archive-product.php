@@ -85,9 +85,9 @@ get_header( 'shop' ); ?>
 
         // Search
         echo
-        '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
-          <input type="search" class="search" value="" name="s" title="" />
-          <button type="submit">search</button>
+        '<form id="search-form" role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+          <input id="search-field" type="search" class="search" value="" name="s" title="" />
+          <button id="search-button" type="submit">search</button>
           <p class="search-trigger">search</p>
         </form>';
 
