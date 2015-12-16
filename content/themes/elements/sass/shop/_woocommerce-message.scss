@@ -13,3 +13,11 @@
 .woocommerce-error{
   border-left: 3px solid $red;
 }
+
+body.archive{
+  .woocommerce-info{
+    margin: 80px 0;
+
+    text-align: center;
+  }
+}
