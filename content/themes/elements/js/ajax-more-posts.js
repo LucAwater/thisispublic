@@ -29,9 +29,11 @@ jQuery(document).ready( function($) {
       }
     }).then( function(){
       var masonry = $('.isotope-masonry');
-      var items = $('li');
+      var items = $('.product');
 
-      masonry.isotope( 'reloadItems' ).isotope({itemSelector: 'li'});
+      $('main').imagesLoaded( function() {
+        masonry.isotope( 'reloadItems' ).isotope({itemSelector: 'li'});
+      });
     });
   });
 
