@@ -59,14 +59,16 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
               <?php
               // Brand files
               $brand_files = get_field( 'brand_files', $brand );
-              foreach( $brand_files as $file ){
-                $url = $file['brand_files_file']['url'];
-                $title = $file['brand_files_title'];
+              if( $brand_files ):
+                foreach( $brand_files as $file ){
+                  $url = $file['brand_files_file']['url'];
+                  $title = $file['brand_files_title'];
 
-                if(! empty($url) ){
-                  echo '<a class="link-arrow link-arrow-right" href="' . $url . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $title . '</a>';
+                  if(! empty($url) ){
+                    echo '<a class="link-arrow link-arrow-right" href="' . $url . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $title . '</a>';
+                  }
                 }
-              }
+              endif;
               ?>
             </div>
           </div>
