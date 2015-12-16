@@ -10,10 +10,11 @@ section.testimonials{
       text-align: center;
 
       p:first-child{
-        @include chronicle;
+        @include chronicle-display;
 
         margin-bottom: 1em;
 
+        font-size: 1em; //16px
         font-style: italic;
       }
     }

@@ -168,3 +168,20 @@
     }
   }
 }
+
+// Hide filter elements on custom queries
+@media screen and (max-width: 1100px){
+  .filter{
+    .filter-current[title="gender-current"]{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 950px){
+  .filter{
+    .filter-current[title="tag-current"]{
+      display: none;
+    }
+  }
+}
