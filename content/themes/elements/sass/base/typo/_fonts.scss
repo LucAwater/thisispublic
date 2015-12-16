@@ -13,6 +13,14 @@
   font-family: "Chronicle Display A", "Chronicle Display B";
   font-style: normal;
   font-weight: 400;
+
+  &.is-bold{
+    font-weight: 700;
+  }
+
+  &.is-italic{
+    font-style: italic;
+  }
 }
 
 @mixin chronicle{
@@ -22,5 +30,9 @@
 
   &.is-bold{
     font-weight: 700;
+  }
+
+  &.is-italic{
+    font-style: italic;
   }
 }
