@@ -76,7 +76,7 @@ function ajax_more_products(){
       $user_level = get_the_terms( $product_ID, 'userlevel' );
 
       if( $current_user_role === 'administrator' || $current_user_role === $user_level[0]->slug || $user_level[0]->slug === 'level_all' ){
-        wc_get_template_part( 'content', 'product' );
+        echo 'product<br>';
       }
     endwhile;
   elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :

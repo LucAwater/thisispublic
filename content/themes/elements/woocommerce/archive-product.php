@@ -112,7 +112,13 @@ get_header( 'shop' ); ?>
       if( $wp_query->have_posts() ):
         woocommerce_product_loop_start();
           while( $wp_query->have_posts() ) : $wp_query->the_post();
-            echo '<pre>product</pre>';
+            global $current_user;
+            $current_user_role = $current_user->roles[0];
+            $user_level = get_the_terms( $product_ID, 'userlevel' );
+
+            if( $current_user_role === 'administrator' || $current_user_role === $user_level[0]->slug || $user_level[0]->slug === 'level_all' ){
+              echo 'product<br>';
+            }
           endwhile;
         woocommerce_product_loop_end();
       elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
