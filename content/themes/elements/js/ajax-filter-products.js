@@ -39,7 +39,9 @@ jQuery(document).ready( function($) {
       var masonry = $('.isotope-masonry');
       var items = $('.product');
 
-      masonry.isotope( 'reloadItems' ).isotope();
+      $('main').imagesLoaded( function() {
+        masonry.isotope( 'reloadItems' ).isotope({itemSelector: 'li'});
+      });
     });
   });
 

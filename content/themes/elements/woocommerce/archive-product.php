@@ -78,8 +78,10 @@ get_header( 'shop' ); ?>
 
         echo '<ul id="select-tag" class="filter-options">';
           echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
-          foreach ( $tags as $tag ) {
-            echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
+          if( $tags ){
+            foreach ( $tags as $tag ) {
+              echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
+            }
           }
         echo '</ul>';
 
