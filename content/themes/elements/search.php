@@ -44,13 +44,7 @@
     if( $wp_query->have_posts() ):
       woocommerce_product_loop_start();
         while( $wp_query->have_posts() ) : $wp_query->the_post();
-
-          echo '<li>';
-            echo '<br>';
-            echo '<p>' . get_the_title() . '</p>';
-            woocommerce_product_loop_tags();
-          echo '</li>';
-
+          wc_get_template_part( 'content', 'product' );
         endwhile;
       woocommerce_product_loop_end();
     endif;

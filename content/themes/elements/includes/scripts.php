@@ -25,6 +25,8 @@ function enqueue_theme_scripts() {
 
     wp_enqueue_script( 'filter-products', get_template_directory_uri() . '/js/ajax-filter-products.js', array('jquery'), '1.0', true );
     wp_localize_script( 'filter-products', 'ajaxfilterproducts', array('ajax_url' => admin_url('admin-ajax.php')) );
+    wp_enqueue_script( 'more-results', get_template_directory_uri() . '/js/ajax-more-results.js', array('jquery'), '1.0', true );
+    wp_localize_script( 'more-results', 'ajaxmoreresults', array('ajax_url' => admin_url('admin-ajax.php')) );
     wp_enqueue_script( 'more-products', get_template_directory_uri() . '/js/ajax-more-products.js', array('jquery'), '1.0', true );
     wp_localize_script( 'more-products', 'ajaxmoreproducts', array('ajax_url' => admin_url('admin-ajax.php')) );
     wp_enqueue_script( 'more-posts', get_template_directory_uri() . '/js/ajax-more-posts.js', array('jquery'), '1.0', true );

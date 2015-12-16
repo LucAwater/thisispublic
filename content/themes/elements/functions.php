@@ -7,6 +7,7 @@
 require_once('includes/scripts.php');
 
 require_once('includes/ajax-filter-products.php');
+require_once('includes/ajax-more-results.php');
 require_once('includes/ajax-more-products.php');
 require_once('includes/ajax-more-posts.php');
 
