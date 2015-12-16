@@ -21,6 +21,7 @@ function menu_order( $menu_order ) {
     'edit.php?post_type=page', //Pages
     'company', //Extra information
     'woocommerce',
+    'tag-filter',
     'separator-last',
 
     'edit.php?post_type=acf-field-group', //Custom fields

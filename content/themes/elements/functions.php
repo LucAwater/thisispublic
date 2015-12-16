@@ -6,6 +6,11 @@
 // Includes
 require_once('includes/scripts.php');
 
+require_once('includes/ajax-filter-products.php');
+require_once('includes/ajax-more-results.php');
+require_once('includes/ajax-more-products.php');
+require_once('includes/ajax-more-posts.php');
+
 require_once('includes/admin/login.php');
 require_once('includes/admin/removal.php');
 require_once('includes/admin/menu.php');
@@ -26,6 +31,15 @@ require_once('woocommerce/woo-functions.php');
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
+}
+
+// add category nicenames in body and post class
+function post_cats($classes) {
+  global $post;
+
+  foreach((get_the_category($post->ID)) as $category)
+    $classes[] = $category->category_nicename;
+  return $classes;
 }
 
 // Initialize mobile detect

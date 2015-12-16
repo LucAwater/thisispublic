@@ -1,9 +1,4 @@
-.brands{
-  padding-top: 80px;
-}
-
-.products .product,
-.brands .brand{
+.products .product{
   padding: 0 40px;
   margin-bottom: 80px !important;
   display: block;
@@ -34,9 +29,50 @@
   }
 }
 
-// Hover state
-.products .product,
 .brands .brand{
+  padding: 0 40px;
+  margin-bottom: 80px !important;
+  display: block;
+
+  > div{
+    width: 100%;
+    display: block;
+
+    img{
+      display: block;
+    }
+
+    .thumb-content{
+      padding: 40px;
+
+      background-color: $white;
+
+      p{
+        margin-bottom: 1em;
+      }
+    }
+
+    .thumb-content:first-child{
+      padding: 20px 40px 10px;
+    }
+
+    a.link-arrow{
+      margin-bottom: 0;
+
+      img{
+        display: inline-block !important;
+      }
+
+      &:hover,
+      &:active{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Hover state
+.products .product,{
   > div a.has-content{
     .overlay-thumb{
       @include hide( .3s );

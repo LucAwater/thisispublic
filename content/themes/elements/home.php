@@ -2,33 +2,26 @@
 get_header();
 
 // The Query
-$args = array(
-    'order'     => 'DESC',
-    'orderby'   => 'date'
+$query = array(
+  'order'           => 'DESC',
+  'orderby'         => 'date',
+  'posts_per_page'  => 9
 );
+$wp_query = new WP_Query($query);
 
-query_posts( $args );
-
+// Posts
 echo '<ul class="posts s-grid-1 l-grid-2 xl-grid-3 isotope isotope-masonry">';
-
-// The Loop
-while ( have_posts() ) : the_post();
-  $category = get_the_category();
-  echo
-  '<li>
-    <a href="' . get_permalink() . '">' . get_the_post_thumbnail( $post_ID, 'medium' ) . '</a>
-    <div>
-      <p class="is-grey">' . $category[0]->cat_name . ' | ' . get_the_date() . '</p>
-      <h3>' . get_the_title() . '</h3>
-      <a class="button button-sec" href="' . get_permalink() . '">More</a>
-    </div>
-  </li>';
-endwhile;
-
+  // The Loop
+  if( $wp_query->have_posts() ):
+    while( $wp_query->have_posts() ) : $wp_query->the_post();
+      wc_get_template_part( 'content', 'post' );
+    endwhile;
+  endif;
+  wp_reset_postdata();
 echo '</ul>';
 
-// Reset Query
-wp_reset_query();
+// Load more posts
+echo '<a id="more-posts" class="button">Load more<span class="loader"></span></a>';
 
 get_footer();
 ?>

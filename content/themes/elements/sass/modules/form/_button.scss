@@ -37,4 +37,8 @@ input[type="submit"]{
       background-color: $black;
     }
   }
+
+  &.is-disabled{
+    @include hide( .2s );
+  }
 }
