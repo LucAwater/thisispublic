@@ -6,6 +6,10 @@ jQuery(document).ready( function($) {
     var clicked = $(this);
     var clickedParent = clicked.data('parent');
 
+    // Show more products button again
+    $('#more-products').removeClass('is-disabled');
+
+    // Get current filter values
     if(clickedParent == 'brand'){
       var brand_current = $(this).attr('title');
       var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
@@ -20,9 +24,11 @@ jQuery(document).ready( function($) {
       var tag_current = $(this).attr('title');
     }
 
+    // Switch current classes
     $(this).parents('ul').children('li').removeClass('current');
     $(this).parent().addClass('current');
 
+    // The AJAX call
     $.ajax({
       url : ajaxfilterproducts.ajax_url,
       type : 'post',
