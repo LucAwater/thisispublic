@@ -33,7 +33,10 @@ jQuery(document).ready( function($) {
       var items = $('.product');
 
       $('main').imagesLoaded( function() {
-        masonry.isotope( 'reloadItems' ).isotope({itemSelector: 'li'});
+        masonry.isotope( 'reloadItems' ).isotope({
+          itemSelector: 'li',
+          transitionDuration: 0
+        });
       });
     });
   });

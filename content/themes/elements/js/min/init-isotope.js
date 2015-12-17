@@ -1,1 +1,1 @@
-!function(o){if(o(".isotope").length>0){var i=o(".isotope-masonry");o("main").imagesLoaded(function(){i.isotope({layoutMode:"masonry",hiddenStyle:{opacity:0},visibleStyle:{opacity:1}})})}}(jQuery);
+!function(o){if(o(".isotope").length>0){var e=o(".isotope-masonry");o("main").imagesLoaded(function(){e.isotope({layoutMode:"masonry"})})}}(jQuery);

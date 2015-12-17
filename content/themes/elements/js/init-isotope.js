@@ -5,13 +5,7 @@
 
     $('main').imagesLoaded( function() {
       masonry.isotope({
-        layoutMode: 'masonry',
-        hiddenStyle: {
-          opacity: 0
-        },
-        visibleStyle: {
-          opacity: 1
-        }
+        layoutMode: 'masonry'
       });
     });
   };
