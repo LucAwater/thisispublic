@@ -1,12 +1,19 @@
-@import url("//hello.myfonts.net/count/2f7f3e");
+@import url("//hello.myfonts.net/count/300b50");
 
+@font-face {font-family: 'AvenirNextLTPro-Light';src: url('../webfonts/300B50_0_0.eot');src: url('../webfonts/300B50_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/300B50_0_0.woff2') format('woff2'),url('../webfonts/300B50_0_0.woff') format('woff'),url('../webfonts/300B50_0_0.ttf') format('truetype');}
 
-@font-face {font-family: 'AvenirNextLTPro-Light';src: url('../webfonts/2F7F3E_0_0.eot');src: url('../webfonts/2F7F3E_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/2F7F3E_0_0.woff2') format('woff2'),url('../webfonts/2F7F3E_0_0.woff') format('woff'),url('../webfonts/2F7F3E_0_0.ttf') format('truetype');}
+@font-face {font-family: 'AvenirNextLTPro-Bold';src: url('../webfonts/300B50_1_0.eot');src: url('../webfonts/300B50_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/300B50_1_0.woff2') format('woff2'),url('../webfonts/300B50_1_0.woff') format('woff'),url('../webfonts/300B50_1_0.ttf') format('truetype');}
 
 @mixin avenir{
   font-family: 'AvenirNextLTPro-Light', 'sans-serif';
   font-style: normal;
   font-weight: normal;
+
+  &.is-bold,
+  strong{
+    font-family: 'AvenirNextLTPro-Bold', 'sans-serif';
+    font-weight: 100;
+  }
 }
 
 @mixin chronicle-display{
