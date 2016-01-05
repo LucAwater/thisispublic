@@ -5,7 +5,7 @@ get_header();
 $query = array(
   'order'           => 'DESC',
   'orderby'         => 'date',
-  'posts_per_page'  => 9
+  'posts_per_page'  => 15
 );
 $wp_query = new WP_Query($query);
 
