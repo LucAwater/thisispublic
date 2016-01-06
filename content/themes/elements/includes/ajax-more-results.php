@@ -6,6 +6,7 @@ function ajax_more_results(){
   $query_data = $_POST;
   $offset = $query_data['offset'];
   $key = $query_data['key'];
+  print_r($key);
 
   // The query
   $result = get_search_query();
