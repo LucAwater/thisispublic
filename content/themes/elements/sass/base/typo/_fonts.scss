@@ -21,7 +21,9 @@
   font-style: normal;
   font-weight: 400;
 
-  &.is-bold{
+  &.is-bold,
+  strong{
+    font-family: "Chronicle Display A", "Chronicle Display B";
     font-weight: 700;
   }
 
@@ -35,7 +37,9 @@
   font-style: normal;
   font-weight: 400;
 
-  &.is-bold{
+  &.is-bold,
+  strong{
+    font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
     font-weight: 700;
   }
 
