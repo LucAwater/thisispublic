@@ -1489,7 +1489,9 @@ h2 {
   font-style: normal;
   font-weight: 400;
   font-size: 2.5em; }
-  h2.is-bold {
+  h2.is-bold,
+  h2 strong {
+    font-family: "Chronicle Display A", "Chronicle Display B";
     font-weight: 700; }
   h2.is-italic {
     font-style: italic; }
@@ -1779,7 +1781,9 @@ footer .footer-content {
     padding: 0;
     text-transform: capitalize;
     background-color: #b4b4b4; }
-    #mc_embed_signup input[type="submit"].is-bold {
+    #mc_embed_signup input[type="submit"].is-bold,
+    #mc_embed_signup input[type="submit"] strong {
+      font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
       font-weight: 700; }
     #mc_embed_signup input[type="submit"].is-italic {
       font-style: italic; }
@@ -2464,7 +2468,32 @@ section.testimonials .section-body li {
     section.testimonials .section-body li input[type="search"]:first-child.is-bold,
     section.testimonials .section-body li input[type="tel"]:first-child.is-bold,
     section.testimonials .section-body li input[type="time"]:first-child.is-bold,
-    section.testimonials .section-body li select:first-child.is-bold {
+    section.testimonials .section-body li select:first-child.is-bold,
+    section.testimonials .section-body li p:first-child strong,
+    section.testimonials .section-body li a:first-child strong,
+    section.testimonials .section-body li span:first-child strong,
+    section.testimonials .section-body li label:first-child strong,
+    section.testimonials .section-body li #mc_embed_signup div.mce_inline_error:first-child strong,
+    #mc_embed_signup section.testimonials .section-body li div.mce_inline_error:first-child strong,
+    section.testimonials .section-body li #mc_embed_signup #mce-responses .response:first-child strong,
+    #mc_embed_signup #mce-responses section.testimonials .section-body li .response:first-child strong,
+    section.testimonials .section-body li button:first-child strong,
+    section.testimonials .section-body li .button:first-child strong,
+    section.testimonials .section-body li input[type="submit"]:first-child strong,
+    section.testimonials .section-body li input[type="text"]:first-child strong,
+    section.testimonials .section-body li input[type="password"]:first-child strong,
+    section.testimonials .section-body li input[type="date"]:first-child strong,
+    section.testimonials .section-body li input[type="datetime"]:first-child strong,
+    section.testimonials .section-body li input[type="datetime-local"]:first-child strong,
+    section.testimonials .section-body li input[type="month"]:first-child strong,
+    section.testimonials .section-body li input[type="week"]:first-child strong,
+    section.testimonials .section-body li input[type="email"]:first-child strong,
+    section.testimonials .section-body li input[type="number"]:first-child strong,
+    section.testimonials .section-body li input[type="search"]:first-child strong,
+    section.testimonials .section-body li input[type="tel"]:first-child strong,
+    section.testimonials .section-body li input[type="time"]:first-child strong,
+    section.testimonials .section-body li select:first-child strong {
+      font-family: "Chronicle Display A", "Chronicle Display B";
       font-weight: 700; }
     section.testimonials .section-body li p:first-child.is-italic, section.testimonials .section-body li a:first-child.is-italic, section.testimonials .section-body li span:first-child.is-italic,
     section.testimonials .section-body li label:first-child.is-italic, section.testimonials .section-body li #mc_embed_signup div.mce_inline_error:first-child.is-italic, #mc_embed_signup section.testimonials .section-body li div.mce_inline_error:first-child.is-italic, section.testimonials .section-body li #mc_embed_signup #mce-responses .response:first-child.is-italic, #mc_embed_signup #mce-responses section.testimonials .section-body li .response:first-child.is-italic, section.testimonials .section-body li button:first-child.is-italic,
@@ -2689,7 +2718,34 @@ section.video .section-body:hover .video-button {
         .posts li div input.is-bold[type="search"],
         .posts li div input.is-bold[type="tel"],
         .posts li div input.is-bold[type="time"],
-        .posts li div select.is-bold {
+        .posts li div select.is-bold,
+        .posts li div p strong,
+        .posts li div a strong,
+        .posts li div span strong,
+        .posts li div label strong,
+        .posts li div #mc_embed_signup div.mce_inline_error strong,
+        #mc_embed_signup .posts li div div.mce_inline_error strong,
+        .posts li div #mc_embed_signup #mce-responses .response strong,
+        #mc_embed_signup #mce-responses .posts li div .response strong,
+        .posts li div button strong,
+        .posts li div .button strong,
+        .posts li div input[type="submit"] strong,
+        .posts li div input[type="text"] strong,
+        .posts li div input[type="password"] strong,
+        .posts li div input[type="date"] strong,
+        .posts li div input[type="datetime"] strong,
+        .posts li div input[type="datetime-local"] strong,
+        .posts li div input[type="month"] strong,
+        .posts li div input[type="week"] strong,
+        .posts li div input[type="email"] strong,
+        .posts li div input[type="number"] strong,
+        .posts li div input[type="search"] strong,
+        .posts li div input[type="tel"] strong,
+        .posts li div input[type="time"] strong,
+        .posts li div .form-row a.chosen-single strong,
+        .form-row .posts li div a.chosen-single strong,
+        .posts li div select strong {
+          font-family: "Chronicle Text G1 A", "Chronicle Text G1 B";
           font-weight: 700; }
         .posts li div p.is-italic, .posts li div a.is-italic, .posts li div span.is-italic,
         .posts li div label.is-italic, .posts li div #mc_embed_signup div.is-italic.mce_inline_error, #mc_embed_signup .posts li div div.is-italic.mce_inline_error, .posts li div #mc_embed_signup #mce-responses .is-italic.response, #mc_embed_signup #mce-responses .posts li div .is-italic.response, .posts li div button.is-italic,
