@@ -8,6 +8,9 @@ jQuery(document).ready( function($) {
     var buttonText = button.childNodes[0];
     buttonText.nodeValue = 'loading...';
 
+    // Get searched key
+    var key = $('h1.search-result').data('searched');
+
     // Count already loaded products
     var product_count = $('.product').length;
 
@@ -18,7 +21,7 @@ jQuery(document).ready( function($) {
       data : {
         action : 'ajax_more_results',
         offset: product_count,
-        key: 'blue'
+        key: key
       },
       success : function( response ) {
         jQuery('ul.products').append(response);

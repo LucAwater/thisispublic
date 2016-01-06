@@ -19,7 +19,7 @@
   echo '</div>';
   ?>
 
-  <h1 class="is-aligned-center margin-t50 margin-b80">Search results for: <?php the_search_query(); ?></h1>
+  <h1 class="search-result is-aligned-center margin-t50 margin-b80" data-searched="<?php echo get_search_query(); ?>">Search results for: <?php the_search_query(); ?></h1>
 
     <?php
     // TEMPORARILY show all tags
