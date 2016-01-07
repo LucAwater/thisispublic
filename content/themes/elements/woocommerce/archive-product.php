@@ -68,7 +68,10 @@ get_header( 'shop' ); ?>
         '<ul id="select-category" class="filter-options">
           <li class="current"><a class="tax-filter" title="all" data-parent="category">All</a></li>';
 
-          $categories = get_categories();
+          $args = array(
+            'taxonomy'  => 'product_cat'
+          );
+          $categories = get_categories($args);
 
           foreach( $categories as $category ):
             echo '<li><a class="tax-filter" title="' . $category->slug . '" data-parent="category">' . $category->name . '</a></li>';
@@ -140,7 +143,7 @@ get_header( 'shop' ); ?>
       if( $wp_query->have_posts() ):
         woocommerce_product_loop_start();
           while( $wp_query->have_posts() ) : $wp_query->the_post();
-            global $current_user;
+            global $current_user, $product_ID;
             $current_user_role = $current_user->roles[0];
             $user_level = get_the_terms( $product_ID, 'userlevel' );
 

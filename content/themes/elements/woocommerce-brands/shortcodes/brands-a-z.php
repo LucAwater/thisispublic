@@ -4,6 +4,7 @@
  *
  * @usedby [product_brand_list]
  */
+global $post;
 if( is_tax('product_brand') || is_shop() || is_search() ){
   $brand_terms = get_the_terms($post->id, 'product_brand');
   $current_brand = $brand_terms[0]->slug;

@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product, $woocommerce_loop;
+global $product, $product_ID, $woocommerce_loop;
 
 // Get brand(s) product belongs to
 $brand = get_the_terms( $product_ID, 'product_brand' );
