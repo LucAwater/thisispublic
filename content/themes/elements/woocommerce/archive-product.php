@@ -52,11 +52,11 @@ get_header( 'shop' ); ?>
 
         if( is_shop() ){
           echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
-          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">tag: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         } else {
           echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
-          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">tag: <span>All</span></a>';
+          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         }
 
