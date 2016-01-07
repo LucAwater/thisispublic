@@ -3302,6 +3302,8 @@ ul.social li {
   height: 100%; }
 
 @media only screen and (max-width: 47.938em) {
+  .filter .filter-current:first-child {
+    padding-left: 40px; }
   .filter .back,
   .filter a[title="gender-current"] {
     display: none; }
@@ -3330,20 +3332,28 @@ ul.social li {
       display: block; }
     .filter .search-form.is-active .search-trigger {
       display: none; } }
+@media screen and (max-width: 1150px) {
+  .filter .filter-current[title="gender-current"] {
+    display: none; } }
+@media screen and (max-width: 980px) {
+  .filter .filter-current[title="tag-current"] {
+    display: none; } }
+@media screen and (max-width: 830px) {
+  .filter .filter-current[title="season-current"] {
+    display: none; } }
 @media only screen and (max-width: 31.25em) {
+  .filter .filter-current[title="category-current"] {
+    display: none; }
+
   .filter {
     padding: 0 40px; }
+    .filter .filter-current:first-child {
+      padding-left: 20px; }
     .filter a[title="brand-current"] {
       padding: 0 20px;
       margin-left: -20px; }
     .filter .search-form.is-active {
       padding: 0 40px; } }
-@media screen and (max-width: 1100px) {
-  .filter .filter-current[title="gender-current"] {
-    display: none; } }
-@media screen and (max-width: 950px) {
-  .filter .filter-current[title="tag-current"] {
-    display: none; } }
 body.woocommerce-account .back {
   max-width: 800px;
   margin: -40px auto; }

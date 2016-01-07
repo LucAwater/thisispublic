@@ -98,6 +98,10 @@
 
 @media #{$medium-down}{
   .filter{
+    .filter-current:first-child{
+      padding-left: 40px;
+    }
+
     // Remove some elements
     .back,
     a[title="gender-current"]{
@@ -154,9 +158,44 @@
   }
 }
 
+// Hide filter elements on custom queries
+@media screen and (max-width: 1150px){
+  .filter{
+    .filter-current[title="gender-current"]{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 980px){
+  .filter{
+    .filter-current[title="tag-current"]{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 830px){
+  .filter{
+    .filter-current[title="season-current"]{
+      display: none;
+    }
+  }
+}
+
 @media #{$small-only}{
   .filter{
+    .filter-current[title="category-current"]{
+      display: none;
+    }
+  }
+
+  .filter{
     padding: 0 40px;
+
+    .filter-current:first-child{
+      padding-left: 20px;
+    }
 
     a[title="brand-current"]{
       padding: 0 20px;
@@ -165,23 +204,6 @@
 
     .search-form.is-active{
       padding: 0 40px;
-    }
-  }
-}
-
-// Hide filter elements on custom queries
-@media screen and (max-width: 1100px){
-  .filter{
-    .filter-current[title="gender-current"]{
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 950px){
-  .filter{
-    .filter-current[title="tag-current"]{
-      display: none;
     }
   }
 }
