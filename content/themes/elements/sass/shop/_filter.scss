@@ -44,15 +44,15 @@
   }
 }
 
-.back{
-  padding-right: 40px;
-}
-
 .filter{
   .filter-current{
     padding: 0 40px;
 
     text-decoration: none;
+
+    &:first-child{
+      padding-left: 0;
+    }
 
     &.is-active{
       background-color: $grey;

@@ -3258,12 +3258,11 @@ ul.social li {
     .filter .search-form .search-trigger {
       display: none; }
 
-.back {
-  padding-right: 40px; }
-
 .filter .filter-current {
   padding: 0 40px;
   text-decoration: none; }
+  .filter .filter-current:first-child {
+    padding-left: 0; }
   .filter .filter-current.is-active {
     background-color: #e8e8e8; }
 .filter ul.filter-options {

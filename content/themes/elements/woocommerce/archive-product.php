@@ -42,20 +42,20 @@ get_header( 'shop' ); ?>
     // If user is logged in, continue looping products
     else:
       echo '<div class="filter is-fullwidth">';
-        echo
-        '<div class="back">
-          <a class="link-arrow link-arrow-left" href="' . home_url() . '/brands"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to all brands</a>
-        </div>';
 
         // Current brand and gender
         $brand_terms = get_the_terms($post->id, 'product_brand');
 
         if( is_shop() ){
           echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
+          echo '<a class="filter-current" title="category-current" data-current="all" data-target="category">category: <span>All</span></a>';
+          echo '<a class="filter-current" title="season-current" data-current="all" data-target="season">season: <span>All</span></a>';
           echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         } else {
           echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
+          echo '<a class="filter-current" title="category-current" data-current="all" data-target="category">category: <span>All</span></a>';
+          echo '<a class="filter-current" title="season-current" data-current="all" data-target="season">season: <span>All</span></a>';
           echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>';
           echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
         }
@@ -63,11 +63,37 @@ get_header( 'shop' ); ?>
         // Brand filter
         echo do_shortcode('[product_brand_list]');
 
+        // Category filter
+        echo
+        '<ul id="select-category" class="filter-options">
+          <li class="current"><a class="tax-filter" title="all" data-parent="category">All</a></li>';
+
+          $categories = get_categories();
+
+          foreach( $categories as $category ):
+            echo '<li><a class="tax-filter" title="' . $category->slug . '" data-parent="category">' . $category->name . '</a></li>';
+          endforeach;
+        echo '</ul>';
+
+        // Season filter
+        echo
+        '<ul id="select-season" class="filter-options">
+          <li class="current"><a class="tax-filter" title="all" data-parent="season">All</a></li>';
+
+          $seasons = get_terms('season');
+
+          foreach( $seasons as $season ):
+            echo '<li><a class="tax-filter" title="' . $season->slug . '" data-parent="season">' . $season->name . '</a></li>';
+          endforeach;
+        echo '</ul>';
+
         // Tag filter
         $tags = get_field('tags_selected', 'option');
 
-        echo '<ul id="select-tag" class="filter-options">';
-          echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+        echo
+        '<ul id="select-tag" class="filter-options">
+          <li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+
           if( $tags ){
             foreach ( $tags as $tag ) {
               echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
