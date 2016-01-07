@@ -99,12 +99,12 @@ get_header( 'shop' ); ?>
       if( is_shop() ){
         $query = array(
             'post_type' => 'product',
-            'posts_per_page' => 9
+            'posts_per_page' => 15
         );
       } else {
         $query = array(
             'post_type' => 'product',
-            'posts_per_page' => 9,
+            'posts_per_page' => 15,
             'product_brand' => $brand_terms[0]->slug
         );
       }

@@ -63,7 +63,7 @@ function ajax_more_products(){
   // Post query
   $query = array(
     'post_type' => 'product',
-    'posts_per_page' => 9,
+    'posts_per_page' => 15,
     'tax_query' => $tax_query,
     'offset' => $offset
   );
