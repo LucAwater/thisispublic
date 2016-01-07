@@ -56,6 +56,8 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
 
             <div class="thumb-content">
               <p><?php echo $brand->description; ?></p>
+              <a class="link-arrow link-arrow-right" href="<?php echo get_term_link( $brand->slug, 'product_brand' ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">View products from this brand</a>
+
               <?php
               // Brand files
               $brand_files = get_field( 'brand_files', $brand );

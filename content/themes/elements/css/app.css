@@ -3011,7 +3011,11 @@ ul.social li {
     .brands .brand > div .thumb-content:first-child {
       padding: 20px 40px 10px; }
     .brands .brand > div a.link-arrow {
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis; }
       .brands .brand > div a.link-arrow img {
         display: inline-block !important; }
       .brands .brand > div a.link-arrow:hover, .brands .brand > div a.link-arrow:active {

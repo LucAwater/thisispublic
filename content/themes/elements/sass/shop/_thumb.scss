@@ -58,6 +58,10 @@
 
     a.link-arrow{
       margin-bottom: 0;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
 
       img{
         display: inline-block !important;
