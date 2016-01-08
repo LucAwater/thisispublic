@@ -67,9 +67,18 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
                   $url = $file['brand_files_file']['url'];
                   $title = $file['brand_files_title'];
 
-                  if(! empty($url) ){
-                    echo '<a class="link-arrow link-arrow-right" href="' . $url . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $title . '</a>';
-                  }
+                  echo '<a class="link-arrow link-arrow-right" href="' . $url . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $title . '</a>';
+                }
+              endif;
+
+              $brand_mailLinks = get_field( 'brand_mailLinks', $brand );
+              if( $brand_mailLinks ):
+                foreach( $brand_mailLinks as $link ){
+                  $subject = $link['brand_mailLinks_subject'];
+                  $content = $link['brand_mailLinks_content'];
+                  $actionlink = $link['brand_mailLinks_link'];
+
+                  echo '<a class="link-arrow link-arrow-right" href="mailto:info@thisispublic.com?subject=' . $subject . '&body=' . $content . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $actionlink . '</a>';
                 }
               endif;
               ?>
