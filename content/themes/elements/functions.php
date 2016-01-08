@@ -12,8 +12,6 @@ require_once('includes/ajax-more-products.php');
 require_once('includes/ajax-more-posts.php');
 
 require_once('includes/admin/login.php');
-require_once('includes/admin/removal.php');
-require_once('includes/admin/menu.php');
 require_once('includes/admin/acf-page.php');
 require_once('includes/admin/custom-roles.php');
 require_once('includes/admin/free-products.php');
