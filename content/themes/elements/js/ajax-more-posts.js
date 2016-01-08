@@ -1,12 +1,27 @@
 jQuery(document).ready( function($) {
 
-  $('body').on( 'click', '#more-posts', function() {
-    // Start loading animation on button
-    $(this).addClass('is-loading');
+  var infiniteScroll = function() {
+    var grid = $('.isotope');
 
-    var button = document.getElementById('more-posts');
-    var buttonText = button.childNodes[0];
-    buttonText.nodeValue = 'loading...';
+    var waypoint = new Waypoint({
+      element: grid,
+      handler: function(direction) {
+        if( direction == 'down' ){
+          loadPosts();
+          this.destroy();
+        }
+      },
+      offset: 'bottom-in-view'
+    });
+  };
+
+  if( $('.isotope').length > 0 ){
+    infiniteScroll();
+  }
+
+  var loadPosts = function() {
+    // Add spinner below the grid
+    $('.isotope').after('<div class="loader"></div>');
 
     // Count already loaded products
     var post_count = $('.posts li').length;
@@ -22,12 +37,16 @@ jQuery(document).ready( function($) {
       success : function( response ) {
         jQuery('ul.posts').append(response);
 
-        $('#more-posts').removeClass('is-loading');
-        var button = document.getElementById('more-posts');
-        var buttonText = button.childNodes[0];
-        buttonText.nodeValue = 'load more';
+        // If the response is not empty, recalculate waypoints
+        if( response ){
+          $('.loader').remove();
+          infiniteScroll();
+        } else {
+          $('.loader').remove();
+        }
       }
     }).then( function(){
+      // Re-initialize isotope
       var masonry = $('.isotope-masonry');
       var items = $('.product');
 
@@ -38,6 +57,6 @@ jQuery(document).ready( function($) {
         });
       });
     });
-  });
+  };
 
 })
