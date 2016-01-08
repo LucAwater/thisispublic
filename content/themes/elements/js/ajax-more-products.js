@@ -1,12 +1,27 @@
 jQuery(document).ready( function($) {
 
-  $('body').on( 'click', '#more-products', function() {
-    // Start loading animation on button
-    $(this).addClass('is-loading');
+  var infiniteScrollProducts = function() {
+    var grid = $('.products');
 
-    var button = document.getElementById('more-products');
-    var buttonText = button.childNodes[0];
-    buttonText.nodeValue = 'loading...';
+    var waypoint = new Waypoint({
+      element: grid,
+      handler: function(direction) {
+        if( direction == 'down' ){
+          loadProducts();
+          this.destroy();
+        }
+      },
+      offset: 'bottom-in-view'
+    });
+  };
+
+  if( $('.products').length > 0 ){
+    infiniteScrollProducts();
+  }
+
+  var loadProducts = function() {
+    // Add spinner below the grid
+    $('.products').after('<div class="loader"></div>');
 
     // Get all current filter values
     var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
@@ -30,10 +45,13 @@ jQuery(document).ready( function($) {
       success : function( response ) {
         jQuery('ul.products').append(response);
 
-        $('#more-products').removeClass('is-loading');
-        var button = document.getElementById('more-products');
-        var buttonText = button.childNodes[0];
-        buttonText.nodeValue = 'load more';
+        // If the response is not empty, recalculate waypoints
+        if( response ){
+          $('.loader').remove();
+          infiniteScrollProducts();
+        } else {
+          $('.loader').remove();
+        }
       }
     }).then( function(){
       var masonry = $('.isotope-masonry');
@@ -46,6 +64,6 @@ jQuery(document).ready( function($) {
         });
       });
     });
-  });
+  };
 
 })

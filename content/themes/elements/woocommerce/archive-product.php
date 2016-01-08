@@ -158,7 +158,6 @@ get_header( 'shop' ); ?>
       wp_reset_postdata();
       ?>
 
-      <a id="more-products" class="button">Load more<span class="loader"></span></a>
     <?php endif; ?><!-- end of user login check -->
 
 	<?php

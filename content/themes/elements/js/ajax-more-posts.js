@@ -1,7 +1,7 @@
 jQuery(document).ready( function($) {
 
-  var infiniteScroll = function() {
-    var grid = $('.isotope');
+  var infiniteScrollPosts = function() {
+    var grid = $('.posts');
 
     var waypoint = new Waypoint({
       element: grid,
@@ -15,13 +15,13 @@ jQuery(document).ready( function($) {
     });
   };
 
-  if( $('.isotope').length > 0 ){
-    infiniteScroll();
+  if( $('.posts').length > 0 ){
+    infiniteScrollPosts();
   }
 
   var loadPosts = function() {
     // Add spinner below the grid
-    $('.isotope').after('<div class="loader"></div>');
+    $('.posts').after('<div class="loader"></div>');
 
     // Count already loaded products
     var post_count = $('.posts li').length;
@@ -40,7 +40,7 @@ jQuery(document).ready( function($) {
         // If the response is not empty, recalculate waypoints
         if( response ){
           $('.loader').remove();
-          infiniteScroll();
+          infiniteScrollPosts();
         } else {
           $('.loader').remove();
         }
