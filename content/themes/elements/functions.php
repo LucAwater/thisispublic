@@ -31,6 +31,23 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
+// Woocommerce New Customer Admin Notification Email
+add_action('woocommerce_created_customer', 'admin_email_on_registration');
+// Redefine user notification function
+function admin_email_on_registration( $user_id, $plaintext_pass = '' ) {
+  $user = new WP_User($user_id);
+
+  $user_login = stripslashes($user->user_login);
+  $user_email = stripslashes($user->user_email);
+
+  $message  = "New user registration on website:<br /><br />";
+  $message .= sprintf(__('Username: %s'), $user_login) . "<br />";
+  $message .= sprintf(__('E-mail: %s'), $user_email) . "<br /><br />";
+  $message .= sprintf(__('Approve user here: %s'), get_home_url() . "/login");
+
+  @wp_mail(get_option('admin_email'), sprintf(__('[%s] New User Registration'), get_option('blogname')), $message);
+}
+
 // add category nicenames in body and post class
 function post_cats($classes) {
   global $post;
