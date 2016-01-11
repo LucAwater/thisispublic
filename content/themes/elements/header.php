@@ -60,6 +60,10 @@ if( $detect->isMobile() || $detect->isTablet() ){
       <img src="<?php echo bloginfo( 'template_directory' ); ?>/img/logo.svg">
     </a>
 
+    <?php if( is_user_logged_in() ): ?>
+      <a id="logout" href="<?php echo wp_logout_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/icon-lock.svg">Sign out</a>
+    <?php endif; ?>
+
     <a class="menu-open"><i></i></a>
   </header>
 

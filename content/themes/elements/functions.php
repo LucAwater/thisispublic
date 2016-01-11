@@ -31,6 +31,19 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
+// Login/logout redirects
+add_action('wp_logout','go_home');
+function go_home(){
+  wp_redirect( home_url() );
+  exit();
+}
+
+add_action('wp_login','login_redirect');
+function login_redirect(){
+  wp_redirect( home_url() . "/brands" );
+  exit();
+}
+
 // Woocommerce New Customer Admin Notification Email
 add_action('woocommerce_created_customer', 'admin_email_on_registration');
 // Redefine user notification function

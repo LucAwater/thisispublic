@@ -1,12 +1,9 @@
 a.menu-open,
 a.menu-close{
-  top: 17.5px;
-  right: 70px;
-  position: absolute;
-
   width: 45px;
   height: 45px;
   padding: 10px;
+  margin-left: 30px;
   display: block;
 
   i{
@@ -58,12 +55,5 @@ a.menu-close i{
 
   &:after{
     @include transform( rotate(-45deg) );
-  }
-}
-
-@media #{$small-only}{
-  a.menu-open,
-  a.menu-close{
-    right: $side-margin-small;
   }
 }
