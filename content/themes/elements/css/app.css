@@ -3038,48 +3038,6 @@ ul.social li {
   .products .product > div a.button {
     float: right; }
 
-.brands .brand {
-  padding: 0 40px;
-  margin-bottom: 80px !important;
-  display: block; }
-  .brands .brand > div {
-    width: 100%;
-    display: block; }
-    .brands .brand > div img {
-      display: block; }
-    .brands .brand > div .thumb-content {
-      padding: 40px;
-      background-color: white; }
-      .brands .brand > div .thumb-content p, .brands .brand > div .thumb-content a, .brands .brand > div .thumb-content span,
-      .brands .brand > div .thumb-content label, .brands .brand > div .thumb-content #mc_embed_signup div.mce_inline_error, #mc_embed_signup .brands .brand > div .thumb-content div.mce_inline_error, .brands .brand > div .thumb-content #mc_embed_signup #mce-responses .response, #mc_embed_signup #mce-responses .brands .brand > div .thumb-content .response, .brands .brand > div .thumb-content button,
-      .brands .brand > div .thumb-content .button,
-      .brands .brand > div .thumb-content input[type="submit"], .brands .brand > div .thumb-content input[type="text"],
-      .brands .brand > div .thumb-content input[type="password"],
-      .brands .brand > div .thumb-content input[type="date"],
-      .brands .brand > div .thumb-content input[type="datetime"],
-      .brands .brand > div .thumb-content input[type="datetime-local"],
-      .brands .brand > div .thumb-content input[type="month"],
-      .brands .brand > div .thumb-content input[type="week"],
-      .brands .brand > div .thumb-content input[type="email"],
-      .brands .brand > div .thumb-content input[type="number"],
-      .brands .brand > div .thumb-content input[type="search"],
-      .brands .brand > div .thumb-content input[type="tel"],
-      .brands .brand > div .thumb-content input[type="time"],
-      .brands .brand > div .thumb-content select {
-        margin-bottom: 1em; }
-    .brands .brand > div .thumb-content:first-child {
-      padding: 20px 40px 10px; }
-    .brands .brand > div a.link-arrow {
-      margin-bottom: 0;
-      display: block;
-      white-space: nowrap;
-      overflow: hidden !important;
-      text-overflow: ellipsis; }
-      .brands .brand > div a.link-arrow img {
-        display: inline-block !important; }
-      .brands .brand > div a.link-arrow:hover, .brands .brand > div a.link-arrow:active {
-        text-decoration: underline; }
-
 .products .product > div a.has-content .overlay-thumb {
   opacity: 0;
   visibility: hidden;
@@ -3150,7 +3108,57 @@ ul.social li {
   transition: 0.3s; }
 
 @media only screen and (max-width: 31.25em) {
-  .products .product,
+  .products .product {
+    padding: 0 20px; } }
+.brands .brand {
+  padding: 0 40px;
+  margin-bottom: 80px !important;
+  display: block; }
+  .brands .brand > div {
+    width: 100%;
+    display: block; }
+    .brands .brand > div img {
+      display: block; }
+    .brands .brand > div .thumb-content {
+      padding: 40px;
+      background-color: white; }
+      .brands .brand > div .thumb-content p, .brands .brand > div .thumb-content a, .brands .brand > div .thumb-content span,
+      .brands .brand > div .thumb-content label, .brands .brand > div .thumb-content #mc_embed_signup div.mce_inline_error, #mc_embed_signup .brands .brand > div .thumb-content div.mce_inline_error, .brands .brand > div .thumb-content #mc_embed_signup #mce-responses .response, #mc_embed_signup #mce-responses .brands .brand > div .thumb-content .response, .brands .brand > div .thumb-content button,
+      .brands .brand > div .thumb-content .button,
+      .brands .brand > div .thumb-content input[type="submit"], .brands .brand > div .thumb-content input[type="text"],
+      .brands .brand > div .thumb-content input[type="password"],
+      .brands .brand > div .thumb-content input[type="date"],
+      .brands .brand > div .thumb-content input[type="datetime"],
+      .brands .brand > div .thumb-content input[type="datetime-local"],
+      .brands .brand > div .thumb-content input[type="month"],
+      .brands .brand > div .thumb-content input[type="week"],
+      .brands .brand > div .thumb-content input[type="email"],
+      .brands .brand > div .thumb-content input[type="number"],
+      .brands .brand > div .thumb-content input[type="search"],
+      .brands .brand > div .thumb-content input[type="tel"],
+      .brands .brand > div .thumb-content input[type="time"],
+      .brands .brand > div .thumb-content select {
+        margin-bottom: 1em; }
+    .brands .brand > div .thumb-content:first-child {
+      padding: 20px 40px 10px; }
+    .brands .brand > div div.brand-files,
+    .brands .brand > div div.brand-links {
+      margin-top: 1em; }
+    .brands .brand > div a.link-arrow {
+      margin-bottom: 0;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden !important;
+      text-overflow: ellipsis; }
+      .brands .brand > div a.link-arrow img {
+        display: inline-block !important; }
+      .brands .brand > div a.link-arrow:hover, .brands .brand > div a.link-arrow:active {
+        text-decoration: underline; }
+    .brands .brand > div a.button {
+      max-width: none;
+      margin-bottom: 0 !important; }
+
+@media only screen and (max-width: 31.25em) {
   .brands .brand {
     padding: 0 20px; } }
 .products .product > div a.has-content .thumb-content {
