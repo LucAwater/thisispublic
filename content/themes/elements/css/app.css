@@ -3311,10 +3311,10 @@ ul.social li {
       display: none; }
 
 .filter .filter-current {
-  padding: 0 40px;
+  padding: 0 25px;
   text-decoration: none; }
   .filter .filter-current:first-child {
-    padding-left: 0; }
+    margin-left: -25px; }
   .filter .filter-current.is-active {
     background-color: #e8e8e8; }
 .filter ul.filter-options {
@@ -3354,8 +3354,6 @@ ul.social li {
   height: 100%; }
 
 @media only screen and (max-width: 47.938em) {
-  .filter .filter-current:first-child {
-    padding-left: 40px; }
   .filter .back,
   .filter a[title="gender-current"] {
     display: none; }
@@ -3387,10 +3385,10 @@ ul.social li {
 @media screen and (max-width: 1150px) {
   .filter .filter-current[title="gender-current"] {
     display: none; } }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1000px) {
   .filter .filter-current[title="tag-current"] {
     display: none; } }
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 885px) {
   .filter .filter-current[title="season-current"] {
     display: none; } }
 @media only screen and (max-width: 31.25em) {
@@ -3400,7 +3398,7 @@ ul.social li {
   .filter {
     padding: 0 40px; }
     .filter .filter-current:first-child {
-      padding-left: 20px; }
+      margin-left: -20px; }
     .filter a[title="brand-current"] {
       padding: 0 20px;
       margin-left: -20px; }

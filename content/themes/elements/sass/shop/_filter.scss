@@ -46,12 +46,12 @@
 
 .filter{
   .filter-current{
-    padding: 0 40px;
+    padding: 0 25px;
 
     text-decoration: none;
 
     &:first-child{
-      padding-left: 0;
+      margin-left: -25px;
     }
 
     &.is-active{
@@ -98,10 +98,6 @@
 
 @media #{$medium-down}{
   .filter{
-    .filter-current:first-child{
-      padding-left: 40px;
-    }
-
     // Remove some elements
     .back,
     a[title="gender-current"]{
@@ -167,7 +163,7 @@
   }
 }
 
-@media screen and (max-width: 980px){
+@media screen and (max-width: 1000px){
   .filter{
     .filter-current[title="tag-current"]{
       display: none;
@@ -175,7 +171,7 @@
   }
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 885px){
   .filter{
     .filter-current[title="season-current"]{
       display: none;
@@ -194,7 +190,7 @@
     padding: 0 40px;
 
     .filter-current:first-child{
-      padding-left: 20px;
+      margin-left: -20px;
     }
 
     a[title="brand-current"]{
