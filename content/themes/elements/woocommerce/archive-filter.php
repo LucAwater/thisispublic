@@ -63,7 +63,7 @@ $brand_terms = get_the_terms($post->id, 'product_brand');
         <li><a class="tax-filter" title="<?php echo $tag->slug; ?>" data-parent="tag"><?php echo $tag->name; ?></a></li>
         <?php
       endforeach;
-    endif; ?>
+    endif;
     ?>
   </ul>
 

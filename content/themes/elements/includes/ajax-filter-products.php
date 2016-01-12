@@ -10,6 +10,19 @@ function ajax_filter_products(){
   $gender = $query_data['gender'];
   $tag = $query_data['tag'];
 
+  // echo '<div style="margin-top: 100px">';
+  // print_r($brand);
+  // echo '<br>';
+  // print_r($category);
+  // echo '<br>';
+  // print_r($season);
+  // echo '<br>';
+  // print_r($tag);
+  // echo '<br>';
+  // print_r($gender);
+  // echo '<br>';
+  // echo '</div>';
+
   // Build the tax query
   $tax_query = array('relation' => 'AND');
 
@@ -29,37 +42,39 @@ function ajax_filter_products(){
     );
   }
 
-  // if ( $category == 'all') {
-  //   $terms = get_terms( 'product_cat' );
-  //   $term_ids = wp_list_pluck( $terms, 'term_id' );
-  //   $tax_query[] =  array(
-  //     'taxonomy' => 'product_cat',
-  //     'field' => 'term_id',
-  //     'terms' => $term_ids
-  //   );
-  // } else {
-  //   $tax_query[] =  array(
-  //     'taxonomy' => 'product_cat',
-  //     'field' => 'slug',
-  //     'terms' => $category
-  //   );
-  // }
-  //
-  // if ( $season == 'all') {
-  //   $terms = get_terms( 'season' );
-  //   $term_ids = wp_list_pluck( $terms, 'term_id' );
-  //   $tax_query[] =  array(
-  //     'taxonomy' => 'season',
-  //     'field' => 'term_id',
-  //     'terms' => $term_ids
-  //   );
-  // } else {
-  //   $tax_query[] =  array(
-  //     'taxonomy' => 'season',
-  //     'field' => 'slug',
-  //     'terms' => $season
-  //   );
-  // }
+  if ( $category == 'all') {
+    $terms = get_terms( 'product_cat' );
+    $term_ids = wp_list_pluck( $terms, 'term_id' );
+    $tax_query[] =  array(
+      'taxonomy' => 'product_cat',
+      'field' => 'term_id',
+      'terms' => $term_ids,
+      'operator' => 'NOT IN'
+    );
+  } else {
+    $tax_query[] =  array(
+      'taxonomy' => 'product_cat',
+      'field' => 'slug',
+      'terms' => $category
+    );
+  }
+
+  if ( $season == 'all') {
+    $terms = get_terms( 'season' );
+    $term_ids = wp_list_pluck( $terms, 'term_id' );
+    $tax_query[] =  array(
+      'taxonomy' => 'season',
+      'field' => 'term_id',
+      'terms' => $term_ids,
+      'operator' => 'NOT IN'
+    );
+  } else {
+    $tax_query[] =  array(
+      'taxonomy' => 'season',
+      'field' => 'slug',
+      'terms' => $season
+    );
+  }
 
   if ( $gender == 'all') {
     $terms = get_terms( 'gender' );
