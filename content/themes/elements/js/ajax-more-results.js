@@ -1,12 +1,27 @@
 jQuery(document).ready( function($) {
 
-  $('body').on( 'click', '#more-results', function() {
-    // Start loading animation on button
-    $(this).addClass('is-loading');
+  var infiniteScrollResults = function() {
+    var grid = $('.products');
 
-    var button = document.getElementById('more-results');
-    var buttonText = button.childNodes[0];
-    buttonText.nodeValue = 'loading...';
+    var waypoint = new Waypoint({
+      element: grid,
+      handler: function(direction) {
+        if( direction == 'down' ){
+          loadResults();
+          this.destroy();
+        }
+      },
+      offset: 'bottom-in-view'
+    });
+  };
+
+  if( $('.products').length > 0 ){
+    infiniteScrollResults();
+  }
+
+  var loadResults = function() {
+    // Add spinner below the grid
+    $('.posts').after('<div class="loader"></div>');
 
     // Get searched key
     var key = $('h1.search-result').data('searched');
@@ -26,10 +41,12 @@ jQuery(document).ready( function($) {
       success : function( response ) {
         jQuery('ul.products').append(response);
 
-        $('#more-results').removeClass('is-loading');
-        var button = document.getElementById('more-results');
-        var buttonText = button.childNodes[0];
-        buttonText.nodeValue = 'load more';
+        if( response ){
+          $('.loader').remove();
+          infiniteScrollResults();
+        } else {
+          $('.loader').remove();
+        }
       }
     }).then( function(){
       var masonry = $('.isotope-masonry');
@@ -42,6 +59,5 @@ jQuery(document).ready( function($) {
         });
       });
     });
-  });
-
+  };
 })
