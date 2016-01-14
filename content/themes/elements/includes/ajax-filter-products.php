@@ -111,7 +111,9 @@ function ajax_filter_products(){
   // Post query
   $query = array(
     'post_type' => 'product',
-    'posts_per_page' => 9,
+    'posts_per_page' => 15,
+    'orderby' => 'title',
+    'order' => 'ASC',
     'tax_query' => $tax_query
   );
   $wp_query = new WP_Query($query);

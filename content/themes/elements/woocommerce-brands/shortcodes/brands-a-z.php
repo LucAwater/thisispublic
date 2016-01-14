@@ -19,7 +19,7 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
     foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :
       foreach ( $product_brands[ $i ] as $brand ) {
         if( is_tax('product_brand') && $brand->slug === $current_brand ){
-          echo '<li class="current"><a class="tax-filter" title="' . $brand->slug . '">' . $brand->name . '</a></li>';
+          echo '<li class="current"><a class="tax-filter" title="' . $brand->slug . '" data-parent="brand">' . $brand->name . '</a></li>';
         } else {
           echo '<li><a class="tax-filter" title="' . $brand->slug . '" data-parent="brand">' . $brand->name . '</a></li>';
         }
