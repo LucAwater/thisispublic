@@ -1,12 +1,13 @@
 var infiniteScrollProducts = function() {
   var grid = $('.products');
 
+  Waypoint.destroyAll();
+
   var waypoint = new Waypoint({
     element: grid,
     handler: function(direction) {
       if( direction == 'down' ){
         loadProducts();
-        this.destroy();
       }
     },
     offset: 'bottom-in-view'
@@ -45,14 +46,12 @@ var loadProducts = function() {
       offset: product_count
     },
     success : function( response ) {
-      jQuery('ul.products').append(response);
+      $('ul.products').append(response);
+      $('.loader').remove();
 
       // If the response is not empty, recalculate waypoints
       if( response ){
-        $('.loader').remove();
         infiniteScrollProducts();
-      } else {
-        $('.loader').remove();
       }
     }
   }).then( function(){

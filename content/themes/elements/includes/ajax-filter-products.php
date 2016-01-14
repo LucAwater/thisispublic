@@ -48,7 +48,7 @@ function ajax_filter_products(){
     $tax_query[] =  array(
       'taxonomy' => 'product_cat',
       'field' => 'term_id',
-      'terms' => $term_ids,
+      'terms' => 'xxx',
       'operator' => 'NOT IN'
     );
   } else {
@@ -65,7 +65,7 @@ function ajax_filter_products(){
     $tax_query[] =  array(
       'taxonomy' => 'season',
       'field' => 'term_id',
-      'terms' => $term_ids,
+      'terms' => 'xxx',
       'operator' => 'NOT IN'
     );
   } else {
