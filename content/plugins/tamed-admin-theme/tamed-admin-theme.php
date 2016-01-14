@@ -181,7 +181,7 @@ if( class_exists('tamed') ) {
   if( !empty($items) ){
     function tamed_menu_order( $menu_order ) {
       $items = json_decode(get_option('tamed_menu_order'));
-      $items_menu = [];
+      $items_menu = array();
 
       foreach( $items as $item ){
         array_push($items_menu, $item->page);
@@ -198,7 +198,7 @@ if( class_exists('tamed') ) {
   if( !empty($remove_items) ){
     function remove_menu_items() {
       $remove_items = json_decode(get_option('tamed_menu_removals'));
-      $items_removals = [];
+      $items_removals = array();
 
       foreach( $remove_items as $item ){
         array_push($items_removals, remove_menu_page($item->page));
