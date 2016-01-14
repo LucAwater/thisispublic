@@ -47,12 +47,16 @@ get_header( 'shop' ); ?>
       if( is_shop() ){
         $query = array(
             'post_type' => 'product',
+            'orderby' => 'title',
+            'order' => 'ASC',
             'posts_per_page' => 15
         );
       } else {
         $query = array(
             'post_type' => 'product',
             'posts_per_page' => 15,
+            'orderby' => 'title',
+            'order' => 'ASC',
             'product_brand' => $brand_terms[0]->slug
         );
       }

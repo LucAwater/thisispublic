@@ -6,9 +6,6 @@ jQuery(document).ready( function($) {
     var clicked = $(this);
     var clickedParent = clicked.data('parent');
 
-    // Show more products button again
-    $('#more-products').removeClass('is-disabled');
-
     // Get current filter values
     if(clickedParent == 'brand'){
       var brand_current = $(this).attr('title');
@@ -38,12 +35,19 @@ jQuery(document).ready( function($) {
       var gender_current = $(this).attr('title');
       var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
 
-    } else {
+    } else if(clickedParent == 'tag') {
       var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
       var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
       var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
       var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
       var tag_current = $(this).attr('title');
+
+    } else {
+      var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
+      var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
+      var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
+      var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
+      var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
     }
 
     // Switch current classes
@@ -75,6 +79,8 @@ jQuery(document).ready( function($) {
           transitionDuration: 0
         });
       });
+
+      infiniteScrollProducts();
     });
   });
 
