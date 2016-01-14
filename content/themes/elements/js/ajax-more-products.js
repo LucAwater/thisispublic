@@ -1,16 +1,12 @@
 var infiniteScrollProducts = function() {
   var grid = $('.products');
 
-  Waypoint.destroyAll();
-
-  var waypoint = new Waypoint({
-    element: grid,
-    handler: function(direction) {
-      if( direction == 'down' ){
-        loadProducts();
-      }
-    },
-    offset: 'bottom-in-view'
+  var executed = false;
+  $(window).scroll( function() {
+    if( $(window).scrollTop() + $(window).height() == $(document).height() && executed == false) {
+      loadProducts();
+      executed = true;
+    }
   });
 };
 
@@ -47,11 +43,12 @@ var loadProducts = function() {
     },
     success : function( response ) {
       $('ul.products').append(response);
-      $('.loader').remove();
 
-      // If the response is not empty, recalculate waypoints
       if( response ){
+        $('.loader').remove();
         infiniteScrollProducts();
+      } else {
+        $('.loader').remove();
       }
     }
   }).then( function(){

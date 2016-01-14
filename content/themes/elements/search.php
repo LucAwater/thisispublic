@@ -35,6 +35,8 @@
     $result = get_search_query();
     $query = array(
       'post_type' => 'product',
+      'sort' => 'ASC',
+      'sortby' => 'title',
       'posts_per_page' => 15,
       's' => $result
     );
@@ -49,9 +51,6 @@
       woocommerce_product_loop_end();
     endif;
     wp_reset_postdata();
-
-    // Load more results
-    echo '<a id="more-results" class="button">Load more<span class="loader"></span></a>';
     ?>
 
 <?php get_footer(); ?>

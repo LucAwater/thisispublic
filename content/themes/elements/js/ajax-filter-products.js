@@ -66,6 +66,13 @@ option.click( function() {
     },
     success : function( response ) {
       $('ul.products').html(response);
+
+      if( response ){
+        $('.loader').remove();
+        infiniteScrollProducts();
+      } else {
+        $('.loader').remove();
+      }
     }
   }).then( function(){
     var masonry = $('.isotope-masonry');
@@ -77,7 +84,5 @@ option.click( function() {
         transitionDuration: 0
       });
     });
-
-    infiniteScrollProducts();
   });
 });
