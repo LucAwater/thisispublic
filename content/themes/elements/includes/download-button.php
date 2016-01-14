@@ -6,17 +6,19 @@ function direct_free_downloads_button($button) {
     $files = $product->get_files();
     $files = array_keys($files);
 
-    $download_url = home_url('?download_file='.$product->id.'&key='.$files[0].'&free=1' );
+    if($files):
+      $download_url = home_url('?download_file='.$product->id.'&key='.$files[0].'&free=1' );
 
-    $button = sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button %s product_type_%s">%s</a>',
-      esc_url( $download_url  ),
-      esc_attr( $product->id ),
-      esc_attr( $product->get_sku() ),
-      esc_attr( isset( $quantity ) ? $quantity : 1 ),
-      $product->is_purchasable() && $product->is_in_stock() ? '' : '',
-      esc_attr( $product->product_type ),
-      esc_html( 'Download' )
-    );
+      $button = sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" data-quantity="%s" class="button %s product_type_%s">%s</a>',
+        esc_url( $download_url  ),
+        esc_attr( $product->id ),
+        esc_attr( $product->get_sku() ),
+        esc_attr( isset( $quantity ) ? $quantity : 1 ),
+        $product->is_purchasable() && $product->is_in_stock() ? '' : '',
+        esc_attr( $product->product_type ),
+        esc_html( 'Download' )
+      );
+    endif;
   }
 
   return $button;

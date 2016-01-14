@@ -20,8 +20,5 @@ echo '<ul class="posts s-grid-1 l-grid-2 xl-grid-3 isotope isotope-masonry">';
   wp_reset_postdata();
 echo '</ul>';
 
-// Load more posts
-echo '<a id="more-posts" class="button">Load more<span class="loader"></span></a>';
-
 get_footer();
 ?>

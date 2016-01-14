@@ -11,7 +11,7 @@ function ajax_more_results(){
   $result = get_search_query();
   $query = array(
     'post_type' => 'product',
-    'posts_per_page' => 9,
+    'posts_per_page' => 15,
     's' => $key,
     'offset' => $offset
   );

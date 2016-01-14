@@ -46,7 +46,7 @@ else:
     <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
       <div class="product-back">
-        <a class="link-arrow link-arrow-left" href="<?php echo home_url() . "/brand/" . $brand[0]->slug; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg">back to <?php echo $brand[0]->name; ?></a>
+        <a class="link-arrow link-arrow-left" href="<?php echo home_url() . "/brand/" . $brand[0]->slug; ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow.svg"><?php echo $brand[0]->name; ?></a>
       </div>
 
       <div class="summary entry-summary">
@@ -68,8 +68,8 @@ else:
             $title = get_the_title();
             $description = get_the_content();
 
-            echo '<p>' . $brand[0]->name . '</p>';
-            echo '<h1>' . $title . '</h1>';
+            echo '<h1>' . $brand[0]->name . '</h1>';
+            echo '<p>' . $title . '</p>';
             echo wpautop($description);
 
             // Download button

@@ -41,70 +41,18 @@ get_header( 'shop' ); ?>
       echo '<p class="woocommerce-error">You must be logged in to view products. Click <a href="' . home_url() . '/account">here</a> to login or register</p>';
     // If user is logged in, continue looping products
     else:
-      echo '<div class="filter is-fullwidth">';
-        echo
-        '<div class="back">
-          <a class="link-arrow link-arrow-left" href="' . home_url() . '/brands"><img src="' . get_template_directory_uri() . '/img/arrow.svg">back to all brands</a>
-        </div>';
-
-        // Current brand and gender
-        $brand_terms = get_the_terms($post->id, 'product_brand');
-
-        if( is_shop() ){
-          echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
-          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">tag: <span>All</span></a>';
-          echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
-        } else {
-          echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
-          echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">tag: <span>All</span></a>';
-          echo '<a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>';
-        }
-
-        // Brand filter
-        echo do_shortcode('[product_brand_list]');
-
-        // Tag filter
-        $tags = get_field('tags_selected', 'option');
-
-        echo '<ul id="select-tag" class="filter-options">';
-          echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
-          if( $tags ){
-            foreach ( $tags as $tag ) {
-              echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
-            }
-          }
-        echo '</ul>';
-
-        // Gender filter
-        $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );
-
-        echo '<ul id="select-gender" class="filter-options">';
-          echo '<li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>';
-          foreach ( $genders as $gender ) {
-            echo '<li><a class="tax-filter" title="' . $gender->slug . '" data-parent="gender">' . $gender->name . '</a></li>';
-          }
-        echo '</ul>';
-
-        // Search
-        echo
-        '<form id="search-form" role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
-          <input id="search-field" type="search" class="search" value="" name="s" title="" />
-          <button id="search-button" type="submit">search</button>
-          <p class="search-trigger">search</p>
-        </form>';
-
-      echo '</div>';
+      include_once( 'archive-filter.php' );
 
       // Post query
       if( is_shop() ){
         $query = array(
             'post_type' => 'product',
-            'posts_per_page' => 9
+            'posts_per_page' => 15
         );
       } else {
         $query = array(
             'post_type' => 'product',
-            'posts_per_page' => 9,
+            'posts_per_page' => 15,
             'product_brand' => $brand_terms[0]->slug
         );
       }
@@ -114,7 +62,7 @@ get_header( 'shop' ); ?>
       if( $wp_query->have_posts() ):
         woocommerce_product_loop_start();
           while( $wp_query->have_posts() ) : $wp_query->the_post();
-            global $current_user;
+            global $current_user, $product_ID;
             $current_user_role = $current_user->roles[0];
             $user_level = get_the_terms( $product_ID, 'userlevel' );
 
@@ -129,7 +77,6 @@ get_header( 'shop' ); ?>
       wp_reset_postdata();
       ?>
 
-      <a id="more-products" class="button">Load more<span class="loader"></span></a>
     <?php endif; ?><!-- end of user login check -->
 
 	<?php

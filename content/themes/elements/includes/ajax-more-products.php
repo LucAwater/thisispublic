@@ -63,7 +63,7 @@ function ajax_more_products(){
   // Post query
   $query = array(
     'post_type' => 'product',
-    'posts_per_page' => 9,
+    'posts_per_page' => 15,
     'tax_query' => $tax_query,
     'offset' => $offset
   );
@@ -71,7 +71,7 @@ function ajax_more_products(){
 
   if( $wp_query->have_posts() ):
     while( $wp_query->have_posts() ) : $wp_query->the_post();
-      global $current_user;
+      global $current_user, $product_ID;
       $current_user_role = $current_user->roles[0];
       $user_level = get_the_terms( $product_ID, 'userlevel' );
 
@@ -79,14 +79,6 @@ function ajax_more_products(){
         wc_get_template_part( 'content', 'product' );
       }
     endwhile;
-  elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
-    ?>
-    <script type="text/javascript">
-    var button = document.getElementById("more-products");
-    $(button).disabled = true;
-    $(button).addClass('is-disabled');
-    </script>
-    <?php
   endif;
   wp_reset_postdata();
 

@@ -35,7 +35,7 @@
     $result = get_search_query();
     $query = array(
       'post_type' => 'product',
-      'posts_per_page' => 9,
+      'posts_per_page' => 15,
       's' => $result
     );
     $wp_query = new WP_Query($query);

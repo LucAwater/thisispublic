@@ -12,14 +12,13 @@ require_once('includes/ajax-more-products.php');
 require_once('includes/ajax-more-posts.php');
 
 require_once('includes/admin/login.php');
-require_once('includes/admin/removal.php');
-require_once('includes/admin/menu.php');
 require_once('includes/admin/acf-page.php');
 require_once('includes/admin/custom-roles.php');
 require_once('includes/admin/free-products.php');
 require_once('includes/admin/tax-gender.php');
 require_once('includes/admin/tax-userlevel.php');
 require_once('includes/admin/tax-season.php');
+require_once('includes/admin/custom-filter.php');
 
 require_once('includes/account-autologin.php');
 require_once('includes/account-approved.php');
@@ -31,6 +30,30 @@ require_once('woocommerce/woo-functions.php');
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
+}
+
+// Login/logout redirects
+add_action('wp_logout','go_home');
+function go_home(){
+  wp_redirect( home_url() );
+  exit();
+}
+
+// Woocommerce New Customer Admin Notification Email
+add_action('woocommerce_created_customer', 'admin_email_on_registration');
+// Redefine user notification function
+function admin_email_on_registration( $user_id, $plaintext_pass = '' ) {
+  $user = new WP_User($user_id);
+
+  $user_login = stripslashes($user->user_login);
+  $user_email = stripslashes($user->user_email);
+
+  $message  = "New user registration on website:<br /><br />";
+  $message .= sprintf(__('Username: %s'), $user_login) . "<br />";
+  $message .= sprintf(__('E-mail: %s'), $user_email) . "<br /><br />";
+  $message .= sprintf(__('Approve user here: %s'), get_home_url() . "/login");
+
+  @wp_mail(get_option('admin_email'), sprintf(__('[%s] New User Registration'), get_option('blogname')), $message);
 }
 
 // add category nicenames in body and post class

@@ -10,7 +10,7 @@ function ajax_more_posts(){
   $query = array(
     'order'           => 'DESC',
     'orderby'         => 'date',
-    'posts_per_page'  => 9,
+    'posts_per_page'  => 15,
     'offset'          => $offset
   );
   $wp_query = new WP_Query($query);
@@ -20,14 +20,6 @@ function ajax_more_posts(){
     while( $wp_query->have_posts() ) : $wp_query->the_post();
       wc_get_template_part( 'content', 'post' );
     endwhile;
-  else:
-    ?>
-    <script type="text/javascript">
-    var button = document.getElementById("more-posts");
-    $(button).disabled = true;
-    $(button).addClass('is-disabled');
-    </script>
-    <?php
   endif;
   wp_reset_postdata();
 
