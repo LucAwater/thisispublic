@@ -15,6 +15,8 @@ if( $('.products').length > 0 ){
 }
 
 var loadProducts = function() {
+  console.log("loadProducts fired");
+
   // Add spinner below the grid
   $('.products').after('<div class="loader"></div>');
 
