@@ -67,9 +67,11 @@ else:
           echo '<div>';
             $title = get_the_title();
             $description = get_the_content();
+            $price = get_post_meta( get_the_ID(), '_regular_price', true);
 
             echo '<h1>' . $brand[0]->name . '</h1>';
             echo '<p>' . $title . '</p>';
+            echo $product->get_price_html();
             echo wpautop($description);
 
             // Download button

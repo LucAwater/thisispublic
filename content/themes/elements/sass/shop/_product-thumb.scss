@@ -3,6 +3,11 @@
     a.has-content{
       .thumb-content{
         padding: 20px;
+
+        .price{
+          display: block;
+          margin-bottom: 20px;
+        }
       }
 
       .overlay-thumb{

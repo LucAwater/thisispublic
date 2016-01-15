@@ -2957,23 +2957,6 @@ ul.social li {
   .product .product-info > div {
     padding: 40px 40px 20px 40px;
     background-color: white; }
-    .product .product-info > div p:first-child, .product .product-info > div a:first-child, .product .product-info > div span:first-child,
-    .product .product-info > div label:first-child, .product .product-info > div #mc_embed_signup div.mce_inline_error:first-child, #mc_embed_signup .product .product-info > div div.mce_inline_error:first-child, .product .product-info > div #mc_embed_signup #mce-responses .response:first-child, #mc_embed_signup #mce-responses .product .product-info > div .response:first-child, .product .product-info > div button:first-child,
-    .product .product-info > div .button:first-child,
-    .product .product-info > div input[type="submit"]:first-child, .product .product-info > div input[type="text"]:first-child,
-    .product .product-info > div input[type="password"]:first-child,
-    .product .product-info > div input[type="date"]:first-child,
-    .product .product-info > div input[type="datetime"]:first-child,
-    .product .product-info > div input[type="datetime-local"]:first-child,
-    .product .product-info > div input[type="month"]:first-child,
-    .product .product-info > div input[type="week"]:first-child,
-    .product .product-info > div input[type="email"]:first-child,
-    .product .product-info > div input[type="number"]:first-child,
-    .product .product-info > div input[type="search"]:first-child,
-    .product .product-info > div input[type="tel"]:first-child,
-    .product .product-info > div input[type="time"]:first-child,
-    .product .product-info > div select:first-child {
-      margin-bottom: 40px; }
     .product .product-info > div p, .product .product-info > div a, .product .product-info > div span,
     .product .product-info > div label, .product .product-info > div #mc_embed_signup div.mce_inline_error, #mc_embed_signup .product .product-info > div div.mce_inline_error, .product .product-info > div #mc_embed_signup #mce-responses .response, #mc_embed_signup #mce-responses .product .product-info > div .response, .product .product-info > div button,
     .product .product-info > div .button,
@@ -2991,6 +2974,9 @@ ul.social li {
     .product .product-info > div input[type="time"],
     .product .product-info > div select {
       margin-bottom: 20px; }
+    .product .product-info > div .amount {
+      display: block;
+      margin-bottom: 40px; }
     .product .product-info > div .button {
       margin-top: 20px;
       margin-bottom: 20px; }
@@ -3034,7 +3020,7 @@ ul.social li {
       padding: 40px;
       background-color: white; }
       .products .product > div a.has-content .thumb-content h3 {
-        margin-bottom: 40px; }
+        margin: 5px 0; }
   .products .product > div a.button {
     float: right; }
 
@@ -3163,6 +3149,9 @@ ul.social li {
     padding: 0 20px; } }
 .products .product > div a.has-content .thumb-content {
   padding: 20px; }
+  .products .product > div a.has-content .thumb-content .price {
+    display: block;
+    margin-bottom: 20px; }
 .products .product > div a.has-content .overlay-thumb {
   height: 100%; }
 .products .product > div a.has-content .overlay-thumb:after {
