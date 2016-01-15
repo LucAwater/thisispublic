@@ -44,8 +44,8 @@ echo '<section class="slider' . (( $o_menu == true ) ? ' has-anchor" id="anchor-
       if(! $detect->isMobile() ):
         echo
         '<div class="slider-controls">
-          <a class="slider-next link-arrow link-arrow-left"><img src="' . get_template_directory_uri() . '/img/arrow.svg"></a>
-          <a class="slider-prev link-arrow link-arrow-right"><img src="' . get_template_directory_uri() . '/img/arrow.svg"></a>
+          <a class="slider-prev link-arrow link-arrow-left"><img src="' . get_template_directory_uri() . '/img/arrow.svg"></a>
+          <a class="slider-next link-arrow link-arrow-right"><img src="' . get_template_directory_uri() . '/img/arrow.svg"></a>
         </div>';
       endif;
 

@@ -44,12 +44,13 @@
 
       background-color: $white;
 
-      p:first-child{
-        margin-bottom: 40px;
-      }
-
       p{
         margin-bottom: 20px;
+      }
+
+      .amount{
+        display: block;
+        margin-bottom: 40px;
       }
 
       .button{
