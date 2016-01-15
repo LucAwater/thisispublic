@@ -3,7 +3,7 @@
 $b_items = get_sub_field( 'testimonials_b_item' );
 
 // Output
-echo '<section class="testimonials">';
+echo '<section class="testimonials has-no-pad-bottom">';
 
   // Grid header
   echo
