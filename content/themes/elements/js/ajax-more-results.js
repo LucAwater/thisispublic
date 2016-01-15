@@ -1,7 +1,7 @@
 jQuery(document).ready( function($) {
 
   var infiniteScrollResults = function() {
-    var grid = $('.products');
+    var grid = $('.search-results .products');
 
     var waypoint = new Waypoint({
       element: grid,
@@ -15,13 +15,13 @@ jQuery(document).ready( function($) {
     });
   };
 
-  if( $('.products').length > 0 ){
+  if( $('.search-results .products').length > 0 ){
     infiniteScrollResults();
   }
 
   var loadResults = function() {
     // Add spinner below the grid
-    $('.posts').after('<div class="loader"></div>');
+    $('.products').after('<div class="loader"></div>');
 
     // Get searched key
     var key = $('h1.search-result').data('searched');
@@ -39,7 +39,7 @@ jQuery(document).ready( function($) {
         key: key
       },
       success : function( response ) {
-        jQuery('ul.products').append(response);
+        jQuery('.search-results .products').append(response);
 
         if( response ){
           $('.loader').remove();
