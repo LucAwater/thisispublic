@@ -3306,7 +3306,7 @@ ul.social li {
     margin-left: -25px; }
   .filter .filter-current.is-active {
     background-color: #e8e8e8; }
-.filter ul.filter-options {
+.filter .filter-options {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 0s;
@@ -3314,14 +3314,32 @@ ul.social li {
   -ms-transition: 0s;
   -o-transition: 0s;
   transition: 0s;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flex;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-content: flex-start;
+  -ms-flex-align: flex-start;
+  align-content: flex-start;
   top: 80px;
   left: 0;
   position: absolute;
   z-index: 1000;
   width: 100%;
-  padding: 40px;
-  background-color: #e8e8e8; }
-  .filter ul.filter-options.is-active {
+  height: 40vh;
+  min-height: 300px;
+  padding: 80px;
+  padding-bottom: 40px;
+  background-color: rgba(232, 232, 232, 0.98); }
+  .filter .filter-options.is-active {
     opacity: 1;
     visibility: visible;
     -webkit-transition: 0s;
@@ -3329,9 +3347,12 @@ ul.social li {
     -ms-transition: 0s;
     -o-transition: 0s;
     transition: 0s; }
-  .filter ul.filter-options li:first-child {
+  .filter .filter-options li {
+    margin-right: 80px;
+    margin-bottom: 10px; }
+  .filter .filter-options li:first-child {
     margin-bottom: 40px; }
-  .filter ul.filter-options li.current a {
+  .filter .filter-options li.current a {
     text-decoration: underline; }
 
 .overlay {
@@ -3343,7 +3364,6 @@ ul.social li {
   height: 100%; }
 
 @media only screen and (max-width: 47.938em) {
-  .filter .back,
   .filter a[title="gender-current"] {
     display: none; }
   .filter a[title="brand-current"] {
@@ -3372,16 +3392,20 @@ ul.social li {
     .filter .search-form.is-active .search-trigger {
       display: none; } }
 @media screen and (max-width: 1150px) {
-  .filter .filter-current[title="gender-current"] {
+  .filter .filter-current[title="gender-current"],
+  .filter #select-gender {
     display: none; } }
 @media screen and (max-width: 1000px) {
-  .filter .filter-current[title="tag-current"] {
+  .filter .filter-current[title="tag-current"],
+  .filter #select-tag {
     display: none; } }
 @media screen and (max-width: 885px) {
-  .filter .filter-current[title="season-current"] {
+  .filter .filter-current[title="season-current"],
+  .filter #select-season {
     display: none; } }
 @media only screen and (max-width: 31.25em) {
-  .filter .filter-current[title="category-current"] {
+  .filter .filter-current[title="category-current"],
+  .filter #select-category {
     display: none; }
 
   .filter {
@@ -3392,7 +3416,10 @@ ul.social li {
       padding: 0 20px;
       margin-left: -20px; }
     .filter .search-form.is-active {
-      padding: 0 40px; } }
+      padding: 0 40px; }
+    .filter .filter-options {
+      height: auto;
+      padding: 40px; } }
 body.woocommerce-account .back {
   max-width: 800px;
   margin: -40px auto; }

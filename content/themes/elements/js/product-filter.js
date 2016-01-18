@@ -71,6 +71,6 @@
 
   filterUpdateCurrent();
   filterDropdown();
-  filterOptionsPos();
+  // filterOptionsPos();
 
 }( jQuery ));
