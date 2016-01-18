@@ -19,29 +19,36 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
     var filterOption = $('a.tax-filter');
 
     filterCurrent.click( function() {
-      $('.filter-current').removeClass('is-active');
-      $('.filter-options').removeClass('is-active');
+      // Get matching filter menu/options
+      var target = $(this).attr('data-target');
+      var targetOptions = $('#select-' + target);
 
+      // Remove any is-active classes that do not belong to the clicked one
+      $('.filter-current').not(this).removeClass('is-active');
+      $('.filter-options').not(targetOptions).removeClass('is-active');
+
+      // If no overlay exists, create one
       if( $('.overlay').length < 1 ) {
         $('main').append('<div class="overlay"></div>');
       }
 
-      var target = $(this).attr('data-target');
-      var targetOptions = $('#select-' + target);
-
+      // Activate the clicked filter title and matching filter menu/options
       $(this).toggleClass('is-active');
       targetOptions.toggleClass('is-active');
 
-      $('.overlay').click( function() {
-        $('.filter-current').removeClass('is-active');
-        $('.filter-options').removeClass('is-active');
-        $(this).remove();
-      });
-
-      filterOption.click( function() {
+      // Hiding the filter menu/options
+      var dropdownHide = function() {
         $('.filter-current').removeClass('is-active');
         $('.filter-options').removeClass('is-active');
         $('.overlay').remove();
+      }
+
+      $('.overlay').click( function() {
+        dropdownHide();
+      });
+
+      filterOption.click( function() {
+        dropdownHide();
       });
     });
   };
@@ -84,7 +91,7 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 
   filterUpdateCurrent();
   filterDropdown();
-  filterOptionsPos();
+  // filterOptionsPos();
 
 }( jQuery ));
 !function(e){function h(){var h=e(".hero"),s=e(".hero-banner"),t=e("header"),i=(t.height(),h.height());s.css("height",i);var r=e(".is-stretched-wrapper"),c=r.width(),o=r.height(),d=e(".is-stretched-object"),n=d.width()/d.height();d.css("min-height",o),o*n>c?(d.removeClass("is-stretched-wide"),d.addClass("is-stretched-high")):(d.removeClass("is-stretched-high"),d.addClass("is-stretched-wide"));var a=e(".arrow-scroll");a.css("top",i-30),a.click(function(){e("html, body").animate({scrollTop:i+20},500)})}e("section.hero").length>0&&(h(),e(window).on("resize",function(){h()}))}(jQuery);
