@@ -3350,10 +3350,13 @@ ul.social li {
   .filter .filter-options li {
     margin-right: 80px;
     margin-bottom: 10px; }
-  .filter .filter-options li:first-child {
+  .filter .filter-options > li:first-child {
     margin-bottom: 40px; }
   .filter .filter-options li.current a {
     text-decoration: underline; }
+
+#select-category .subcategories {
+  padding-left: 10px; }
 
 .overlay {
   top: 0;

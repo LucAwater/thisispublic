@@ -87,7 +87,7 @@
       margin-bottom: 10px;
     }
 
-    li:first-child{
+    > li:first-child{
       margin-bottom: 40px;
     }
 
@@ -95,6 +95,10 @@
       text-decoration: underline;
     }
   }
+}
+
+#select-category .subcategories{
+  padding-left: 10px;
 }
 
 .overlay{
