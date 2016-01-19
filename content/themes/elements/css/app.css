@@ -2931,11 +2931,19 @@ ul.social li {
   100% {
     -webkit-transform: rotate(360deg);
     tranform: rotate(360deg); } }
+body.page-account
+body.page-brands,
 body.tax-product_brand,
 body.post-type-archive-product,
 body.search-results,
 body.single-product {
   min-width: 1280px; }
+  body.page-account
+  body.page-brands header,
+  body.page-account
+  body.page-brands main,
+  body.page-account
+  body.page-brands footer,
   body.tax-product_brand header,
   body.tax-product_brand main,
   body.tax-product_brand footer,
