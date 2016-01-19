@@ -2,6 +2,8 @@
 /**
  * @package WordPress
  */
+
+global $post;
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +25,12 @@
   <meta property="og:url" content="">
 
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <?php if( is_shop() || is_tax( 'product_brand' ) || is_product() || is_account_page() || is_page('brands') || is_search() ): ?>
+    <meta name="viewport" content="width=1280">
+  <?php else: ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?php endif; ?>
 
   <!-- Fonts from Typography.com -->
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/680076/784108/css/fonts.css" />
@@ -39,8 +46,6 @@
 </head>
 
 <?php
-global $post;
-
 $detect = new Mobile_Detect;
 if( $detect->isMobile() || $detect->isTablet() ){
   $body_class = 'is-touch page-' . $post->post_name;
