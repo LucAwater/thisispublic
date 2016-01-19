@@ -1,0 +1,12 @@
+body.tax-product_brand,
+body.post-type-archive-product,
+body.search-results,
+body.single-product{
+  min-width: 1280px;
+
+  header,
+  main,
+  footer{
+    min-width: 1280px;
+  }
+}

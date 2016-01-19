@@ -168,61 +168,61 @@
   }
 }
 
-// Hide filter elements on custom queries
-@media screen and (max-width: 1150px){
-  .filter{
-    .filter-current[title="gender-current"],
-    #select-gender{
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 1000px){
-  .filter{
-    .filter-current[title="tag-current"],
-    #select-tag{
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 885px){
-  .filter{
-    .filter-current[title="season-current"],
-    #select-season{
-      display: none;
-    }
-  }
-}
-
-@media #{$small-only}{
-  .filter{
-    .filter-current[title="category-current"],
-    #select-category{
-      display: none;
-    }
-  }
-
-  .filter{
-    padding: 0 40px;
-
-    .filter-current:first-child{
-      margin-left: -20px;
-    }
-
-    a[title="brand-current"]{
-      padding: 0 20px;
-      margin-left: -20px;
-    }
-
-    .search-form.is-active{
-      padding: 0 40px;
-    }
-
-    .filter-options{
-      height: auto;
-      padding: 40px;
-    }
-  }
-}
+// // Hide filter elements on custom queries
+// @media screen and (max-width: 1150px){
+//   .filter{
+//     .filter-current[title="gender-current"],
+//     #select-gender{
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media screen and (max-width: 1000px){
+//   .filter{
+//     .filter-current[title="tag-current"],
+//     #select-tag{
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media screen and (max-width: 885px){
+//   .filter{
+//     .filter-current[title="season-current"],
+//     #select-season{
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media #{$small-only}{
+//   .filter{
+//     .filter-current[title="category-current"],
+//     #select-category{
+//       display: none;
+//     }
+//   }
+//
+//   .filter{
+//     padding: 0 40px;
+//
+//     .filter-current:first-child{
+//       margin-left: -20px;
+//     }
+//
+//     a[title="brand-current"]{
+//       padding: 0 20px;
+//       margin-left: -20px;
+//     }
+//
+//     .search-form.is-active{
+//       padding: 0 40px;
+//     }
+//
+//     .filter-options{
+//       height: auto;
+//       padding: 40px;
+//     }
+//   }
+// }
