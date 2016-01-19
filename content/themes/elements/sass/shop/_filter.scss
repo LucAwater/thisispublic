@@ -59,8 +59,11 @@
     }
   }
 
-  ul.filter-options{
+  .filter-options{
     @include hide( 0s );
+    @include flex;
+    @include flex-flow( column wrap );
+    @include align-content( flex-start );
 
     top: 80px;
     left: 0;
@@ -68,15 +71,23 @@
     z-index: $zIndex-filterOptions;
 
     width: 100%;
-    padding: 40px;
+    height: 40vh;
+    min-height: 300px;
+    padding: 80px;
+    padding-bottom: 40px;
 
-    background-color: $grey;
+    background-color: rgba( $grey, .98 );
 
     &.is-active{
       @include show( 0s );
     }
 
-    li:first-child{
+    li{
+      margin-right: 80px;
+      margin-bottom: 10px;
+    }
+
+    > li:first-child{
       margin-bottom: 40px;
     }
 
@@ -84,6 +95,10 @@
       text-decoration: underline;
     }
   }
+}
+
+#select-category .subcategories{
+  padding-left: 10px;
 }
 
 .overlay{
@@ -99,7 +114,6 @@
 @media #{$medium-down}{
   .filter{
     // Remove some elements
-    .back,
     a[title="gender-current"]{
       display: none;
     }
@@ -154,52 +168,61 @@
   }
 }
 
-// Hide filter elements on custom queries
-@media screen and (max-width: 1150px){
-  .filter{
-    .filter-current[title="gender-current"]{
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 1000px){
-  .filter{
-    .filter-current[title="tag-current"]{
-      display: none;
-    }
-  }
-}
-
-@media screen and (max-width: 885px){
-  .filter{
-    .filter-current[title="season-current"]{
-      display: none;
-    }
-  }
-}
-
-@media #{$small-only}{
-  .filter{
-    .filter-current[title="category-current"]{
-      display: none;
-    }
-  }
-
-  .filter{
-    padding: 0 40px;
-
-    .filter-current:first-child{
-      margin-left: -20px;
-    }
-
-    a[title="brand-current"]{
-      padding: 0 20px;
-      margin-left: -20px;
-    }
-
-    .search-form.is-active{
-      padding: 0 40px;
-    }
-  }
-}
+// // Hide filter elements on custom queries
+// @media screen and (max-width: 1150px){
+//   .filter{
+//     .filter-current[title="gender-current"],
+//     #select-gender{
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media screen and (max-width: 1000px){
+//   .filter{
+//     .filter-current[title="tag-current"],
+//     #select-tag{
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media screen and (max-width: 885px){
+//   .filter{
+//     .filter-current[title="season-current"],
+//     #select-season{
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media #{$small-only}{
+//   .filter{
+//     .filter-current[title="category-current"],
+//     #select-category{
+//       display: none;
+//     }
+//   }
+//
+//   .filter{
+//     padding: 0 40px;
+//
+//     .filter-current:first-child{
+//       margin-left: -20px;
+//     }
+//
+//     a[title="brand-current"]{
+//       padding: 0 20px;
+//       margin-left: -20px;
+//     }
+//
+//     .search-form.is-active{
+//       padding: 0 40px;
+//     }
+//
+//     .filter-options{
+//       height: auto;
+//       padding: 40px;
+//     }
+//   }
+// }

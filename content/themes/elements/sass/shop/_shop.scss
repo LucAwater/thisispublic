@@ -1,0 +1,47 @@
+body.page-account,
+body.page-brands,
+body.tax-product_brand,
+body.post-type-archive-product,
+body.search-results,
+body.single-product{
+  min-width: 1280px;
+
+  header,
+  main,
+  footer{
+    min-width: 1280px;
+  }
+}
+
+@media #{$small-only}{
+  body.page-account,
+  body.page-brands,
+  body.tax-product_brand,
+  body.post-type-archive-product,
+  body.search-results,
+  body.single-product{
+    header,
+    footer{
+      padding-left: $side-margin;
+      padding-right: $side-margin;
+    }
+
+    main{
+      padding-left: $side-margin / 2;
+      padding-right: $side-margin / 2;
+    }
+
+    header .link-logo{
+      left: $side-margin;
+    }
+
+    .products .product,
+    .brands .brand{
+      padding: 0 40px;
+    }
+
+    .filter{
+      margin-left: -$side-margin / 2 !important;
+    }
+  }
+}

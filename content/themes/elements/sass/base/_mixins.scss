@@ -48,6 +48,11 @@
           flex-direction: $value;
 }
 
+@mixin flex-flow($value){
+  -webkit-flex-flow: $value;
+          flex-flow: $value;
+}
+
 @mixin align-self($value){
   -webkit-align-self: $value;
      -moz-align-self: $value;
@@ -60,6 +65,12 @@
   -webkit-align-items: $value;
        -ms-flex-align: $value;
           align-items: $value;
+}
+
+@mixin align-content($value){
+  -webkit-align-content: $value;
+       -ms-flex-align: $value;
+          align-content: $value;
 }
 
 @mixin justify-content($value: flex-start) {

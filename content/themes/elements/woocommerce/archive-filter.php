@@ -27,14 +27,32 @@ $brand_terms = get_the_terms($post->id, 'product_brand');
 
     <?php
     $args = array(
-      'taxonomy' => 'product_cat'
+      'taxonomy'  => 'product_cat'
     );
     $categories = get_categories( $args );
 
     foreach( $categories as $cat ):
     ?>
       <li><a class="tax-filter" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a></li>
-    <?php endforeach; ?>
+    <?php
+
+      $subargs = array(
+        'taxonomy'  => 'product_cat',
+        'child_of'  => $cat->term_id
+      );
+      $subcategories = get_categories( $subargs );
+
+      if( $subcategories ):
+        ?>
+        <ul class="subcategories">
+          <?php foreach( $subcategories as $subcat ): ?>
+            <li>– <a class="tax-filter" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $subcat->name; ?></a></li>
+          <?php endforeach; ?>
+        </ul>
+        <?php
+      endif;
+    endforeach; ?>
+
   </ul>
 
   <!-- Season filter -->

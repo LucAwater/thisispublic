@@ -6,29 +6,36 @@
     var filterOption = $('a.tax-filter');
 
     filterCurrent.click( function() {
-      $('.filter-current').removeClass('is-active');
-      $('.filter-options').removeClass('is-active');
+      // Get matching filter menu/options
+      var target = $(this).attr('data-target');
+      var targetOptions = $('#select-' + target);
 
+      // Remove any is-active classes that do not belong to the clicked one
+      $('.filter-current').not(this).removeClass('is-active');
+      $('.filter-options').not(targetOptions).removeClass('is-active');
+
+      // If no overlay exists, create one
       if( $('.overlay').length < 1 ) {
         $('main').append('<div class="overlay"></div>');
       }
 
-      var target = $(this).attr('data-target');
-      var targetOptions = $('#select-' + target);
-
+      // Activate the clicked filter title and matching filter menu/options
       $(this).toggleClass('is-active');
       targetOptions.toggleClass('is-active');
 
-      $('.overlay').click( function() {
-        $('.filter-current').removeClass('is-active');
-        $('.filter-options').removeClass('is-active');
-        $(this).remove();
-      });
-
-      filterOption.click( function() {
+      // Hiding the filter menu/options
+      var dropdownHide = function() {
         $('.filter-current').removeClass('is-active');
         $('.filter-options').removeClass('is-active');
         $('.overlay').remove();
+      }
+
+      $('.overlay').click( function() {
+        dropdownHide();
+      });
+
+      filterOption.click( function() {
+        dropdownHide();
       });
     });
   };
@@ -71,6 +78,6 @@
 
   filterUpdateCurrent();
   filterDropdown();
-  filterOptionsPos();
+  // filterOptionsPos();
 
 }( jQuery ));
