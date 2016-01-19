@@ -39,7 +39,7 @@ if( is_tax('product_brand') || is_shop() || is_search() ){
     </form>';
   echo '</div>';
 
-  echo '<ul class="brands s-grid-1 l-grid-2 xl-grid-3 isotope isotope-masonry">';
+  echo '<ul class="brands s-grid-3">';
     foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :
       foreach ( $product_brands[ $i ] as $brand ) :
         global $current_user, $product_ID;

@@ -2958,6 +2958,56 @@ body.single-product {
   body.single-product footer {
     min-width: 1280px; }
 
+@media only screen and (max-width: 31.25em) {
+  body.page-account header,
+  body.page-account footer,
+  body.page-brands header,
+  body.page-brands footer,
+  body.tax-product_brand header,
+  body.tax-product_brand footer,
+  body.post-type-archive-product header,
+  body.post-type-archive-product footer,
+  body.search-results header,
+  body.search-results footer,
+  body.single-product header,
+  body.single-product footer {
+    padding-left: 5rem;
+    padding-right: 5rem; }
+  body.page-account main,
+  body.page-brands main,
+  body.tax-product_brand main,
+  body.post-type-archive-product main,
+  body.search-results main,
+  body.single-product main {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem; }
+  body.page-account header .link-logo,
+  body.page-brands header .link-logo,
+  body.tax-product_brand header .link-logo,
+  body.post-type-archive-product header .link-logo,
+  body.search-results header .link-logo,
+  body.single-product header .link-logo {
+    left: 5rem; }
+  body.page-account .products .product,
+  body.page-account .brands .brand,
+  body.page-brands .products .product,
+  body.page-brands .brands .brand,
+  body.tax-product_brand .products .product,
+  body.tax-product_brand .brands .brand,
+  body.post-type-archive-product .products .product,
+  body.post-type-archive-product .brands .brand,
+  body.search-results .products .product,
+  body.search-results .brands .brand,
+  body.single-product .products .product,
+  body.single-product .brands .brand {
+    padding: 0 40px; }
+  body.page-account .filter,
+  body.page-brands .filter,
+  body.tax-product_brand .filter,
+  body.post-type-archive-product .filter,
+  body.search-results .filter,
+  body.single-product .filter {
+    margin-left: -2.5rem !important; } }
 .product .product-back {
   width: 100%;
   height: 80px;
