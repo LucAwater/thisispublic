@@ -18,7 +18,7 @@ if( ! is_user_logged_in() ):
   echo '<p class="woocommerce-error">You must be logged in to view products. Click <a href="' . home_url() . '/account">here</a> to login or register</p>';
 // If user is logged in, continue looping products
 else:
-  global $current_user;
+  global $current_user, $product_ID;
   $current_user_role = $current_user->roles[0];
   $user_level = get_the_terms( $product_ID, 'userlevel' );
 
@@ -27,6 +27,7 @@ else:
     global $product;
 
     $brand = get_the_terms( get_the_ID(), 'product_brand' );
+    $product_price = get_post_meta( get_the_ID(), 'product_price', true );
     ?>
 
     <?php
@@ -71,7 +72,7 @@ else:
 
             echo '<h1>' . $brand[0]->name . '</h1>';
             echo '<p>' . $title . '</p>';
-            echo $product->get_price_html();
+            echo '<span class="amount">' . get_woocommerce_currency_symbol() . ' ' . $product_price . '</span>';
             echo wpautop($description);
 
             // Download button
