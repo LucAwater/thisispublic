@@ -19,6 +19,7 @@ require_once('includes/admin/tax-gender.php');
 require_once('includes/admin/tax-userlevel.php');
 require_once('includes/admin/tax-season.php');
 require_once('includes/admin/custom-filter.php');
+require_once('includes/admin/product-custom-fields.php');
 
 require_once('includes/account-autologin.php');
 require_once('includes/account-approved.php');
@@ -38,6 +39,18 @@ function go_home(){
   wp_redirect( home_url() );
   exit();
 }
+
+function hide_price_fields() { ?>
+   <style>
+   .wp-admin #woocommerce-product-data .pricing,
+   .wp-admin #price span,
+   .wp-admin.post-type-product .price span {
+       display: none !important;
+   }
+   </style>
+<?php
+}
+add_action('admin_head', 'hide_price_fields');
 
 // Woocommerce New Customer Admin Notification Email
 add_action('woocommerce_created_customer', 'admin_email_on_registration');
