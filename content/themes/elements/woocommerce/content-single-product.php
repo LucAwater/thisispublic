@@ -27,7 +27,7 @@ else:
     global $product;
 
     $brand = get_the_terms( get_the_ID(), 'product_brand' );
-    $product_price = get_post_meta( get_the_ID(), 'product_price', true );
+    $display_price = get_post_meta( get_the_ID(), 'display_price', true );
     ?>
 
     <?php
@@ -72,7 +72,7 @@ else:
 
             echo '<h1>' . $brand[0]->name . '</h1>';
             echo '<p>' . $title . '</p>';
-            echo '<span class="amount">' . get_woocommerce_currency_symbol() . ' ' . $product_price . '</span>';
+            echo '<span class="amount">' . get_woocommerce_currency_symbol() . ' ' . $display_price . '</span>';
             echo wpautop($description);
 
             // Download button

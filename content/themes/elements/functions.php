@@ -40,6 +40,18 @@ function go_home(){
   exit();
 }
 
+function hide_price_fields() { ?>
+   <style>
+   .wp-admin #woocommerce-product-data .pricing,
+   .wp-admin #price span,
+   .wp-admin.post-type-product .price span {
+       display: none !important;
+   }
+   </style>
+<?php
+}
+add_action('admin_head', 'hide_price_fields');
+
 // Woocommerce New Customer Admin Notification Email
 add_action('woocommerce_created_customer', 'admin_email_on_registration');
 // Redefine user notification function

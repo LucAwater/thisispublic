@@ -16,8 +16,8 @@ function woo_add_custom_general_fields() {
   // Text Field: package content
   woocommerce_wp_text_input(
     array(
-      'id'          => 'product_price',
-      'label'       => __( 'Product price', 'woocommerce' ),
+      'id'          => 'display_price',
+      'label'       => __( 'Display price', 'woocommerce' ),
       'desc_tip'    => 'true'
     )
   );
@@ -28,10 +28,10 @@ function woo_add_custom_general_fields() {
 // Saving the fields
 function woo_add_custom_general_fields_save( $post_id ){
   // Text Field: package content
-  $woocommerce_text_field = $_POST['product_price'];
+  $woocommerce_text_field = $_POST['display_price'];
   if( !empty( $woocommerce_text_field ) )
-    update_post_meta( $post_id, 'product_price', esc_attr( $woocommerce_text_field ) );
+    update_post_meta( $post_id, 'display_price', esc_attr( $woocommerce_text_field ) );
   else
-    update_post_meta( $post_id, 'product_price', esc_attr( $woocommerce_text_field ) );
+    update_post_meta( $post_id, 'display_price', esc_attr( $woocommerce_text_field ) );
 }
 ?>
