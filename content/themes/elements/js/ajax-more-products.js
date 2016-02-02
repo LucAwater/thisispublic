@@ -13,7 +13,6 @@ var infiniteScrollProducts = function() {
 
       loadProducts();
     }
-
   });
 };
 
