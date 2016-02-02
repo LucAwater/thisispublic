@@ -1,12 +1,19 @@
 var infiniteScrollProducts = function() {
   var grid = $('.products');
 
-  var executed = false;
-  $(window).scroll( function() {
-    if( $(window).scrollTop() + $(window).height() == $(document).height() && executed == false) {
+  var trigger_point = $(document).height() - $('footer').height();
+  var screen_bottom = $(window).scrollTop() + $(window).height();
+
+  $(window).on('scroll', function() {
+    trigger_point = $(document).height() - $('footer').height();
+    screen_bottom = $(window).scrollTop() + $(window).height();
+
+    if( screen_bottom > trigger_point ){
+      $(window).off('scroll');
+
       loadProducts();
-      executed = true;
     }
+
   });
 };
 
@@ -15,8 +22,6 @@ if( $('.products').length > 0 ){
 }
 
 var loadProducts = function() {
-  console.log("loadProducts fired");
-
   // Add spinner below the grid
   $('.products').after('<div class="loader"></div>');
 
