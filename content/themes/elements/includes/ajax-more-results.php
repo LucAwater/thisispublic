@@ -8,9 +8,10 @@ function ajax_more_results(){
   $key = $query_data['key'];
 
   // The query
-  $result = get_search_query();
   $query = array(
     'post_type' => 'product',
+    'sort' => 'ASC',
+    'sortby' => 'title',
     'posts_per_page' => 15,
     's' => $key,
     'offset' => $offset
@@ -19,17 +20,13 @@ function ajax_more_results(){
 
   // The loop
   if( $wp_query->have_posts() ):
-    while( $wp_query->have_posts() ) : $wp_query->the_post();
-      wc_get_template_part( 'content', 'product' );
-    endwhile;
-  else:
-    ?>
-    <script type="text/javascript">
-    var button = document.getElementById("more-results");
-    $(button).disabled = true;
-    $(button).addClass('is-disabled');
-    </script>
-    <?php
+    woocommerce_product_loop_start();
+      while( $wp_query->have_posts() ) : $wp_query->the_post();
+        wc_get_template_part( 'content', 'product' );
+      endwhile;
+    woocommerce_product_loop_end();
+  elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
+    // no more products
   endif;
   wp_reset_postdata();
 
