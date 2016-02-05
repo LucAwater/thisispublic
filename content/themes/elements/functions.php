@@ -33,13 +33,6 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-// Login/logout redirects
-add_action('wp_logout','go_home');
-function go_home(){
-  wp_redirect( home_url() );
-  exit();
-}
-
 function hide_price_fields() { ?>
    <style>
    .wp-admin #woocommerce-product-data .pricing,

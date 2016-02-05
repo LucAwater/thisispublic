@@ -3447,7 +3447,10 @@ body.single-product {
       display: none; } }
 body.woocommerce-account .back {
   max-width: 800px;
-  margin: -40px auto; }
+  margin: 0 auto; }
+
+body.woocommerce-edit-account .account-content {
+  margin: 0 auto; }
 
 .account-content {
   max-width: 800px;
