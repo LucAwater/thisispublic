@@ -77,7 +77,13 @@ $tag_terms = get_the_terms($post->id, 'product_tag');
 
   <!-- Tag filter -->
   <ul id="select-tag" class="filter-options">
-    <li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>
+    <?php
+    if( !is_tax('product_tag') ){
+      echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+    } else {
+      echo '<li><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+    }
+    ?>
 
     <?php
     $tags = get_field( 'tags_selected', 'option' );
