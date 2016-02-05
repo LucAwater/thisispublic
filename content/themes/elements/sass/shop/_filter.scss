@@ -91,14 +91,32 @@
       margin-bottom: 40px;
     }
 
-    li.current a{
+    li.current > a{
       text-decoration: underline;
     }
   }
 }
 
-#select-category .subcategories{
-  padding-left: 10px;
+#select-category{
+  display: inline;
+
+  > li{
+    display: inline-block;
+    vertical-align: top;
+
+    margin-right: 80px;
+
+    > a{
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .subcategories{
+      li{
+        margin-right: 0;
+      }
+    }
+  }
 }
 
 .overlay{

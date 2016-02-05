@@ -3403,11 +3403,20 @@ body.single-product {
     margin-bottom: 10px; }
   .filter .filter-options > li:first-child {
     margin-bottom: 40px; }
-  .filter .filter-options li.current a {
+  .filter .filter-options li.current > a {
     text-decoration: underline; }
 
-#select-category .subcategories {
-  padding-left: 10px; }
+#select-category {
+  display: inline; }
+  #select-category > li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 80px; }
+    #select-category > li > a {
+      display: inline-block;
+      margin-bottom: 10px; }
+    #select-category > li .subcategories li {
+      margin-right: 0; }
 
 .overlay {
   top: 0;

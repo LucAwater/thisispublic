@@ -40,25 +40,25 @@ $tag_terms = get_the_terms($post->id, 'product_tag');
 
     foreach( $categories as $cat ):
     ?>
-      <li><a class="tax-filter" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a></li>
-    <?php
-
-      $subargs = array(
-        'taxonomy'  => 'product_cat',
-        'child_of'  => $cat->term_id
-      );
-      $subcategories = get_categories( $subargs );
-
-      if( $subcategories ):
-        ?>
-        <ul class="subcategories">
-          <?php foreach( $subcategories as $subcat ): ?>
-            <li>– <a class="tax-filter" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $subcat->name; ?></a></li>
-          <?php endforeach; ?>
-        </ul>
+      <li><a class="tax-filter is-bold" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a>
         <?php
-      endif;
-    endforeach; ?>
+        $subargs = array(
+          'taxonomy'  => 'product_cat',
+          'child_of'  => $cat->term_id
+        );
+        $subcategories = get_categories( $subargs );
+
+        if( $subcategories ):
+          ?>
+          <ul class="subcategories">
+            <?php foreach( $subcategories as $subcat ): ?>
+              <li><a class="tax-filter" title="<?php echo $subcat->slug; ?>" data-parent="category"><?php echo $subcat->name; ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+          <?php
+        endif;
+      endforeach; ?>
+    </li>
 
   </ul>
 
