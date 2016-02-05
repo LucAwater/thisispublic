@@ -39,11 +39,6 @@ get_header( 'shop' ); ?>
     // Check if user is logged in
     if( ! is_user_logged_in() ):
       echo '<p class="woocommerce-error">You must be logged in to view products. Click <a href="' . home_url() . '/account">here</a> to login or register</p>';
-      // echo
-      // '<div id="comingsoon">
-      //   <h1>COMING SOON</h1>
-      //   <p>For images please send an email to <a href="mailto:showroom@thisispublic.com">showroom@thisispublic.com</a></p>
-      // </div>';
 
     // If user is logged in, continue looping products
     else:
