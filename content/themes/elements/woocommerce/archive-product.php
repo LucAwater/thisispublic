@@ -51,13 +51,21 @@ get_header( 'shop' ); ?>
             'order' => 'DESC',
             'posts_per_page' => 15
         );
-      } else {
+      } elseif( is_tax('product_brand') ) {
         $query = array(
             'post_type' => 'product',
             'posts_per_page' => 15,
             'orderby' => 'date',
             'order' => 'DESC',
             'product_brand' => $brand_terms[0]->slug
+        );
+      } else {
+        $query = array(
+            'post_type' => 'product',
+            'posts_per_page' => 15,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'product_tag' => $tag_terms[0]->slug
         );
       }
 
