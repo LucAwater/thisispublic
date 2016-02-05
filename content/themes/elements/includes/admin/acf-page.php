@@ -10,8 +10,8 @@ if( function_exists('acf_add_options_page') ){
   ));
 
   acf_add_options_page( array(
-    'page_title'  => 'Tag Filter',
-    'menu_title'  => 'Tag Filter',
+    'page_title'  => 'Theme Selectors',
+    'menu_title'  => 'Theme Selectors',
     'menu_slug'   => 'tag-filter',
     'redirect'    => false
   ));

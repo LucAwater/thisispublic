@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+global $post, $current_user, $product_ID;
+
 get_header( 'shop' ); ?>
 
 	<?php
@@ -53,11 +55,21 @@ get_header( 'shop' ); ?>
         </form>
       </div>
 
-      <?php
-      $brands = get_terms( 'product_brand' );
+      <ul class="tags brands s-grid-3">
+        <?php
+        // List selected tags/themes
+        $tags = get_field('tags_selected_thumbs', 'option');
 
-      if( $brands ):
-        echo '<ul class="brands s-grid-3">';
+        if( $tags ):
+          foreach( $tags as $tag ):
+            include('thumb-tag.php');
+          endforeach;
+        endif;
+
+        // List all brands
+        $brands = get_terms( 'product_brand' );
+
+        if( $brands ):
           foreach( $brands as $brand ):
             $current_user_role = $current_user->roles[0];
             $user_level = get_field( 'brand_userLevel', $brand );
@@ -66,10 +78,11 @@ get_header( 'shop' ); ?>
               include('thumb-brand.php');
             endif;
           endforeach;
-        echo '</ul>';
-      endif;
-    endif;
-    ?>
+        endif;
+        ?>
+      </ul>
+      
+    <?php endif; ?>
 
 	<?php
 		/**
