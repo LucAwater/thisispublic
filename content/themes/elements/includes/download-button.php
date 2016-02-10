@@ -2,7 +2,7 @@
 function direct_free_downloads_button($button) {
   global $product;
 
-  if( $product->is_downloadable() AND $product->get_price() == 0 ) {
+  if( $product->is_downloadable() ) {
     $files = $product->get_files();
     $files = array_keys($files);
 
