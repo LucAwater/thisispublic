@@ -3,15 +3,18 @@ jQuery(document).ready( function($) {
   var infiniteScrollPosts = function() {
     var grid = $('.posts');
 
-    var waypoint = new Waypoint({
-      element: grid,
-      handler: function(direction) {
-        if( direction == 'down' ){
-          loadPosts();
-          this.destroy();
-        }
-      },
-      offset: 'bottom-in-view'
+    var trigger_point = $(document).height() - $('footer').height();
+    var screen_bottom = $(window).scrollTop() + $(window).height();
+
+    $(window).on('scroll', function() {
+      trigger_point = $(document).height() - $('footer').height();
+      screen_bottom = $(window).scrollTop() + $(window).height();
+
+      if( screen_bottom > trigger_point ){
+        $(window).off('scroll');
+
+        loadPosts();
+      }
     });
   };
 

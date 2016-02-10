@@ -18,15 +18,16 @@ if( ! is_user_logged_in() ):
   echo '<p class="woocommerce-error">You must be logged in to view products. Click <a href="' . home_url() . '/account">here</a> to login or register</p>';
 // If user is logged in, continue looping products
 else:
-  global $current_user, $product_ID;
+  global $current_user, $product_ID, $product;
+
   $current_user_role = $current_user->roles[0];
   $user_level = get_the_terms( $product_ID, 'userlevel' );
 
   if( $current_user_role === 'administrator' || $current_user_role === $user_level[0]->slug || $user_level[0]->slug === 'level_all' ):
 
-    global $product;
-
     $brand = get_the_terms( get_the_ID(), 'product_brand' );
+    $title = get_the_title();
+    $description = get_the_content();
     $display_price = get_post_meta( get_the_ID(), 'display_price', true );
     ?>
 
@@ -51,50 +52,31 @@ else:
       </div>
 
       <div class="summary entry-summary">
-        <?php
-        // Product images
-        echo '<div class="product-images">';
-          echo '<ul>';
+        <div class="product-images">
+          <ul>
+            <?php
             $attachment_ids = $product->get_gallery_attachment_ids();
 
             foreach( $attachment_ids as $attachment_id ) {
               echo '<li><img src="' . wp_get_attachment_url( $attachment_id ) . '"></li>';
             }
-          echo '</ul>';
-        echo '</div>';
+            ?>
+          </ul>
+        </div>
 
-        // Product info
-        echo '<div class="product-info">';
-          echo '<div>';
-            $title = get_the_title();
-            $description = get_the_content();
-            $price = get_post_meta( get_the_ID(), '_regular_price', true);
+        <div class="product-info">
+          <div>
+            <h1><?php echo $brand[0]->name; ?></h1>
+            <p><?php echo $title; ?></p>
+            <span class="amount"><?php echo ( $display_price ) ? get_woocommerce_currency_symbol() . ' ' . $display_price : ''; ?></span>
+            <?php echo wpautop($description); ?>
 
-            echo '<h1>' . $brand[0]->name . '</h1>';
-            echo '<p>' . $title . '</p>';
-            echo '<span class="amount">' . get_woocommerce_currency_symbol() . ' ' . $display_price . '</span>';
-            echo wpautop($description);
+            <?php ( $product->get_files() ) ? do_action( 'woocommerce_single_product_summary' ) : false; ?>
 
-            // Download button
-            do_action( 'woocommerce_single_product_summary' );
-
-            echo '<p class="is-grey">download a .zip ﬁle with all high ressolution images</p>';
-          echo '</div>';
-        echo '</div>';
-        ?>
-
+            <p class="is-grey">download a .zip ﬁle with all high ressolution images</p>
+          </div>
+        </div>
       </div><!-- .summary -->
-
-      <?php
-        /**
-         * woocommerce_after_single_product_summary hook
-         *
-         * @hooked woocommerce_output_product_data_tabs - 10
-         * @hooked woocommerce_upsell_display - 15
-         * @hooked woocommerce_output_related_products - 20
-         */
-        do_action( 'woocommerce_after_single_product_summary' );
-      ?>
 
       <meta itemprop="url" content="<?php the_permalink(); ?>" />
 

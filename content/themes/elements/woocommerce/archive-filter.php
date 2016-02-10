@@ -1,6 +1,7 @@
 <?php
 // Current brand and gender
 $brand_terms = get_the_terms($post->id, 'product_brand');
+$tag_terms = get_the_terms($post->id, 'product_tag');
 ?>
 
 <div class="filter is-fullwidth">
@@ -10,11 +11,17 @@ $brand_terms = get_the_terms($post->id, 'product_brand');
     <a class="filter-current" title="season-current" data-current="all" data-target="season">season: <span>All</span></a>
     <a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>
     <a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>
-  <?php else: ?>
+  <?php elseif( is_tax('product_brand') ): ?>
     <a class="filter-current" title="brand-current" data-current="<?php echo $brand_terms[0]->slug; ?>" data-target="brand">brand: <span><?php echo $brand_terms[0]->name; ?></span></a>
     <a class="filter-current" title="category-current" data-current="all" data-target="category">product category: <span>All</span></a>
     <a class="filter-current" title="season-current" data-current="all" data-target="season">season: <span>All</span></a>
     <a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>
+    <a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>
+  <?php else: ?>
+    <a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>
+    <a class="filter-current" title="category-current" data-current="all" data-target="category">product category: <span>All</span></a>
+    <a class="filter-current" title="season-current" data-current="all" data-target="season">season: <span>All</span></a>
+    <a class="filter-current" title="tag-current" data-current="<?php echo $tag_terms[0]->slug; ?>" data-target="tag">theme: <span><?php echo $tag_terms[0]->name; ?></span></a>
     <a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>
   <?php endif; ?>
 
@@ -33,25 +40,25 @@ $brand_terms = get_the_terms($post->id, 'product_brand');
 
     foreach( $categories as $cat ):
     ?>
-      <li><a class="tax-filter" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a></li>
-    <?php
-
-      $subargs = array(
-        'taxonomy'  => 'product_cat',
-        'child_of'  => $cat->term_id
-      );
-      $subcategories = get_categories( $subargs );
-
-      if( $subcategories ):
-        ?>
-        <ul class="subcategories">
-          <?php foreach( $subcategories as $subcat ): ?>
-            <li>– <a class="tax-filter" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $subcat->name; ?></a></li>
-          <?php endforeach; ?>
-        </ul>
+      <li><a class="tax-filter is-bold" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a>
         <?php
-      endif;
-    endforeach; ?>
+        $subargs = array(
+          'taxonomy'  => 'product_cat',
+          'child_of'  => $cat->term_id
+        );
+        $subcategories = get_categories( $subargs );
+
+        if( $subcategories ):
+          ?>
+          <ul class="subcategories">
+            <?php foreach( $subcategories as $subcat ): ?>
+              <li><a class="tax-filter" title="<?php echo $subcat->slug; ?>" data-parent="category"><?php echo $subcat->name; ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+          <?php
+        endif;
+      endforeach; ?>
+    </li>
 
   </ul>
 
@@ -70,16 +77,27 @@ $brand_terms = get_the_terms($post->id, 'product_brand');
 
   <!-- Tag filter -->
   <ul id="select-tag" class="filter-options">
-    <li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>
+    <?php
+    if( !is_tax('product_tag') ){
+      echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+    } else {
+      echo '<li><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+    }
+    ?>
 
     <?php
     $tags = get_field( 'tags_selected', 'option' );
+    $current_tag = $tag_terms[0]->slug;
 
     if( $tags ):
       foreach( $tags as $tag ):
-        ?>
-        <li><a class="tax-filter" title="<?php echo $tag->slug; ?>" data-parent="tag"><?php echo $tag->name; ?></a></li>
-        <?php
+
+        if( is_tax('product_tag') && $tag->slug === $current_tag ){
+          echo '<li class="current"><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
+        } else {
+          echo '<li><a class="tax-filter" title="' . $tag->slug . '" data-parent="tag">' . $tag->name . '</a></li>';
+        }
+
       endforeach;
     endif;
     ?>

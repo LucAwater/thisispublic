@@ -47,17 +47,25 @@ get_header( 'shop' ); ?>
       if( is_shop() ){
         $query = array(
             'post_type' => 'product',
-            'orderby' => 'title',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order' => 'DESC',
             'posts_per_page' => 15
+        );
+      } elseif( is_tax('product_brand') ) {
+        $query = array(
+            'post_type' => 'product',
+            'posts_per_page' => 15,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'product_brand' => $brand_terms[0]->slug
         );
       } else {
         $query = array(
             'post_type' => 'product',
             'posts_per_page' => 15,
-            'orderby' => 'title',
-            'order' => 'ASC',
-            'product_brand' => $brand_terms[0]->slug
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'product_tag' => $tag_terms[0]->slug
         );
       }
 

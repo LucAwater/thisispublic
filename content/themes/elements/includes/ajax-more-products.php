@@ -86,7 +86,8 @@ function ajax_more_products(){
     $tax_query[] =  array(
       'taxonomy' => 'product_tag',
       'field' => 'term_id',
-      'terms' => $term_ids
+      'terms' => 'xxx',
+      'operator' => 'NOT IN'
     );
   } else {
     $tax_query[] =  array(

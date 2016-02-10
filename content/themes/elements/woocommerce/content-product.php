@@ -92,13 +92,14 @@ array_push($classes, 'product');
   		?>
 
       <?php
-      /**
-       * woocommerce_after_shop_loop_item hook
-       *
-       * @hooked woocommerce_template_loop_add_to_cart - 10
-       */
-      do_action( 'woocommerce_after_shop_loop_item' );
-
+      if( $product->get_files() ){
+        /**
+         * woocommerce_after_shop_loop_item hook
+         *
+         * @hooked woocommerce_template_loop_add_to_cart - 10
+         */
+        do_action( 'woocommerce_after_shop_loop_item' );
+      }
       ?>
 
     </a>

@@ -49,7 +49,7 @@ option.click( function() {
   }
 
   // Switch current classes
-  $(this).parents('ul').children('li').removeClass('current');
+  $(this).parents('ul.filter-options').find('li.current').removeClass('current');
   $(this).parent().addClass('current');
 
   // The AJAX call
