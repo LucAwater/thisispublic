@@ -25,7 +25,7 @@ function registration_message(){
 
   if( isset($_REQUEST['approved']) ){
     $approved = $_REQUEST['approved'];
-    if ($approved == 'false')  echo '<div class="woocommerce-message"><p class="registration successful">Registration successful! You will be notified upon approval of your account.</p></div>';
+    if ($approved == 'false')  echo "<div class='woocommerce-message'><p class='registration successful'>Registration successful! You will be notified upon approval of your account.<br><br>Make sure to check your spam folder if our email doesn't turn up.</p></div>";
     else echo $not_approved_message;
   }
   else echo $not_approved_message;
