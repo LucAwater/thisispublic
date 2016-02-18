@@ -34,9 +34,11 @@ $tag_terms = get_the_terms($post->id, 'product_tag');
 
     <?php
     $args = array(
-      'taxonomy'  => 'product_cat'
+        'hide_empty' => false,
+        'parent'     => 0
     );
-    $categories = get_categories( $args );
+
+    $categories = get_terms( 'product_cat', $args );
 
     foreach( $categories as $cat ):
     ?>
