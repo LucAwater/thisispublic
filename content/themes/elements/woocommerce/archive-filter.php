@@ -46,6 +46,7 @@ $tag_terms = get_the_terms($post->id, 'product_tag');
         <?php
         $subargs = array(
           'taxonomy'  => 'product_cat',
+          'hide_empty' => false,
           'child_of'  => $cat->term_id
         );
         $subcategories = get_categories( $subargs );
