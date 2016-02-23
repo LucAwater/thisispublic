@@ -1,0 +1,1 @@
+!function(e){e(".hero").length>0&&(e("body").addClass("has-hero"),new Waypoint.Sticky({element:e("header")[0],stuckClass:"is-fixed"}))}(jQuery);
