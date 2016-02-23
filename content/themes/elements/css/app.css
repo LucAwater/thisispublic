@@ -3288,15 +3288,42 @@ body.single-product {
   100% {
     -webkit-transform: rotate(360deg);
     tranform: rotate(360deg); } }
+.filter > ul {
+  display: inline; }
+  .filter > ul > li {
+    height: 80px;
+    display: inline-block;
+    line-height: 80px;
+    cursor: pointer; }
+    .filter > ul > li:first-child {
+      margin-left: -25px; }
+    .filter > ul > li:hover {
+      background-color: #e8e8e8; }
+    .filter > ul > li:hover ul {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transition: 0s;
+      -moz-transition: 0s;
+      -ms-transition: 0s;
+      -o-transition: 0s;
+      transition: 0s; }
+
 .filter {
   width: 100%;
   height: 80px;
   padding: 0 80px;
   z-index: 1000; }
-  .filter > a, .filter > p, .filter > a, .filter > span,
-  .filter > label, #mc_embed_signup .filter > div.mce_inline_error, #mc_embed_signup #mce-responses .filter > .response, .filter > button,
+  .filter > a,
+  .filter > p,
+  .filter > a,
+  .filter > span,
+  .filter > label,
+  #mc_embed_signup .filter > div.mce_inline_error,
+  #mc_embed_signup #mce-responses .filter > .response,
+  .filter > button,
   .filter > .button,
-  .filter > input[type="submit"], .filter > input[type="text"],
+  .filter > input[type="submit"],
+  .filter > input[type="text"],
   .filter > input[type="password"],
   .filter > input[type="date"],
   .filter > input[type="datetime"],
@@ -3309,54 +3336,15 @@ body.single-product {
   .filter > input[type="tel"],
   .filter > input[type="time"],
   .form-row .filter > a.chosen-single,
-  .filter > select, .filter > div {
+  .filter > select,
+  .filter > div {
     float: left;
     display: inline-block;
     line-height: 80px; }
-  .filter .search-form {
-    display: -webkit-box;
-    /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;
-    /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flex;
-    /* TWEENER - IE 10 */
-    display: -webkit-flex;
-    /* NEW - Chrome */
-    display: flex;
-    /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: auto;
-    height: 80px;
-    float: right; }
-    .filter .search-form .search {
-      width: auto;
-      float: left; }
-    .filter .search-form button {
-      font-family: 'AvenirNextLTPro-Light', 'sans-serif';
-      font-style: normal;
-      font-weight: normal;
-      float: left;
-      padding: 0 15px;
-      color: black;
-      background-color: transparent; }
-      .filter .search-form button.is-bold,
-      .filter .search-form button strong {
-        font-family: 'AvenirNextLTPro-Bold', 'sans-serif';
-        font-weight: 100; }
-      .filter .search-form button:hover, .filter .search-form button:focus {
-        background-color: transparent; }
-    .filter .search-form .search-trigger {
-      display: none; }
 
 .filter .filter-current {
   padding: 0 25px;
   text-decoration: none; }
-  .filter .filter-current:first-child {
-    margin-left: -25px; }
-  .filter .filter-current.is-active {
-    background-color: #e8e8e8; }
 .filter .filter-options {
   opacity: 0;
   visibility: hidden;
@@ -3365,58 +3353,25 @@ body.single-product {
   -ms-transition: 0s;
   -o-transition: 0s;
   transition: 0s;
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-  /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flex;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Chrome */
-  display: flex;
-  /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  -webkit-flex-flow: column wrap;
-  flex-flow: column wrap;
-  -webkit-align-content: flex-start;
-  -ms-flex-align: flex-start;
-  align-content: flex-start;
-  top: 80px;
   left: 0;
   position: absolute;
   z-index: 1000;
-  width: 100%;
-  height: 40vh;
-  min-height: 300px;
-  padding: 80px;
-  padding-bottom: 40px;
+  width: auto;
+  height: auto;
+  padding: 25px;
+  padding-right: 100px;
+  line-height: normal;
+  white-space: nowrap;
   background-color: rgba(232, 232, 232, 0.98); }
-  .filter .filter-options.is-active {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: 0s;
-    -moz-transition: 0s;
-    -ms-transition: 0s;
-    -o-transition: 0s;
-    transition: 0s; }
-  .filter .filter-options li {
-    margin-right: 80px;
-    margin-bottom: 10px; }
   .filter .filter-options > li:first-child {
-    margin-bottom: 40px; }
-  .filter .filter-options li.current > a {
+    margin-bottom: 1em; }
+  .filter .filter-options > li.current > a {
     text-decoration: underline; }
 
-#select-category {
-  display: inline; }
-  #select-category > li {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 80px; }
-    #select-category > li > a {
-      display: inline-block;
-      margin-bottom: 10px; }
-    #select-category > li .subcategories li {
-      margin-right: 0; }
+#select-category > li {
+  margin-bottom: 1em; }
+#select-category > li:last-child {
+  margin-bottom: 0; }
 
 .overlay {
   top: 0;
@@ -3454,6 +3409,43 @@ body.single-product {
       display: block; }
     .filter .search-form.is-active .search-trigger {
       display: none; } }
+.filter .search-form {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flex;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: auto;
+  height: 80px;
+  float: right; }
+  .filter .search-form .search {
+    width: auto;
+    float: left; }
+  .filter .search-form button {
+    font-family: 'AvenirNextLTPro-Light', 'sans-serif';
+    font-style: normal;
+    font-weight: normal;
+    float: left;
+    padding: 0 15px;
+    color: black;
+    background-color: transparent; }
+    .filter .search-form button.is-bold,
+    .filter .search-form button strong {
+      font-family: 'AvenirNextLTPro-Bold', 'sans-serif';
+      font-weight: 100; }
+    .filter .search-form button:hover, .filter .search-form button:focus {
+      background-color: transparent; }
+  .filter .search-form .search-trigger {
+    display: none; }
+
 body.woocommerce-account .back {
   max-width: 800px;
   margin: 0 auto; }

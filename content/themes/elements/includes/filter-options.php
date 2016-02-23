@@ -1,20 +1,16 @@
 <?php
 function filter_options_brand() {
-  if( is_tax('product_brand') ){
-    echo '<a class="filter-current" title="brand-current" data-current="' . $brand_terms[0]->slug . '" data-target="brand">brand: <span>' . $brand_terms[0]->name . '</span></a>';
-  } else {
-    echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand: <span>All</span></a>';
-  }
+  echo '<a class="filter-current" title="brand-current" data-current="all" data-target="brand">brand</a>';
 
   echo do_shortcode( '[product_brand_list]' );
 }
 
 function filter_options_category() {
   ?>
-  <a class="filter-current" title="category-current" data-current="all" data-target="category">product category: <span>All</span></a>
+  <a class="filter-current" title="category-current" data-current="all" data-target="category">product category</a>
 
   <ul id="select-category" class="filter-options">
-    <li class="current"><a class="tax-filter" title="all" data-parent="category">All</a></li>
+    <li class="current"><a class="tax-filter is-uppercase" title="all" data-parent="category">Show all</a></li>
 
     <?php
     $args = array(
@@ -26,7 +22,7 @@ function filter_options_category() {
 
     foreach( $categories as $cat ):
     ?>
-      <li><a class="tax-filter is-bold" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a>
+      <li><a class="tax-filter is-uppercase" title="<?php echo $cat->slug; ?>" data-parent="category"><?php echo $cat->name; ?></a>
         <?php
         $subargs = array(
           'taxonomy'  => 'product_cat',
@@ -53,10 +49,10 @@ function filter_options_category() {
 
 function filter_options_season() {
   ?>
-  <a class="filter-current" title="season-current" data-current="all" data-target="season">season: <span>All</span></a>
+  <a class="filter-current" title="season-current" data-current="all" data-target="season">season</a>
 
   <ul id="select-season" class="filter-options">
-    <li class="current"><a class="tax-filter" title="all" data-parent="season">All</a></li>
+    <li class="current"><a class="tax-filter is-uppercase" title="all" data-parent="season">Show all</a></li>
 
     <?php
     $seasons = get_terms( 'season' );
@@ -71,19 +67,15 @@ function filter_options_season() {
 
 function filter_options_tag() {
   $tag_terms = get_the_terms($post->id, 'product_tag');
-
-  if( is_tax('product_tag') ){
-    echo '<a class="filter-current" title="tag-current" data-current="' . $tag_terms[0]->slug . '" data-target="tag">theme: <span>' . $tag_terms[0]->name . '</span></a>';
-  } else {
-    echo '<a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme: <span>All</span></a>';
-  }
   ?>
+  <a class="filter-current" title="tag-current" data-current="all" data-target="tag">theme</a>
+  
   <ul id="select-tag" class="filter-options">
     <?php
     if( !is_tax('product_tag') ){
-      echo '<li class="current"><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+      echo '<li class="current"><a class="tax-filter is-uppercase" title="all" data-parent="tag">Show all</a></li>';
     } else {
-      echo '<li><a class="tax-filter" title="all" data-parent="tag">All</a></li>';
+      echo '<li><a class="tax-filter is-uppercase" title="all" data-parent="tag">Show all</a></li>';
     }
     ?>
 
@@ -109,10 +101,10 @@ function filter_options_tag() {
 
 function filter_options_gender() {
   ?>
-  <a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender: <span>All</span></a>
+  <a class="filter-current" title="gender-current" data-current="all" data-target="gender">gender</a>
 
   <ul id="select-gender" class="filter-options">
-    <li class="current"><a class="tax-filter" title="all" data-parent="gender">All</a></li>
+    <li class="current"><a class="tax-filter is-uppercase" title="all" data-parent="gender">Show all</a></li>
 
     <?php
     $genders = get_terms( 'gender', 'orderby=count&hide_empty=0' );

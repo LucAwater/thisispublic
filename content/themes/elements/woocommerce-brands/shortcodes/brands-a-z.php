@@ -10,9 +10,9 @@ $current_brand = $brand_terms[0]->slug;
 
 echo '<ul id="select-brand" class="filter-options">';
   if( !is_tax('product_brand') ){
-    echo '<li class="current"><a class="tax-filter" title="all" data-parent="brand">All</a></li>';
+    echo '<li class="current"><a class="tax-filter is-uppercase" title="all" data-parent="brand">Show all</a></li>';
   } else {
-    echo '<li><a class="tax-filter" title="all" data-parent="brand">All</a></li>';
+    echo '<li><a class="tax-filter is-uppercase" title="all" data-parent="brand">Show all</a></li>';
   }
 
   foreach ( $index as $i ) if ( isset( $product_brands[ $i ] ) ) :

@@ -1,46 +1,39 @@
+.filter > ul{
+  display: inline;
+
+  > li{
+    height: 80px;
+    display: inline-block;
+
+    line-height: 80px;
+    cursor: pointer;
+
+    &:first-child{
+      margin-left: -25px;
+    }
+
+    &:hover{
+      background-color: $grey;
+    }
+
+    &:hover ul{
+      @include show( 0s );
+    }
+  }
+}
+
 .filter{
   width: 100%;
   height: 80px;
   padding: 0 80px;
   z-index: $zIndex-filterOptions;
 
-  > a, > p, > div{
+  > a,
+  > p,
+  > div{
     float: left;
     display: inline-block;
     line-height: 80px;
-  }
-
-  .search-form{
-    @include flex;
-    @include align-items( center );
-
-    width: auto;
-    height: 80px;
-    float: right;
-
-    .search{
-      width: auto;
-      float: left;
-    }
-
-    button{
-      @include avenir;
-
-      float: left;
-      padding: 0 15px;
-
-      color: $black;
-      background-color: transparent;
-
-      &:hover,
-      &:focus{
-        background-color: transparent;
-      }
-    }
-
-    .search-trigger{
-      display: none;
-    }
   }
 }
 
@@ -49,73 +42,41 @@
     padding: 0 25px;
 
     text-decoration: none;
-
-    &:first-child{
-      margin-left: -25px;
-    }
-
-    &.is-active{
-      background-color: $grey;
-    }
   }
 
   .filter-options{
     @include hide( 0s );
-    @include flex;
-    @include flex-flow( column wrap );
-    @include align-content( flex-start );
 
-    top: 80px;
     left: 0;
     position: absolute;
     z-index: $zIndex-filterOptions;
 
-    width: 100%;
-    height: 40vh;
-    min-height: 300px;
-    padding: 80px;
-    padding-bottom: 40px;
+    width: auto;
+    height: auto;
+    padding: 25px;
+    padding-right: 100px;
 
+    line-height: normal;
+    white-space: nowrap;
     background-color: rgba( $grey, .98 );
 
-    &.is-active{
-      @include show( 0s );
-    }
-
-    li{
-      margin-right: 80px;
-      margin-bottom: 10px;
-    }
-
     > li:first-child{
-      margin-bottom: 40px;
+      margin-bottom: 1em;
     }
 
-    li.current > a{
+    > li.current > a{
       text-decoration: underline;
     }
   }
 }
 
 #select-category{
-  display: inline;
-
   > li{
-    display: inline-block;
-    vertical-align: top;
+    margin-bottom: 1em;
+  }
 
-    margin-right: 80px;
-
-    > a{
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-
-    .subcategories{
-      li{
-        margin-right: 0;
-      }
-    }
+  > li:last-child{
+    margin-bottom: 0;
   }
 }
 
