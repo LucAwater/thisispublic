@@ -13,46 +13,6 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
 !function(n){}(jQuery);
 (function($) {
 
-  // Showing/hiding dropdown
-  var filterDropdown = function() {
-    var filterCurrent = $('.filter-current');
-    var filterOption = $('a.tax-filter');
-
-    filterCurrent.click( function() {
-      // Get matching filter menu/options
-      var target = $(this).attr('data-target');
-      var targetOptions = $('#select-' + target);
-
-      // Remove any is-active classes that do not belong to the clicked one
-      $('.filter-current').not(this).removeClass('is-active');
-      $('.filter-options').not(targetOptions).removeClass('is-active');
-
-      // If no overlay exists, create one
-      if( $('.overlay').length < 1 ) {
-        $('main').append('<div class="overlay"></div>');
-      }
-
-      // Activate the clicked filter title and matching filter menu/options
-      $(this).toggleClass('is-active');
-      targetOptions.toggleClass('is-active');
-
-      // Hiding the filter menu/options
-      var dropdownHide = function() {
-        $('.filter-current').removeClass('is-active');
-        $('.filter-options').removeClass('is-active');
-        $('.overlay').remove();
-      }
-
-      $('.overlay').click( function() {
-        dropdownHide();
-      });
-
-      filterOption.click( function() {
-        dropdownHide();
-      });
-    });
-  };
-
   // Giving filter-current updated data
   var filterUpdateCurrent = function() {
     var filterOption = $('ul.filter-options li a');
@@ -63,35 +23,11 @@ var i=h.modes[t],o=this.options[t]||{};this.options[t]=i.options?e(i.options,o):
       var optionParent = $('.filter').find("[data-target='" + optionParentVal + "']");
 
       optionParent.attr('data-current', optionVal);
-      optionParentContent = optionParent.find('span');
-      optionParentContent.text(optionVal[0].toUpperCase() + optionVal.substr(1));
-    });
-  };
-
-  // Positioning filter options
-  var filterOptionsPos = function (){
-    var filterCurrent = $('.filter-current');
-
-    for(var i = 0; i < filterCurrent.length; i++){
-      var filterCurrentVal = $(filterCurrent[i]).children('span');
-      var targetVal = $(filterCurrent[i]).attr('data-target');
-      var target = $('#select-' + targetVal);
-      target.css("padding-left", filterCurrentVal.offset().left);
-    };
-
-    $(window).on('resize', function() {
-      for(var i = 0; i < filterCurrent.length; i++){
-        var filterCurrentVal = $(filterCurrent[i]).children('span');
-        var targetVal = $(filterCurrent[i]).attr('data-target');
-        var target = $('#select-' + targetVal);
-        target.css("padding-left", filterCurrentVal.offset().left);
-      };
+      optionParent.data('current', optionVal);
     });
   };
 
   filterUpdateCurrent();
-  filterDropdown();
-  // filterOptionsPos();
 
 }( jQuery ));
 !function(e){function h(){var h=e(".hero"),s=e(".hero-banner"),t=e("header"),i=(t.height(),h.height());s.css("height",i);var r=e(".is-stretched-wrapper"),c=r.width(),o=r.height(),d=e(".is-stretched-object"),n=d.width()/d.height();d.css("min-height",o),o*n>c?(d.removeClass("is-stretched-wide"),d.addClass("is-stretched-high")):(d.removeClass("is-stretched-high"),d.addClass("is-stretched-wide"));var a=e(".arrow-scroll");a.css("top",i-30),a.click(function(){e("html, body").animate({scrollTop:i+20},500)})}e("section.hero").length>0&&(h(),e(window).on("resize",function(){h()}))}(jQuery);
