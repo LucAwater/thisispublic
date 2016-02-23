@@ -3379,7 +3379,8 @@ body.single-product {
 
 .filter .filter-current {
   padding: 0 25px;
-  text-decoration: none; }
+  text-decoration: none;
+  text-transform: capitalize; }
 .filter .filter-options {
   opacity: 0;
   visibility: hidden;
