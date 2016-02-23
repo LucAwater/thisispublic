@@ -7,50 +7,50 @@ option.click( function() {
   // Get current filter values
   if(clickedParent == 'brand'){
     var brand_current = $(this).attr('title');
-    var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
-    var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
-    var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
-    var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
+    var category_current = $('a[title="category-current"]').data('current');
+    var season_current = $('a[title="season-current"]').data('current');
+    var gender_current = $('a[title="gender-current"]').data('current');
+    var tag_current = $('a[title="tag-current"]').data('current');
 
   } else if(clickedParent == 'category') {
-    var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
+    var brand_current = $('a[title="brand-current"]').data('current');
     var category_current = $(this).attr('title');
-    var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
-    var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
-    var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
+    var season_current = $('a[title="season-current"]').data('current');
+    var gender_current = $('a[title="gender-current"]').data('current');
+    var tag_current = $('a[title="tag-current"]').data('current');
 
   } else if(clickedParent == 'season') {
-    var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
-    var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
+    var brand_current = $('a[title="brand-current"]').data('current');
+    var category_current = $('a[title="category-current"]').data('current');
     var season_current = $(this).attr('title');
-    var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
-    var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
+    var gender_current = $('a[title="gender-current"]').data('current');
+    var tag_current = $('a[title="tag-current"]').data('current');
 
   } else if(clickedParent == 'gender'){
-    var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
-    var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
-    var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
+    var brand_current = $('a[title="brand-current"]').data('current');
+    var category_current = $('a[title="category-current"]').data('current');
+    var season_current = $('a[title="season-current"]').data('current');
     var gender_current = $(this).attr('title');
-    var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
+    var tag_current = $('a[title="tag-current"]').data('current');
 
   } else if(clickedParent == 'tag') {
-    var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
-    var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
-    var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
-    var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
+    var brand_current = $('a[title="brand-current"]').data('current');
+    var category_current = $('a[title="category-current"]').data('current');
+    var season_current = $('a[title="season-current"]').data('current');
+    var gender_current = $('a[title="gender-current"]').data('current');
     var tag_current = $(this).attr('title');
 
   } else {
-    var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
-    var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
-    var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
-    var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
-    var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
+    var brand_current = $('a[title="brand-current"]').data('current');
+    var category_current = $('a[title="category-current"]').data('current');
+    var season_current = $('a[title="season-current"]').data('current');
+    var gender_current = $('a[title="gender-current"]').data('current');
+    var tag_current = $('a[title="tag-current"]').data('current');
   }
 
   // Switch current classes
-  $(this).parents('ul.filter-options').find('li.current').removeClass('current');
-  $(this).parent().addClass('current');
+  $(this).parents('ul.filter-options').find('.current').removeClass('current');
+  $(this).addClass('current');
 
   // The AJAX call
   $.ajax({

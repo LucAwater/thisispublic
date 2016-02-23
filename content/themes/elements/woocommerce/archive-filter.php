@@ -1,3 +1,5 @@
+<?php $brand_terms = get_the_terms($post->id, 'product_brand'); ?>
+
 <div class="filter is-fullwidth">
   <ul>
     <li><?php filter_options_brand(); ?></li>

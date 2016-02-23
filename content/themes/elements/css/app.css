@@ -3365,7 +3365,7 @@ body.single-product {
   background-color: rgba(232, 232, 232, 0.98); }
   .filter .filter-options > li:first-child {
     margin-bottom: 1em; }
-  .filter .filter-options > li.current > a {
+  .filter .filter-options li > a.current {
     text-decoration: underline; }
 
 #select-category > li {
