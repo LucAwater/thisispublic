@@ -1605,6 +1605,26 @@ a {
   a:hover {
     text-decoration: underline; }
 
+a p, a a, a span,
+a label, a #mc_embed_signup div.mce_inline_error, #mc_embed_signup a div.mce_inline_error, a #mc_embed_signup #mce-responses .response, #mc_embed_signup #mce-responses a .response, a button,
+a .button,
+a input[type="submit"], a input[type="text"],
+a input[type="password"],
+a input[type="date"],
+a input[type="datetime"],
+a input[type="datetime-local"],
+a input[type="month"],
+a input[type="week"],
+a input[type="email"],
+a input[type="number"],
+a input[type="search"],
+a input[type="tel"],
+a input[type="time"],
+a .form-row a.chosen-single,
+.form-row a a.chosen-single,
+a select {
+  font-size: 1em; }
+
 @media only screen and (max-width: 47.938em) {
   h1, h3, h3 {
     font-size: 1.188em; } }
@@ -3070,7 +3090,22 @@ body.single-product {
     .products .product > div a.has-content .thumb-content {
       padding: 40px;
       background-color: white; }
-      .products .product > div a.has-content .thumb-content h3 {
+      .products .product > div a.has-content .thumb-content p, .products .product > div a.has-content .thumb-content a, .products .product > div a.has-content .thumb-content span,
+      .products .product > div a.has-content .thumb-content label, .products .product > div a.has-content .thumb-content #mc_embed_signup div.mce_inline_error, #mc_embed_signup .products .product > div a.has-content .thumb-content div.mce_inline_error, .products .product > div a.has-content .thumb-content #mc_embed_signup #mce-responses .response, #mc_embed_signup #mce-responses .products .product > div a.has-content .thumb-content .response, .products .product > div a.has-content .thumb-content button,
+      .products .product > div a.has-content .thumb-content .button,
+      .products .product > div a.has-content .thumb-content input[type="submit"], .products .product > div a.has-content .thumb-content input[type="text"],
+      .products .product > div a.has-content .thumb-content input[type="password"],
+      .products .product > div a.has-content .thumb-content input[type="date"],
+      .products .product > div a.has-content .thumb-content input[type="datetime"],
+      .products .product > div a.has-content .thumb-content input[type="datetime-local"],
+      .products .product > div a.has-content .thumb-content input[type="month"],
+      .products .product > div a.has-content .thumb-content input[type="week"],
+      .products .product > div a.has-content .thumb-content input[type="email"],
+      .products .product > div a.has-content .thumb-content input[type="number"],
+      .products .product > div a.has-content .thumb-content input[type="search"],
+      .products .product > div a.has-content .thumb-content input[type="tel"],
+      .products .product > div a.has-content .thumb-content input[type="time"],
+      .products .product > div a.has-content .thumb-content select {
         margin: 5px 0; }
   .products .product > div a.button {
     float: right; }
