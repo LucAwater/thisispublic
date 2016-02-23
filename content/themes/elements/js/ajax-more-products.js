@@ -25,11 +25,11 @@ var loadProducts = function() {
   $('.products').after('<div class="loader"></div>');
 
   // Get all current filter values
-  var brand_current = $('a[title="brand-current"]').find('span').text().toLowerCase();
-  var category_current = $('a[title="category-current"]').find('span').text().toLowerCase();
-  var season_current = $('a[title="season-current"]').find('span').text().toLowerCase();
-  var gender_current = $('a[title="gender-current"]').find('span').text().toLowerCase();
-  var tag_current = $('a[title="tag-current"]').find('span').text().toLowerCase();
+  var brand_current = $('a[title="brand-current"]').data('current');
+  var category_current = $('a[title="category-current"]').data('current');
+  var season_current = $('a[title="season-current"]').data('current');
+  var gender_current = $('a[title="gender-current"]').data('current');
+  var tag_current = $('a[title="tag-current"]').data('current');
 
   // Count already loaded products
   var product_count = $('.product').length;

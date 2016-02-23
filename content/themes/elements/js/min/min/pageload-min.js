@@ -1,0 +1,1 @@
+!function(e){Pace.on("done",function(){e("body").removeClass("is-loading"),e(".pace").remove()})}(jQuery);

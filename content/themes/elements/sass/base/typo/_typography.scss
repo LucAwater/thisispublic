@@ -75,6 +75,10 @@ label{
   @extend p;
 }
 
+a p{
+  font-size: 1em;
+}
+
 @media #{$medium-down}{
   h1, h3{
     font-size: 1.188em; //19px

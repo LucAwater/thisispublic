@@ -61,7 +61,7 @@ array_push($classes, 'product');
 
   		<?php
   			echo '<div class="thumb-content">';
-          echo '<p>' . $brand[0]->name . '</p>';
+          echo '<h3>' . $brand[0]->name . '</h3>';
     			/**
     			 * woocommerce_shop_loop_item_title hook
     			 *

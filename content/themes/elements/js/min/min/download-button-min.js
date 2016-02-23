@@ -1,0 +1,1 @@
+!function(n){function i(){var i=n("a.product_type_simple");i.click(function(){n(this).html("Download again!")})}i()}(jQuery);
