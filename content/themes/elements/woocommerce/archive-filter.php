@@ -1,4 +1,7 @@
-<?php $brand_terms = get_the_terms($post->id, 'product_brand'); ?>
+<?php
+$brand_terms = get_the_terms($post->id, 'product_brand');
+$tag_terms = get_the_terms($post->id, 'product_tag');
+?>
 
 <div class="filter is-fullwidth">
   <ul>

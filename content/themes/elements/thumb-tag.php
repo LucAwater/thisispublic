@@ -27,7 +27,7 @@ $description = $tag->description;
     </a>
 
     <div class="thumb-content">
-      <?php echo $description; ?>
+      <?php echo wpautop($description); ?>
       <a class="button button-sec" href="<?php echo $link; ?>">View products</a>
     </div>
   </div>
