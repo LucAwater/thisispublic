@@ -46,7 +46,7 @@ get_header( 'shop' ); ?>
     else:
       ?>
       <div class="filter is-fullwidth">
-        <p>Public_ Imagebank</p>
+        <p>PUBLIC_ Imagebank</p>
 
         <form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
           <input type="search" class="search" value="" name="s" title="" />
