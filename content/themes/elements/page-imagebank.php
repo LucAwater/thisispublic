@@ -57,15 +57,6 @@ get_header( 'shop' ); ?>
 
       <ul class="tags brands s-grid-3">
         <?php
-        // List selected tags/themes
-        $tags = get_field('tags_selected_thumbs', 'option');
-
-        if( $tags ):
-          foreach( $tags as $tag ):
-            include('thumb-tag.php');
-          endforeach;
-        endif;
-
         // List all brands
         $brands = get_terms( 'product_brand' );
 
@@ -79,9 +70,18 @@ get_header( 'shop' ); ?>
             endif;
           endforeach;
         endif;
+
+        // List selected tags/themes
+        $tags = get_field('tags_selected_thumbs', 'option');
+
+        if( $tags ):
+          foreach( $tags as $tag ):
+            include('thumb-tag.php');
+          endforeach;
+        endif;
         ?>
       </ul>
-      
+
     <?php endif; ?>
 
 	<?php
