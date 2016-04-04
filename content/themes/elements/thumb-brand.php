@@ -36,9 +36,10 @@
         foreach( $brand_mailLinks as $link ){
           $subject = $link['brand_mailLinks_subject'];
           $content = $link['brand_mailLinks_content'];
+          $content = preg_replace('/<br \/>/', '%0D%0A', $content);
           $actionlink = $link['brand_mailLinks_link'];
 
-          echo '<a class="link-arrow link-arrow-right" href="mailto:info@thisispublic.com?subject=' . $subject . '&body=' . $content . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $actionlink . '</a>';
+          echo '<a class="link-arrow link-arrow-right" href="mailto:imagebank@thisispublic.com?subject=' . $subject . '&body=' . $content . '"><img src="' . get_template_directory_uri() . '/img/arrow.svg">' . $actionlink . '</a>';
         }
 
         echo '</div>';
