@@ -48,7 +48,7 @@ get_header( 'shop' ); ?>
       <div class="filter is-fullwidth">
         <p>PUBLIC_ Imagebank</p>
 
-        <form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '">
+        <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
           <input type="search" class="search" value="" name="s" title="" />
           <button type="submit">search</button>
           <p class="search-trigger">search</p>
